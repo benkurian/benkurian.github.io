@@ -11,9 +11,9 @@ var music = [{
   title: "Who Do I Want to Be? Soundtrack",
   description: "The music to my StudentCam 2024 documentary.",
   img: "wdiwtb.webp",
-  linkText: "Listen on <i class='bi bi-youtube'></i> YouTube",
-  linkHref: "https://youtu.be/FUbPylyq6J0",
-  dateAdded: "March 26, 2024",
+  linkText: "Listen on <i class='bi bi-spotify'></i> Spotify",
+  linkHref: "https://open.spotify.com/album/6WOxGtJ2cwFJIXdNYZuXjK?si=zcsDU0TsR0S0fR3IJs-ZGQ",
+  dateAdded: "March 2, 2024",
 }];
 
 // String to store HTML for displaying music cards
