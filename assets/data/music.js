@@ -23,7 +23,7 @@ var cardContainerHTML = "";
 for (var i = music.length - 1; i >= 0; i--) {
   cardContainerHTML += `
   <div class='card m-3 shadow animate__animated animate__fadeIn' style='width: 18rem; height: 33rem;'>
-    <img oncontextmenu="return false;" loading="lazy" src='/assets/images/music/compressed/${music[i].img}' class='mt-3 rounded w-100 h-100' alt='${music[i].title}' style='object-fit: cover;'>
+    <img oncontextmenu="return false;" loading="lazy" src='/assets/images/compressed/music/${music[i].img}' class='mt-3 rounded w-100 h-100' alt='${music[i].title}' style='object-fit: cover;'>
     <div class='card-body pb-0'>
       <h5 class='card-title'>${music[i].title}</h5>
       <p class='card-text'>${music[i].description}</p>
