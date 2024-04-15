@@ -6,7 +6,7 @@ var videos = [
     img: "aquaponics.webp",
     linkText: "Watch on <i class='bi bi-youtube'></i> YouTube",
     linkHref: "https://youtu.be/zsHRN33V4IA",
-    dateAdded: "May 9, 2022",
+    dateAdded: new Date("May 9, 2022"),
   },
   {
     title: "Losing A Generation",
@@ -14,7 +14,7 @@ var videos = [
     img: "lag.webp",
     linkText: "Watch on <i class='bi bi-youtube'></i> YouTube",
     linkHref: "https://youtu.be/-rcz3fX9laQ",
-    dateAdded: "March 15, 2023",
+    dateAdded: new Date("March 15, 2023"),
   },
   {
     title: "E-Waste Video",
@@ -22,7 +22,7 @@ var videos = [
     img: "ewaste.webp",
     linkText: "Watch on <i class='bi bi-youtube'></i> YouTube",
     linkHref: "https://youtu.be/d1BNiJjgWQ8",
-    dateAdded: "May 8, 2023",
+    dateAdded: new Date("May 8, 2023"),
   },
   {
     title: "COMA Cricket Tourney",
@@ -30,7 +30,7 @@ var videos = [
     img: "coma.webp",
     linkText: "Watch on <i class='bi bi-youtube'></i> YouTube",
     linkHref: "https://youtu.be/FI9LKZP8Ppc",
-    dateAdded: "July 15, 2023",
+    dateAdded: new Date("July 15, 2023"),
   },
   {
     title: "Who Do I Want to Be?",
@@ -38,30 +38,35 @@ var videos = [
     img: "wdiwtb.webp",
     linkText: "Watch on <i class='bi bi-youtube'></i> YouTube",
     linkHref: "https://youtu.be/ju_pT2KA4v0",
-    dateAdded: "March 13, 2024",
+    dateAdded: new Date("March 13, 2024"),
   },
 ];
+
+// Sort the videos array based on dateAdded (from newest to oldest)
+videos.sort(function(a, b) {
+  return b.dateAdded - a.dateAdded;
+});
 
 // String to store HTML for displaying video cards
 var cardContainerHTML = "";
 
-// Loop through each video in reverse order and construct HTML for each video card
-for (var i = videos.length - 1; i >= 0; i--) {
+// Construct HTML for each card using forEach loop
+videos.forEach(function(item) {
   cardContainerHTML += `
     <div class='card m-3 shadow animate__animated animate__fadeIn' style='width: 18rem; height: 33rem;'>
-      <img oncontextmenu="return false;" loading="lazy" src='/assets/images/compressed/videos/${videos[i].img}' class='mt-3 rounded w-100 h-100' alt='${videos[i].title}' style='object-fit: cover;'>
+      <img oncontextmenu="return false;" loading="lazy" src='/assets/images/compressed/videos/${item.img}' class='mt-3 rounded w-100 h-100' alt='${item.title}' style='object-fit: cover;'>
       <div class='card-body pb-0'>
-        <h5 class='card-title'>${videos[i].title}</h5>
-        <p class='card-text'>${videos[i].description}</p>
-        <a href='${videos[i].linkHref}' class='btn btn-dark' target='_blank' rel='noopener noreferrer'>
-          ${videos[i].linkText}
+        <h5 class='card-title'>${item.title}</h5>
+        <p class='card-text'>${item.description}</p>
+        <a href='${item.linkHref}' class='btn btn-dark' target='_blank' rel='noopener noreferrer'>
+          ${item.linkText}
         </a>
         <hr>
-        <p class='text-secondary'>${videos[i].dateAdded}</p>
+        <p class='text-secondary'>${item.dateAdded.getMonth() + 1}/${item.dateAdded.getDate()}/${item.dateAdded.getFullYear()}</p>
       </div>
     </div>
   `;
-}
+});
 
 // Add the constructed HTML to the card container in the document
 document.getElementById("cardContainer").innerHTML = cardContainerHTML;
