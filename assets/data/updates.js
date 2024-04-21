@@ -12,6 +12,12 @@ var updates = [
       description: "My interview with Spectrum News about my documentary.",
       date: new Date("April 13, 2024")
     },
+    {
+      title: "Interview with 10TV",
+      src: "https://www.10tv.com/embeds/video/responsive/530-d2156794-9c8b-40df-a21e-e45a40a19686/iframe",
+      description: "My interview with 10TV about my documentary.",
+      date: new Date("April 17, 2024")
+    },
   ];
   
   // Sort the updates array based on date (from newest to oldest)
