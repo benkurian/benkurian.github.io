@@ -14,9 +14,15 @@ var updates = [
     },
     {
       title: "Interview with 10TV",
-      src: "https://www.10tv.com/embeds/video/responsive/530-d2156794-9c8b-40df-a21e-e45a40a19686/iframe",
+      src: "https://www.10tv.com/embeds/video/530-d2156794-9c8b-40df-a21e-e45a40a19686/iframe",
       description: "My interview with 10TV about my documentary.",
       date: new Date("April 17, 2024")
+    },
+    {
+      title: "Invasive Species Video",
+      src: "https://www.youtube.com/embed/63WfRw47kys?si=uE6MAYzjskFyek4G",
+      description: "The second prize winner in the World of 8 Billion 2024 Video Contest.",
+      date: new Date("May 21, 2024")
     },
   ];
   
@@ -35,7 +41,7 @@ var updates = [
     <p class="lead">${latestUpdate.description}</p>
     <p class="text-secondary">${latestUpdate.date.getMonth() + 1}/${latestUpdate.date.getDate()}/${latestUpdate.date.getFullYear()}</p>
     <br>
-    <p>To get notified whenever I release something, click <a href="/mailinglist.html">here</a> to join my mailing list.</p>
+
   </div>
   <div class="col-sm-6">
     <iframe loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="${latestUpdate.src}" title="${latestUpdate.title}" width="100%" height="100%" allowfullscreen></iframe>
@@ -44,3 +50,5 @@ var updates = [
   
   // Add the constructed HTML to the update container in the document
   document.getElementById("updateContainer").innerHTML = updateContainerHTML;  
+
+  // <p>To get notified whenever I release something, click <a href="/mailinglist.html">here</a> to join my mailing list.</p>

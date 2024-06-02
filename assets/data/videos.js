@@ -40,6 +40,14 @@ var videos = [
     linkHref: "https://youtu.be/ju_pT2KA4v0",
     dateAdded: new Date("March 13, 2024"),
   },
+  {
+    title: "Invasive Species Video",
+    description: "Second-prize winner of World of 8 Billion 2024.",
+    img: "invasive.webp",
+    linkText: "Watch on <i class='bi bi-youtube'></i> YouTube",
+    linkHref: "https://youtu.be/63WfRw47kys",
+    dateAdded: new Date("May 21, 2024"),
+  },
 ];
 
 // Sort the videos array based on dateAdded (from newest to oldest)
