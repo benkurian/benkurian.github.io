@@ -14,6 +14,14 @@ var music = [{
   linkText: "Listen on <i class='bi bi-spotify'></i> Spotify",
   linkHref: "https://open.spotify.com/album/6WOxGtJ2cwFJIXdNYZuXjK?si=zcsDU0TsR0S0fR3IJs-ZGQ",
   dateAdded: new Date("March 2, 2024"),
+},
+{
+  title: "Landscapes<br><br>",
+  description: "Coming soon: A collection of my Piano Guild pieces this year.",
+  img: "landscapes.webp",
+  linkText: "Listen on <i class='bi bi-spotify'></i> Spotify",
+  linkHref: "",
+  dateAdded: new Date("August 14, 2024"),
 }
 ];
 
