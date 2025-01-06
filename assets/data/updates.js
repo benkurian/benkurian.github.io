@@ -24,6 +24,12 @@ var updates = [
       description: "The second prize winner in the World of 8 Billion 2024 Video Contest.",
       date: new Date("May 21, 2024")
     },
+    {
+      title: "TEDxOlentangy Liberty Youth",
+      src: "/assets/images/compressed/index/tedx.webp",
+      description: "I'm fortunate to have been selected as one of the speakers for our school's official TEDx event! Learn more <a href='https://www.ted.com/tedx/events/59648'>here</a>.",
+      date: new Date("December 22, 2024")
+    },
   ];
   
   // Sort the updates array based on date (from newest to oldest)
@@ -44,7 +50,7 @@ var updates = [
 
   </div>
   <div class="col-sm-6">
-    <iframe loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="${latestUpdate.src}" title="${latestUpdate.title}" width="100%" height="100%" allowfullscreen></iframe>
+    <img loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="${latestUpdate.src}" width="100%">
   </div>
   `;
   
@@ -52,3 +58,5 @@ var updates = [
   document.getElementById("updateContainer").innerHTML = updateContainerHTML;  
 
   // <p>To get notified whenever I release something, click <a href="/mailinglist.html">here</a> to join my mailing list.</p>
+
+  // <iframe loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="${latestUpdate.src}" title="${latestUpdate.title}" width="100%" height="100%" allowfullscreen></iframe>
