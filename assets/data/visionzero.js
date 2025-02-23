@@ -16,7 +16,28 @@ var workscited = `
             <iframe height="1000px" src="https://docs.google.com/document/d/e/2PACX-1vRUJ0k1XS-jvyJ7YzlZtNIwdWvo-ESU39R9raLINkgVDKSJA9sj4olppeamw5_jSM4aqhbsHDUgev5I/pub?embedded=true"></iframe>
             `;
 var interviews = `
-            <p class="lead">Working on editing through ten 30-40 minute interviews. Hopefully should be available to watch in a few days!</p>
+            <h1>Interviews</h1>
+            <h2>Ferzan Ahmed</h2>
+            <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/qv5fm-YzGHE?si=gJAufnlWXCZ3tzUv" width="100%" height="800px" allowfullscreen></iframe>
+            <h2><br>Michael Oberdorf</h2>
+            <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/c18QT6JgHAI?si=_cVy4ObNsguZ3vvq" width="100%" height="800px" allowfullscreen></iframe>
+            <h2><br>Staff Lt. Richard Reeder</h2>
+            <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/jjNkQt8r8g4?si=Ch6oLG1Y5-zpcU1U" width="100%" height="800px" allowfullscreen></iframe>
+            <h2><br>Rafael Hernandez</h2>
+            <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/cq8uo8SJznI?si=22bSZyJXlCXU-4KN" width="100%" height="800px" allowfullscreen></iframe>
+            <h2><br>Michelle May</h2>
+            <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/js7tdLjVFbI?si=nRY8kG2sRSBnx3xW" width="100%" height="800px" allowfullscreen></iframe>
+            <h2><br>Dr. Mihail Chirita</h2>
+            <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/SWDxEpzvoeo?si=D5bUGByupEVCxyMi" width="100%" height="800px" allowfullscreen></iframe>
+            <h2><br>David Doria</h2>
+            <!--<iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/oZZIrxikDE0?si=DEk9F8vKya-LfcJB" width="100%" height="800px" allowfullscreen></iframe>-->
+            <p class="lead">Currently waiting on Magna's approval of the interview video to be uploaded. Hopefully should be released soon!</p>
+            <h2><br>Ben Levine</h2>
+            <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/jr0s28Ke_pg?si=pRjEkX6UV4mqpgzY" width="100%" height="800px" allowfullscreen></iframe>
+            <h2><br>Michael Vardi</h2>
+            <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/EFMCIj3pxCU?si=7Ct-URrczXgJ13r3" width="100%" height="800px" allowfullscreen></iframe>
+            <h2><br>Lisa Layzell</h2>
+            <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/qPhjr7NSKu4?si=G5eMOYIFFKK5MATJ" width="100%" height="800px" allowfullscreen></iframe>
             `;
 var music = `
             <h1>Soundtrack</h1><br>
@@ -29,21 +50,21 @@ var acknowledgements = `
             <p class="lead">Michael Oberdorf - Assistant Foreman, Ohio Turnpike Commission, Crash Survivor</p>
             <p class="lead">Staff Lieutenant Richard Reeder - Turnpike Liasion, Ohio State Highway Patrol</p>
             <p class="lead">Rafael Hernandez - Vice President, Tolling Solutions, Kyra Solutions</p>
-            <p class="lead">Dr. Mihail Chirita - AI Consultant, Sagacitas Technologies</p>
             <p class="lead">Michelle May - Highway Safety Program Manager, Ohio Department of Transportation</p>
+            <p class="lead">Dr. Mihail Chirita - AI Consultant, Sagacitas Technologies</p>
             <p class="lead">David Doria - Director of Engineering for Automated Driving, Magna Electronics</p>
             <p class="lead">Ben Levine - Deputy Assistant Secretary of Research and Technology, U.S. Department of Transportation</p>
             <p class="lead">Michael Vardi - Co-Founder, CBO, Valerann</p>
             <p class="lead">Lisa Layzell - CEO, Robotiz3d</p>
-            <h2>Olentangy Liberty High School Staff</h2>
+            <h2><br>Olentangy Liberty High School Staff</h2>
             <p class="lead">Mr. Hale - Math Teacher</p>
             <p class="lead">Mr. Rothey - English Teacher</p>
-            <h2>Olentangy Liberty Middle School Staff</h2>
+            <h2><br>Olentangy Liberty Middle School Staff</h2>
             <p class="lead">Mr. Baker - Principal</p>
             <p class="lead">Mr. Mills - 8th Grade Social Studies Teacher</p>
             <p class="lead">Ms. Zeis - 8th Grade Science Teacher</p>
             <p class="lead">Ms. Welsh - 7th Grade English Teacher</p>
-            <h2>Facilitators</h2>
+            <h2><br>Facilitators</h2>
             <p class="lead">Aravind V.K. - Videography  Mentor</p>
             <p class="lead">Rexon Raj - Drone Operator</p>
             <p class="lead">Chuck Cyrill - Director of Marketing and Communications, Ohio Turnpike Commission</p>
@@ -55,6 +76,17 @@ var acknowledgements = `
             `;
 var updates = `
             <h1>Updates</h1><br>
+            <div class="card my-3">
+                <div class="card-header bg-primary text-white">
+                    Interviews
+                </div>
+                <div class="card-body">
+                    Pretty much all interviews have been uploaded to the website! Sorry for the delay!
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">February 16, 2025</small>
+                </div>
+            </div>
             <div class="card my-3">
                 <div class="card-header bg-primary text-white">
                     Submission
