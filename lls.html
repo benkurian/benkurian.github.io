@@ -44,33 +44,9 @@
   <!-- End Twitter Meta Tags -->
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/index.html"><img width="150vh" src="/assets/images/original/index/logo-wide-black.svg" alt="Logo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/index.html">Home</a>
-          <a class="nav-link" href="/index.html#about">About</a>
-          <a class="nav-link" href="/music.html">Music</a>              
-          <a class="nav-link" href="/sheetmusic.html">Sheet Music</a>   
-          <a class="nav-link" href="#">Videos</a>
-          <div class="dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-              Projects
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/bts.html">Breaking the Silence</a>
-              <a class="dropdown-item active" aria-current="page" href="/lls.html">Leukemia & Lymphoma Society</a>
-            </div>
-          </div>
-          <!-- <a class="nav-link" href="/mailinglist.html">Mailing List</a> -->
-        </div>
-      </div>
-    </div>
+  <nav id="navbarContainer" class="navbar navbar-expand-lg bg-body-tertiary">
   </nav>
+  <script src="/assets/data/navbar.js"></script>
   <div class="bg-image p-3 p-md-5 m-md-3 text-center" style="background-image: url('/assets/images/compressed/lls/lls-bg.webp'); background-size: cover; background-position: center; height: 50%;">
     <span>
       <img src="/assets/images/original/index/logo-wide-white.svg" alt="Logo" width="400" class="mb-3 user-select-none animate__animated animate__fadeInDown">
@@ -121,18 +97,9 @@
     <iframe loading="lazy" class="rounded shadow" src="" width="100%" height="800px" allowfullscreen></iframe>
   </div>
   <div class="container">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2025 Ben Kurian</span>
-      </div>
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3"><a class="text-body-secondary" href="https://youtube.com/@bennymyboi" target="_blank" rel="noopener noreferrer"><i class="bi bi-youtube"></i></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="https://twitter.com/bkuroh17" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/benkurian317/" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="https://open.spotify.com/artist/3RUjQ8FPBYYTPLuPOTnzsT?si=c6EutjXZQw-A1ABwcbMUOw" target="_blank" rel="noopener noreferrer"><i class="bi bi-spotify"></i></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="mailto:bkuroh17@gmail.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope-fill"></i></a></li>
-      </ul>
+    <footer id="footerContainer" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     </footer>
+    <script src="/assets/data/footer.js"></script>
   </div>
 </body>
 </html>

@@ -44,60 +44,13 @@
   <meta name="twitter:creator" content="@bkuroh17">
   <!-- End Twitter Meta Tags -->
   <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
-  <df-messenger
-    project-id="cryptic-smile-256116"
-    agent-id="1d383c1e-5948-4f72-aad8-15efd540e9a7"
-    language-code="en"
-    max-query-length="-1">
-    <df-messenger-chat-bubble
-     chat-title="ben">
-    </df-messenger-chat-bubble>
-  </df-messenger>
-  <style>
-    df-messenger {
-      z-index: 999;
-      position: fixed;
-      --df-messenger-font-color: #000;
-      --df-messenger-font-family: Google Sans;
-      --df-messenger-chat-background: #f3f6fc;
-      --df-messenger-message-user-background: #d3e3fd;
-      --df-messenger-message-bot-background: #fff;
-      bottom: 16px;
-      right: 16px;
-    }
-  </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/index.html"><img width="150vh" src="/assets/images/original/index/logo-wide-black.svg" alt="Logo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
-          <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="/music.html">Music</a>              
-          <a class="nav-link" href="/sheetmusic.html">Sheet Music</a>   
-          <a class="nav-link" href="/videos.html">Videos</a>
-          <div class="dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-              Projects
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/bts.html">Breaking the Silence</a>
-              <a class="dropdown-item" href="/lls.html">Leukemia & Lymphoma Society</a>
-            </div>
-          </div>          
-          <!-- <a class="nav-link" href="/mailinglist.html">Mailing List</a> -->
-        </div>
-      </div>
-    </div>
+  <nav id="navbarContainer" class="navbar navbar-expand-lg bg-body-tertiary">
   </nav>
+  <script src="/assets/data/navbar.js"></script>
   <a id="home"></a>
-  <div class="bg-image p-3 p-md-5 m-md-3 text-center" style="background-image: url('/assets/images/compressed/music/music-bg.webp'); background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; margin-bottom: 50px; height: 50vh;">
+  <!-- <div class="bg-image p-3 p-md-5 m-md-3 text-center" style="background-image: url('/assets/images/compressed/music/music-bg.webp'); background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; margin-bottom: 50px; height: 50vh;">
     <div class="d-flex flex-column align-items-center justify-content-center h-100">
       <span>
         <img src="/assets/images/original/index/logo-wide-white.svg" alt="Logo" width="200" class="mb-3 user-select-none animate__animated animate__fadeInDown">
@@ -111,9 +64,9 @@
       <a href="/lls.html" rel="noopener noreferrer" class="btn btn-lg btn-light px-4 py-2">Learn More</a>
     </span>
     </div>
-  </div>
+  </div> -->
   
-  <!-- <div class="bg-image p-3 p-md-5 m-md-3 text-center" style="background-image: url('/assets/images/compressed/index/hero.webp'); background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; margin-bottom: 50px; height: 100vh;">
+<div class="bg-image p-3 p-md-5 m-md-3 text-center" style="background-image: url('/assets/images/original/index/hero.png'); background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; margin-bottom: 50px; height: 100vh;">
     <img width="70%" oncontextmenu="return false;" loading="lazy" class="text-white user-select-none animate__animated animate__fadeInDown" src="/assets/images/original/index/logo-wide-white.svg" alt="Logo">
     <p class="text-white lead user-select-none animate__animated animate__fadeInUp">Student, Musician, Editor</p>
     <div class="align-items-center animate__animated animate__fadeInUp">
@@ -130,7 +83,7 @@
         }
       </style>
     </div>
-  </div> -->
+  </div>
   
   <a id="update"></a>
   <div id="updateContainer" class="row position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
@@ -149,18 +102,9 @@
     </div>
   </div>
   <div class="container">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2025 Ben Kurian</span>
-      </div>
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3"><a class="text-body-secondary" href="https://youtube.com/@bennymyboi" target="_blank" rel="noopener noreferrer"><i class="bi bi-youtube"></i></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="https://twitter.com/bkuroh17" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/benkurian317/" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="https://open.spotify.com/artist/3RUjQ8FPBYYTPLuPOTnzsT?si=c6EutjXZQw-A1ABwcbMUOw" target="_blank" rel="noopener noreferrer"><i class="bi bi-spotify"></i></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="mailto:bkuroh17@gmail.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope-fill"></i></a></li>
-      </ul>
+    <footer id="footerContainer" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     </footer>
+    <script src="/assets/data/footer.js"></script>
   </div>
 </body>
 </html>
