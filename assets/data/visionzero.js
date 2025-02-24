@@ -30,8 +30,7 @@ var interviews = `
             <h2><br>Dr. Mihail Chirita</h2>
             <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/SWDxEpzvoeo?si=D5bUGByupEVCxyMi" width="100%" height="800px" allowfullscreen></iframe>
             <h2><br>David Doria</h2>
-            <!--<iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/oZZIrxikDE0?si=DEk9F8vKya-LfcJB" width="100%" height="800px" allowfullscreen></iframe>-->
-            <p class="lead">Currently waiting on Magna's approval of the interview video to be uploaded. Hopefully should be released soon!</p>
+            <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/oZZIrxikDE0?si=DEk9F8vKya-LfcJB" width="100%" height="800px" allowfullscreen></iframe>
             <h2><br>Ben Levine</h2>
             <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/jr0s28Ke_pg?si=pRjEkX6UV4mqpgzY" width="100%" height="800px" allowfullscreen></iframe>
             <h2><br>Michael Vardi</h2>
