@@ -3,38 +3,44 @@ var updates = [
   {
     title: "Who Do I Want to Be?",
     src: `<iframe loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="https://www.youtube.com/embed/ju_pT2KA4v0" title="Who Do I Want to Be?" width="100%" height="100%" allowfullscreen></iframe>`,
-    description: "<i>Who Do I Want to Be?</i>, the second prize winner in C-SPAN's StudentCam 2024.",
+    description: `<i>Who Do I Want to Be?</i>, the second prize winner in C-SPAN's StudentCam 2024.`,
     date: new Date("March 15, 2024")
   },
   {
     title: "Interview with Spectrum News",
     src: `<iframe loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="https://www.youtube.com/embed/45F2b03aFZw" title="Interview with Spectrum News" width="100%" height="100%" allowfullscreen></iframe>`,
-    description: "My interview with Spectrum News about my documentary.",
+    description: `My interview with Spectrum News about my documentary.`,
     date: new Date("April 13, 2024")
   },
   {
     title: "Interview with 10TV",
     src: `<iframe loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="https://www.10tv.com/embeds/video/530-d2156794-9c8b-40df-a21e-e45a40a19686/iframe" title="Interview with 10TV" width="100%" height="100%" allowfullscreen></iframe>`,
-    description: "My interview with 10TV about my documentary.",
+    description: `My interview with 10TV about my documentary.`,
     date: new Date("April 17, 2024")
   },
   {
     title: "Invasive Species Video",
     src: `<iframe loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="https://www.youtube.com/embed/63WfRw47kys?si=uE6MAYzjskFyek4G" title="Invasive Species Video" width="100%" height="100%" allowfullscreen></iframe>`,
-    description: "The second prize winner in the World of 8 Billion 2024 Video Contest.",
+    description: `The second prize winner in the World of 8 Billion 2024 Video Contest.`,
     date: new Date("May 21, 2024")
   },
   {
     title: "TEDxOlentangy Liberty Youth",
     src: `<img loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="/assets/images/compressed/index/tedx.webp" width="100%">`,
-    description: "I'm fortunate to have been selected as one of the speakers for our school's official TEDx event! Learn more <a href='https://www.ted.com/tedx/events/59648'>here</a>.",
+    description: `I'm fortunate to have been selected as one of the speakers for our school's official TEDx event! Learn more <a href="https://www.ted.com/tedx/events/59648">here</a>.`,
     date: new Date("December 22, 2024")
   },
   {
     title: "All-State Orchestra Vlog",
     src: `<iframe loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="https://www.youtube.com/embed/uktFtO1onPI?si=vcqXv7jeOshkh-Ek" title="All-State Orchestra Vlog" width="100%" height="100%" allowfullscreen></iframe>`,
-    description: "Watch the OMEA All-State Orchestra 2025 Vlog!",
+    description: `Watch the OMEA All-State Orchestra 2025 Vlog!`,
     date: new Date("February 16, 2025")
+  },
+  {
+    title: "Fan Favorite Voting NOW!",
+    src: `<a href="/vote.html"><img loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="/assets/images/compressed/visionzero/visionzero-bg2.webp" width="100%"></a>`,
+    description: `My winning documentary is top 12 in the nation for C-SPAN's StudentCam competition!<br>Voting runs from March 2 &ndash; to March 9.<br><br><a href="/vote.html">Vote</a> for me to win, every day, on every device!`,
+    date: new Date("March 1, 2025")
   }
 ];
 
