@@ -72,6 +72,7 @@ var acknowledgements = `
             <p class="lead">Alex Kurian - Camera Assistant</p>
             <p class="lead">2013 Toyota Sienna</p>
             <p class="lead">The one guy who stopped me when filming and thought I was a celebrity</p>
+            <img height="50px" oncontextmenu="return false;" loading="lazy" class="img-fluid rounded shadow" src="/assets/images/compressed/visionzero/random-guy.webp" alt="Random guy shaking my hand">
             `;
 var updates = `
             <h1>Updates</h1><br>
