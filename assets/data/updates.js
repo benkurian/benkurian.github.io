@@ -41,6 +41,12 @@ var updates = [
     src: `<a href="/vote.html"><img loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="/assets/images/compressed/visionzero/visionzero-bg2.webp" width="100%"></a>`,
     description: `My winning documentary is top 12 in the nation for C-SPAN's StudentCam competition!<br>Voting runs from March 2 &ndash; to March 9.<br><br><a href="/vote.html">Vote</a> for me to win, every day, on every device!`,
     date: new Date("March 1, 2025")
+  },
+  {
+    title: "1st Prize Winner in C-SPAN StudentCam!",
+    src: `<a href="https://www.studentcam.org/studentcam-2025-prize-winners"><img loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="/assets/images/compressed/visionzero/visionzero-bg2.webp" width="100%"></a>`,
+    description: `<i>The Road to Vision Zero</i> has won 1st Prize in the High School Central Division! Learn more <a href="https://www.studentcam.org/studentcam-2025-prize-winners/">here</a>.`,
+    date: new Date("March 11, 2025")
   }
 ];
 

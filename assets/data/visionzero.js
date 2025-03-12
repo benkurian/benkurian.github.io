@@ -78,6 +78,17 @@ var updates = `
             <h1>Updates</h1><br>
             <div class="card my-3">
                 <div class="card-header bg-primary text-white">
+                    1st Prize!
+                </div>
+                <div class="card-body">
+                    Just won 1st Prize in the High School Central Division in the competition!
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">March 11, 2025</small>
+                </div>
+            </div>
+            <div class="card my-3">
+                <div class="card-header bg-primary text-white">
                     Interviews
                 </div>
                 <div class="card-body">
