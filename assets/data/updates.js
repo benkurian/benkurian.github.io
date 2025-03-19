@@ -47,7 +47,13 @@ var updates = [
     src: `<a href="https://www.studentcam.org/studentcam-2025-prize-winners"><img loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="/assets/images/compressed/visionzero/visionzero-bg2.webp" width="100%"></a>`,
     description: `<i>The Road to Vision Zero</i> has won 1st Prize in the High School Central Division! Learn more <a href="https://www.studentcam.org/studentcam-2025-prize-winners/">here</a>.`,
     date: new Date("March 11, 2025")
-  }
+  },
+  {
+    title: "TEDx Talk",
+    src: `<img loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="/assets/images/compressed/miscellaneous/ted-talk.webp" width="100%">`,
+    description: `Just delivered my talk to TEDxOlentangy Liberty Youth! A recording should be up in a few months on TEDx's YT channel.`,
+    date: new Date("March 18, 2025")
+  },
 ];
 
 // Sort the updates array based on date (from newest to oldest)
