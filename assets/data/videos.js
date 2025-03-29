@@ -48,6 +48,14 @@ var videos = [
     linkHref: "https://youtu.be/63WfRw47kys",
     dateAdded: new Date("May 21, 2024"),
   },
+  {
+    title: "The Road to Vision Zero",
+    description: "First-prize winner of C-SPAN StudentCam 2025.",
+    img: "visionzero.webp",
+    linkText: "Watch on <i class='bi bi-youtube'></i> YouTube",
+    linkHref: "https://www.youtube.com/watch?v=h1dHoLHaSDc&t=8s",
+    dateAdded: new Date("March 1, 2025"),
+  },
 ];
 
 // Sort the videos array based on dateAdded (from newest to oldest)

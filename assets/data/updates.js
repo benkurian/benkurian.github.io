@@ -26,7 +26,7 @@ var updates = [
   },
   {
     title: "TEDxOlentangy Liberty Youth",
-    src: `<img loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="/assets/images/compressed/index/tedx.webp" width="100%">`,
+    src: `<img loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="/assets/images/compressed/updates/tedxolhs.webp" width="100%">`,
     description: `I'm fortunate to have been selected as one of the speakers for our school's official TEDx event! Learn more <a href="https://www.ted.com/tedx/events/59648">here</a>.`,
     date: new Date("December 22, 2024")
   },
@@ -50,9 +50,15 @@ var updates = [
   },
   {
     title: "TEDx Talk",
-    src: `<img loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="/assets/images/compressed/miscellaneous/ted-talk.webp" width="100%">`,
+    src: `<img loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="/assets/images/compressed/updates/ted-talk.webp" width="100%">`,
     description: `Just delivered my talk to TEDxOlentangy Liberty Youth! A recording should be up in a few months on TEDx's YT channel.`,
     date: new Date("March 18, 2025")
+  },
+  {
+    title: "IBTTA Technology Summit 2025",
+    src: `<iframe loading="lazy" class="rounded shadow animate__animated animate__fadeIn" src="https://www.youtube.com/embed/axoGrMKPKs0?si=diak9ISYs4DcSvXc&amp;start=404" title="TRTV0 Premiere" width="100%" height="100%" allowfullscreen></iframe>`,
+    description: `Recently flew out to Dallas, TX, to present about <i>The Road to Vision Zero</i> to the IBTTA Technology Summit 2025's 1,100 attendees!`,
+    date: new Date("March 29, 2025")
   },
 ];
 
@@ -80,23 +86,24 @@ function next() {
 function update() {
   var currentUpdate = updates[currentIndex];
   var updateContainerHTML = `
-    <div class="col-sm-6 p-lg-5 my-5 animate__animated animate__fadeInDown">
-      <h1 class="animate__animated animate__fadeInDown">Latest Update</h1>   
+    <div class="col-sm-6 p-lg-5 my-5 animate__animated animate__fadeIn">
+      <h3 class="animate__animated animate__fadeIn">Latest Update</h3>
+      <h1 class=" display-4 animate__animated animate__fadeIn">${currentUpdate.title}</h3>   
       <p class="lead">${currentUpdate.description}</p>
       <p class="text-secondary">${currentUpdate.date.getMonth() + 1}/${currentUpdate.date.getDate()}/${currentUpdate.date.getFullYear()}</p>
       <br>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item">
-            <a class="page-link" onclick="previous();" aria-label="Previous">
+            <a class="page-link" onclick="previous();" aria-label="Back">
               <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
+              <span class="sr-only">Back</span>
             </a>
           </li>
           <li class="page-item">
             <a class="page-link" onclick="next();" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
+            <span class="sr-only">Next</span>
+            <span aria-hidden="true">&raquo;</span>
             </a>
           </li>
         </ul>

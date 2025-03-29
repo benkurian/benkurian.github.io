@@ -22,6 +22,14 @@ var music = [{
   linkText: "Listen on <i class='bi bi-spotify'></i> Spotify",
   linkHref: "",
   dateAdded: new Date("August 14, 2024"),
+},
+{
+  title: "The Road to Vision Zero",
+  description: "Coming soon: The soundtrack to my award-winning documentary.",
+  img: "visionzero.webp",
+  linkText: "Listen on <i class='bi bi-spotify'></i> Spotify",
+  linkHref: "",
+  dateAdded: new Date("March 29, 2025"),
 }
 ];
 
