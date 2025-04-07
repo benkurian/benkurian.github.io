@@ -15,6 +15,34 @@
   </script>
   <!-- End Google Tag Manager -->
 
+  <!-- Google Cloud Dialogflow CX Chatbot -->
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+  <df-messenger
+    location="us-central1"
+    project-id="fleet-respect-455500-j2"
+    agent-id="34326948-d6a3-4354-8805-0ab1111229c8"
+    language-code="en"
+    max-query-length="-1">
+    <df-messenger-chat-bubble
+      chat-title="JordanAI">
+    </df-messenger-chat-bubble>
+  </df-messenger>
+  <style>
+    df-messenger {
+      z-index: 1000;
+      position: fixed;
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: $font-family-sans-serif;
+      --df-messenger-chat-background: #013566;
+      --df-messenger-message-user-background: #fff;
+      --df-messenger-message-bot-background: #93acc6;
+      bottom: 16px;
+      right: 16px;
+    }
+  </style>
+  <!-- End Google Cloud Dialogflow CX Chatbot -->
+
   <!-- CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -43,112 +71,432 @@
   <meta name="twitter:site" content="@bkuroh17">
   <meta name="twitter:creator" content="@bkuroh17">
   <!-- End Twitter Meta Tags -->
+  
+  <!-- PDF.js  -->
+  <script type="module">
+    import pdfjsDist from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@5.1.91/+esm'
+  </script>
+  <!-- End PDF.js  -->
+
+  <style>
+    .stat-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 15px;
+      border: none;
+      height: 100%;
+    }
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .stat-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero-section {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/original/bts/bts-bg.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 5rem 0;
+      position: relative;
+    }
+    .step-card {
+      border-left: 5px solid #0d6efd;
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+    }
+    .step-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transform: translateX(5px);
+    }
+    .nav-pills .nav-link.active {
+      background-color: #0d6efd;
+      font-weight: bold;
+    }
+    .nav-pills .nav-link {
+      color: #333;
+      font-weight: 500;
+    }
+    .resource-card {
+      transition: all 0.3s ease;
+    }
+    .resource-card:hover {
+      transform: scale(1.03);
+    }
+    .timeline {
+      position: relative;
+      padding-left: 50px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #0d6efd;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -40px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #0d6efd;
+      border: 3px solid white;
+    }
+  </style>
 </head>
 <body>
   <nav id="navbarContainer" class="navbar navbar-expand-lg bg-body-tertiary">
   </nav>
   <script src="/assets/data/navbar.js"></script>
-  <div class="bg-image p-3 p-md-5 m-md-3 text-center" style="background-image: url('/assets/images/original/bts/bts-bg.png'); background-size: cover; background-position: center; height: 50%;">
-    <img class="m-3" src="/assets/images/original/bts/bts-wide.svg" alt="Logo" width="50%" class="user-select-none animate__animated animate__fadeInDown">
-  <h1 class="text-white display-6 animate__animated animate__fadeInUp">A HOSA Health Education Presentation by<br>Ben Kurian & Akash Deepak</h1>
-</div>
-<div class="row position-relative overflow-hidden p-3 p-md-5 m-md-3">
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="students-tab" data-bs-toggle="tab" data-bs-target="#students" type="button" role="tab" aria-controls="students" aria-selected="true">For Students</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="presentation-tab" data-bs-toggle="tab" data-bs-target="#presentation" type="button" role="tab" aria-controls="presentation" aria-selected="false">About our Presentation</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="resources-tab" data-bs-toggle="tab" data-bs-target="#resources" type="button" role="tab" aria-controls="resources" aria-selected="false">Resources</button>
-      </li>
-      <li class="nav-item" role="presentation">
-          <button class="nav-link" id="updates-tab" data-bs-toggle="tab" data-bs-target="#updates" type="button" role="tab" aria-controls="updates" aria-selected="false">Updates</button>
-        </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active pt-3" id="students" role="tabpanel" aria-labelledby="students-tab">
-        <div class="row position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
-          <h1><i class="bi bi-card-list fs-1"></i> Step 1</h1>
-          <p class="lead">Complete the <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSf91qAxm5hDyiFMcuv_LBGUiqu15y_2jSJmkCTsDEb1nKa_JQ/viewform">Pre-Reflection Survey</a>.</p>
-          <iframe loading="lazy" height="500px" src="https://docs.google.com/forms/d/e/1FAIpQLSf91qAxm5hDyiFMcuv_LBGUiqu15y_2jSJmkCTsDEb1nKa_JQ/viewform?embedded=true">Loading…</iframe>
-          </div>
-          <div class="row position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
-            <h1><i class="bi bi-person-bounding-box fs-1"></i> Step 2</h1>
-            <p class="lead">Complete Jordan's Story.</p>
-            <div class="bg-image p-3 p-md-5 m-md-3 text-center" style="background-image: url('/assets/images/original/bts/jordan/jordan-hero.png'); background-size: cover; background-position: center; height: 50%;">
-              <img class="m-3" src="/assets/images/original/bts/jordan/jordan-text.svg" alt="Logo" width="40%" class="user-select-none animate__animated animate__fadeInDown">
-            </div>
-            <div class="row position-relative overflow-hidden bg-light">
-              <div class="col-sm-6 text-center">
-                <iframe loading="lazy" class="my-2 rounded shadow" src="https://drive.google.com/file/d/1CNlxdEGGKceGEGz_aVs1cs-WnsY8tQTu/preview" width="100%" height="300px" allowfullscreen></iframe>
-                <iframe loading="lazy" class="my-2 rounded shadow" src="https://drive.google.com/file/d/1Ul_Z9LMrajoZK1mRjYI-KLXPS4MqTFvk/preview" width="100%" height="300px" allowfullscreen></iframe>
-                <iframe loading="lazy" class="my-2 rounded shadow" src="https://drive.google.com/file/d/1AhRHVx9JkfjJkJ9I3PdKvB1EyjTqE5mi/preview" width="100%" height="300px" allowfullscreen></iframe>
-              </div>
-              <div class="col-sm-6 animate__animated animate__fadeInRight">
-                <iframe loading="lazy" width="100%" height="100%" src="https://docs.google.com/forms/d/e/1FAIpQLSfXfEEeITJEa-6c_jCVN6KCWTQe-hYexUIXXtVPIS9P2Phpcw/viewform?embedded=true">Loading…</iframe>
-              </div>
-            </div>
-            </div>
-            <div class="row position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
-              <h1><i class="bi bi-card-list fs-1"></i> Step 3</h1>
-              <p class="lead">Complete the <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSf7jlFN8jySHgDBdByIZw1Fgk0SMDQfBSfH_sAuapJsOXjQcA/viewform">Post-Reflection Survey</a>.</p>
-              <iframe loading="lazy" height="500px" src="https://docs.google.com/forms/d/e/1FAIpQLSf7jlFN8jySHgDBdByIZw1Fgk0SMDQfBSfH_sAuapJsOXjQcA/viewform?embedded=true">Loading…</iframe>
-              </div>
-      </div>
-      <div class="tab-pane fade pt-3" id="presentation" role="tabpanel" aria-labelledby="presentation-tab">
-        <!-- Add actual content here for 'About our Presentation' -->
-        <p>Details about our presentation.</p>
-      </div>
-      <div class="tab-pane fade pt-3" id="resources" role="tabpanel" aria-labelledby="resources-tab">
-        <div class="row position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
-        <h1>Interview with Andrew Philip, MD, MA</h1>
-        <p class="lead">A Zoom interview conducted with Forensic Psychiatry Fellow <a target="_blank" href="https://medicine.osu.edu/departments/psychiatry-and-behavioral-health/our-people/our-fellows">Andrew Philip, MD, MA</a> in order to gain invaluable insight for our lesson plan.</p>
-        <iframe loading="lazy" class="rounded shadow" src="https://www.youtube.com/embed/2Iu272QqTyE?si=uync_DrIgHegYmmE" width="100%" height="400px" allowfullscreen></iframe>
-      </div>
-      </div>
-      <div class="tab-pane fade pt-3 my-3" id="updates" role="tabpanel" aria-labelledby="updates-tab">
-        <div class="card my-3">
-          <div class="card-header bg-primary text-white">
-            HOSA Regional Competition
-          </div>
-          <div class="card-body">
-            Attended Ohio HOSA Region 5 competition!
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">January 17, 2025</small>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-center">
+    <div class="container">
+      <img src="/assets/images/original/bts/bts-wide.svg" alt="Breaking the Silence Logo" class="img-fluid mb-4 animate__animated animate__fadeInDown" style="max-width: 600px;">
+      <p class="lead mb-5 animate__animated animate__fadeInUp">A HOSA Health Education Initiative on Mental Health Awareness</p>
+    </div>
+  </section>
+
+  <!-- Fast Statistics Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Mental Health by the Numbers</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="stat-card card text-center p-4 bg-white">
+            <i class="bi bi-people-fill stat-icon text-primary"></i>
+            <h3 class="text-primary">57%</h3>
+            <p class="mb-0">rise in youth suicide rates before the pandemic.</p>
           </div>
         </div>
-        <div class="card my-3">
-          <div class="card-header bg-primary text-white">
-            Trial 1
-          </div>
-          <div class="card-body">
-            Conducted our first trial run for Mrs. McKendrick's 7th Grade Academic Assist class!
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">January 10, 2025</small>
+        <div class="col-md-4">
+          <div class="stat-card card text-center p-4 bg-white">
+            <i class="bi bi-emoji-frown-fill stat-icon text-danger"></i>
+            <h3 class="text-danger">44%</h3>
+            <p class="mb-0">of all U.S. high school students suffer with persistent sadness and hopelessness.</p>
           </div>
         </div>
-        <div class="card my-3">
-          <div class="card-header bg-primary text-white">
-            Interview
-          </div>
-          <div class="card-body">
-            Conducted an interview with Psychiatry Fellow Andrew Philip, MD, MA, tOSU. Learn more in the Resources tab.
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">January 6, 2025</small>
+        <div class="col-md-4">
+          <div class="stat-card card text-center p-4 bg-white">
+            <i class="bi bi-chat-left-text-fill stat-icon text-warning"></i>
+            <h3 class="text-warning">11</h3>
+            <p class="mb-0">years it takes for a struggling child to get treatment.</p>
           </div>
         </div>
       </div>
     </div>
-</div>
-<div class="container">
-      <footer id="footerContainer" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  </section>
+
+  <!-- Main Content Section with Vertical Pills Navigation -->
+  <section class="py-5" id="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="sticky-top pt-3">
+            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <button class="nav-link active" id="v-pills-students-tab" data-bs-toggle="pill" data-bs-target="#v-pills-students" type="button" role="tab" aria-controls="v-pills-students" aria-selected="true">For Students</button>
+              <button class="nav-link" id="v-pills-presentation-tab" data-bs-toggle="pill" data-bs-target="#v-pills-presentation" type="button" role="tab" aria-controls="v-pills-presentation" aria-selected="false">Our Presentation</button>
+              <button class="nav-link" id="v-pills-resources-tab" data-bs-toggle="pill" data-bs-target="#v-pills-resources" type="button" role="tab" aria-controls="v-pills-resources" aria-selected="false">Resources</button>
+              <button class="nav-link" id="v-pills-updates-tab" data-bs-toggle="pill" data-bs-target="#v-pills-updates" type="button" role="tab" aria-controls="v-pills-updates" aria-selected="false">Updates</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="tab-content" id="v-pills-tabContent">
+            
+            <!-- For Students Tab -->
+            <div class="tab-pane fade show active" id="v-pills-students" role="tabpanel" aria-labelledby="v-pills-students-tab">
+              <h2 class="mb-4" id="students">Student Journey</h2>
+              <p class="lead mb-5">Follow these steps to complete our mental health education program.</p>
+              
+              <!-- Step 1 -->
+              <div class="card step-card mb-4">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                      <h4 class="mb-0">1</h4>
+                    </div>
+                    <h3 class="ms-3 mb-0">Pre-Reflection Survey</h3>
+                  </div>
+                  <p class="lead">Complete this short survey to share your initial thoughts about mental health.</p>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSf91qAxm5hDyiFMcuv_LBGUiqu15y_2jSJmkCTsDEb1nKa_JQ/viewform" target="_blank" class="btn btn-primary">Take Survey</a>
+                  <div class="mt-3">
+                    <iframe loading="lazy" width="100%" height="500" src="https://docs.google.com/forms/d/e/1FAIpQLSf91qAxm5hDyiFMcuv_LBGUiqu15y_2jSJmkCTsDEb1nKa_JQ/viewform?embedded=true">Loading…</iframe>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Step 2 -->
+              <div class="card step-card mb-4">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                      <h4 class="mb-0">2</h4>
+                    </div>
+                    <h3 class="ms-3 mb-0">Jordan's Story</h3>
+                  </div>
+                  <p class="lead">Experience Jordan's journey through mental health challenges and recovery.</p>
+                  
+                  <div class="bg-image p-5 text-center mb-4 rounded" style="background-image: url('/assets/images/original/bts/jordan/jordan-hero.png'); background-size: cover; background-position: center; min-height: 300px;">
+                    <img src="/assets/images/original/bts/jordan/jordan-text.svg" alt="Jordan's Story" class="img-fluid" style="max-width: 400px;">
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <iframe loading="lazy" class="rounded w-100" src="https://www.youtube.com/embed/T4-B3mOcMAY?si=rr9UmPxqA_s1TZck" height="200" allowfullscreen></iframe>
+                      </div>
+                      <div class="mb-3">
+                        <iframe loading="lazy" class="rounded w-100" src="https://www.youtube.com/embed/CId4XFuM7wc?si=k3ZoGhAm_xmWqHED" height="200" allowfullscreen></iframe>
+                      </div>
+                      <div class="mb-3">
+                        <iframe loading="lazy" class="rounded w-100" src="https://www.youtube.com/embed/pUs_I8sIVOc?si=2wZ_Lw2vICEqiZSg" height="200" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <iframe loading="lazy" width="100%" height="650" src="https://docs.google.com/forms/d/e/1FAIpQLSfXfEEeITJEa-6c_jCVN6KCWTQe-hYexUIXXtVPIS9P2Phpcw/viewform?embedded=true">Loading…</iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Step 3 -->
+              <div class="card step-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                      <h4 class="mb-0">3</h4>
+                    </div>
+                    <h3 class="ms-3 mb-0">Post-Reflection Survey</h3>
+                  </div>
+                  <p class="lead">Complete this final survey to reflect on what you've learned.</p>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7jlFN8jySHgDBdByIZw1Fgk0SMDQfBSfH_sAuapJsOXjQcA/viewform" target="_blank" class="btn btn-primary">Take Survey</a>
+                  <div class="mt-3">
+                    <iframe loading="lazy" width="100%" height="500" src="https://docs.google.com/forms/d/e/1FAIpQLSf7jlFN8jySHgDBdByIZw1Fgk0SMDQfBSfH_sAuapJsOXjQcA/viewform?embedded=true">Loading…</iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Our Presentation Tab -->
+            <div class="tab-pane fade" id="v-pills-presentation" role="tabpanel" aria-labelledby="v-pills-presentation-tab">
+              <h2 class="mb-4">About Our Presentation</h2>
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h3 class="card-title">Breaking the Silence: Mental Health Awareness</h3>
+                  <p class="card-text lead">Our HOSA Health Education presentation focuses on destigmatizing mental health issues among adolescents and promoting early intervention strategies.</p>
+                  
+                  <div class="row mt-4">
+                    <div class="col-md-6 mb-4">
+                      <h4><i class="bi bi-bullseye me-2"></i>Objectives</h4>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Increase awareness about common mental health disorders</li>
+                        <li class="list-group-item">Identify warning signs of mental health struggles</li>
+                        <li class="list-group-item">Provide resources for seeking help</li>
+                        <li class="list-group-item">Promote empathy and understanding</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <h4><i class="bi bi-people-fill me-2"></i>Target Audience</h4>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Middle and high school students</li>
+                        <li class="list-group-item">Educators and school staff</li>
+                        <li class="list-group-item">Parents and guardians</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <h4 class="mt-3"><i class="bi bi-lightbulb-fill me-2"></i>Key Messages</h4>
+                  <div class="alert alert-info">
+                    <p class="mb-2"><strong>Mental health is just as important as physical health.</strong></p>
+                    <p class="mb-2"><strong>It's okay to not be okay - seeking help is a sign of strength.</strong></p>
+                    <p class="mb-0"><strong>Early intervention can make a significant difference in outcomes.</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Resources Tab -->
+            <div class="tab-pane fade" id="v-pills-resources" role="tabpanel" aria-labelledby="v-pills-resources-tab">
+              <h2 class="mb-4" id="resources">Mental Health Resources</h2>
+              
+              <div class="card mb-4 resource-card">
+                <div class="card-header bg-primary text-white">
+                  <h3 class="mb-0">Expert Interview</h3>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Interview with Andrew Philip, MD, MA</h4>
+                  <p class="card-text">A Zoom interview conducted with Forensic Psychiatry Fellow <a href="https://medicine.osu.edu/departments/psychiatry-and-behavioral-health/our-people/our-fellows" target="_blank">Andrew Philip, MD, MA</a> to gain professional insight for our lesson plan.</p>
+                  <div class="ratio ratio-16x9">
+                    <iframe loading="lazy" src="https://www.youtube.com/embed/2Iu272QqTyE?si=uync_DrIgHegYmmE" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-4 resource-card">
+                <div class="card-header bg-primary text-white">
+                  <h3 class="mb-0">Expert Interview</h3>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Interview with Megan Pawsey</h4>
+                  <p class="card-text">An interview conducted with Olentangy Liberty High School's Mental Health Specialist, <a href="https://www.olentangy.k12.oh.us/students/student-well-being/student-services/mental-health-clinicians" target="_blank">Megan Pawsey</a>.</p>
+                  <div class="ratio ratio-16x9">
+                    <iframe loading="lazy" src="https://www.youtube.com/embed/oifbZgEqS6Q?si=B02dnpaFR5IKMMeG" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-4 resource-card">
+                <div class="card-header bg-primary text-white">
+                  <h3 class="mb-0">Expert Interview</h3>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Interview with Evi Roberts</h4>
+                  <p class="card-text">A Zoom interview conducted with Evi Roberts, Youth Program & Policy Manager from the <a href="https://www.ohiospf.org/" target="_blank">Ohio Suicide Prevention Foundation</a>.</p>
+                  <div class="ratio ratio-16x9">
+                    <iframe loading="lazy" src="https://www.youtube.com/embed/-J3gaEjTkK4?si=bRwdeGj_IwO2eRnC" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-4 resource-card">
+                <div class="card-header bg-primary text-white">
+                  <h3 class="mb-0">Expert Interview</h3>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Interview with Jason Durell</h4>
+                  <p class="card-text">An interview conducted with Olentangy Liberty High School's Counselor, <a href="https://olhs.olentangy.k12.oh.us/students/student-services" target="_blank">Jason Durell</a>.</p>
+                  <div class="ratio ratio-16x9">
+                    <iframe loading="lazy" src="https://www.youtube.com/embed/dUGnn6UoOLI?si=ORtc6TdTUZ9y7QFL" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-4 resource-card">
+                <div class="card-header bg-primary text-white">
+                  <h3 class="mb-0">Lesson Resource</h3>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Portfolio</h4>
+                  <p class="card-text">Created for HOSA Health Education.</p>
+                  <style>
+                    .pdfobject-container { height: 600px; border: 1px solid #ccc; }
+                    </style>
+                    <div id="my-pdf"></div>
+                    <script src="https://unpkg.com/pdfobject"></script>
+                    <script>PDFObject.embed("/assets/misc/bts-portfolio.pdf", "#my-pdf");</script>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100 resource-card">
+                    <div class="card-body">
+                      <h4 class="card-title"><i class="bi bi-telephone-fill me-2 text-primary"></i>Crisis Hotlines</h4>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          <strong>988 Suicide & Crisis Lifeline:</strong> Call or text 988
+                        </li>
+                        <li class="list-group-item">
+                          <strong>Crisis Text Line:</strong> Text HOME to 741741
+                        </li>
+                        <li class="list-group-item">
+                          <strong>Trevor Project (LGBTQ+):</strong> 1-866-488-7386 or text START to 678678
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100 resource-card">
+                    <div class="card-body">
+                      <h4 class="card-title"><i class="bi bi-globe me-2 text-primary"></i>Online Resources</h4>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          <a href="https://www.nami.org/" target="_blank">NAMI (National Alliance on Mental Illness)</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="https://www.mentalhealth.gov/" target="_blank">MentalHealth.gov</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="https://www.apa.org/topics/teens/" target="_blank">APA Resources for Teens</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Updates Tab -->
+            <div class="tab-pane fade" id="v-pills-updates" role="tabpanel" aria-labelledby="v-pills-updates-tab">
+              <h2 class="mb-4">Project Updates</h2>
+              
+              <div class="timeline">
+                <!-- Update 1 -->
+                <div class="timeline-item">
+                  <div class="card">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                      <h5 class="mb-0">HOSA Regional Competition</h5>
+                      <span class="badge bg-light text-dark">Latest</span>
+                    </div>
+                    <div class="card-body">
+                      <p>Presented our mental health education program at the Ohio HOSA Region 5 competition and and won second!</p>
+                    </div>
+                    <div class="card-footer text-muted">
+                      January 17, 2025
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Update 2 -->
+                <div class="timeline-item">
+                  <div class="card">
+                    <div class="card-header bg-primary text-white">
+                      <h5 class="mb-0">Trial 1</h5>
+                    </div>
+                    <div class="card-body">
+                      <p>Conducted our first trial run for Mrs. McKendrick's 7th Grade Academic Assist class. Students engaged well with Jordan's Story and provided valuable feedback.</p>
+                    </div>
+                    <div class="card-footer text-muted">
+                      January 10, 2025
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Update 3 -->
+                <div class="timeline-item">
+                  <div class="card">
+                    <div class="card-header bg-primary text-white">
+                      <h5 class="mb-0">Expert Interview</h5>
+                    </div>
+                    <div class="card-body">
+                      <p>Conducted an insightful interview with Psychiatry Fellow Andrew Philip, MD, MA from The Ohio State University. The interview provided valuable clinical perspectives for our program.</p>
+                      <!-- <a href="#resources" class="btn btn-sm btn-outline-primary">View Interview</a> -->
+                    </div>
+                    <div class="card-footer text-muted">
+                      January 6, 2025
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <footer id="footerContainer" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     </footer>
     <script src="/assets/data/footer.js"></script>
-</div>
+  </div>
 </body>
-</html>
+</html> 
