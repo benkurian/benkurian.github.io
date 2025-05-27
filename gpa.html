@@ -75,6 +75,9 @@
             display: flex;
             gap: 0.5rem;
         }
+        .btn-undo-redo {
+            min-width: 80px;
+        }
         @media (max-width: 768px) {
             .course-card .row > div {
                 margin-bottom: 10px;
@@ -88,6 +91,9 @@
             .gpa-badge {
                 font-size: 1.75rem;
                 padding: 0.75rem 1.5rem;
+            }
+            .btn-undo-redo {
+                min-width: 60px;
             }
         }
     </style>
@@ -114,6 +120,44 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                         <button type="button" class="btn btn-primary" onclick="performExport()">Export</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Clear All Modal -->
+        <div class="modal fade" id="clearAllModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirm Clear All</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to remove all courses and years? This action cannot be undone.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger" onclick="performClearAll()">Clear All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Remove Year Modal -->
+        <div class="modal fade" id="removeYearModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="removeYearModalTitle">Confirm Remove Year</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="removeYearModalBody">
+                        <p>Are you sure you want to remove this year and all its courses?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger" onclick="performRemoveYear()">Remove Year</button>
                     </div>
                 </div>
             </div>
@@ -150,15 +194,21 @@
             <button class="btn btn-primary btn-action me-2 mb-2" onclick="addCourse()" data-bs-toggle="tooltip" data-bs-placement="top" title="Add a new course to the selected year">
                 <i class="bi bi-plus-circle"></i> Add Course
             </button>
-            <button class="btn btn-danger btn-action me-2 mb-2" onclick="clearAllCourses()" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove all courses and years">
+            <button class="btn btn-danger btn-action me-2 mb-2" onclick="showClearAllModal()" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove all courses and years">
                 <i class="bi bi-trash"></i> Remove All
             </button>
             <button class="btn btn-outline-primary btn-action me-2 mb-2" onclick="showExportModal()" data-bs-toggle="tooltip" data-bs-placement="top" title="Export GPA data to a JSON file">
                 <i class="bi bi-download"></i> Export
             </button>
             <input type="file" id="jsonFileInput" accept="application/json" onchange="importFromJSON(event)" style="display: none;">
-            <button class="btn btn-outline-primary btn-action mb-2" onclick="document.getElementById('jsonFileInput').click()" data-bs-toggle="tooltip" data-bs-placement="top" title="Import GPA data from a JSON file">
+            <button class="btn btn-outline-primary btn-action me-2 mb-2" onclick="document.getElementById('jsonFileInput').click()" data-bs-toggle="tooltip" data-bs-placement="top" title="Import GPA data from a JSON file">
                 <i class="bi bi-upload"></i> Import
+            </button>
+            <button class="btn btn-outline-secondary btn-undo-redo me-1 mb-2" id="undoBtn" onclick="undoAction()" data-bs-toggle="tooltip" data-bs-placement="top" title="Undo last action" disabled>
+                <i class="bi bi-arrow-counterclockwise"></i> Undo
+            </button>
+            <button class="btn btn-outline-secondary btn-undo-redo mb-2" id="redoBtn" onclick="redoAction()" data-bs-toggle="tooltip" data-bs-placement="top" title="Redo last undone action" disabled>
+                <i class="bi bi-arrow-clockwise"></i> Redo
             </button>
         </div>
         
@@ -190,6 +240,176 @@
         let courseCount = 0;
         let draggedItem = null;
         let tooltipInstances = [];
+        let undoStack = [];
+        let redoStack = [];
+        let currentYearToRemove = null;
+        
+        // State management for undo/redo
+        function saveState() {
+            const courseContainer = document.getElementById('course-container');
+            const courses = courseContainer.querySelectorAll('.course-card');
+            const years = [...new Set(Array.from(courses).map(course => course.getAttribute('data-year')))];
+            
+            const state = {
+                years: years.map(year => {
+                    return {
+                        year: year,
+                        included: document.getElementById(`toggle-year-${year}`).checked,
+                        courses: Array.from(document.querySelectorAll(`[data-year="${year}"].course-card`)).map(course => {
+                            const id = course.id.split('-')[1];
+                            return {
+                                name: document.getElementById(`course-name-${id}`).value,
+                                grade: document.getElementById(`grade-${id}`).value,
+                                weight: document.getElementById(`weight-${id}`).value,
+                                credits: document.getElementById(`credits-${id}`).value,
+                                included: document.getElementById(`include-${id}`).checked,
+                                id: id
+                            };
+                        })
+                    };
+                }),
+                courseCount: courseCount
+            };
+            
+            undoStack.push(JSON.stringify(state));
+            redoStack = []; // Clear redo stack when new action is performed
+            updateUndoRedoButtons();
+        }
+        
+        function restoreState(state) {
+            const data = JSON.parse(state);
+            courseCount = data.courseCount || 0;
+            
+            // Clear existing courses first
+            document.getElementById('course-container').innerHTML = '';
+            
+            // Add imported courses
+            data.years.forEach(yearData => {
+                if (!yearData.year || !yearData.courses || !Array.isArray(yearData.courses)) return;
+                
+                // Create the year divider
+                const yearDivider = createYearDivider(yearData.year);
+                document.getElementById('course-container').appendChild(yearDivider);
+                
+                // Set the include state for the year
+                document.getElementById(`toggle-year-${yearData.year}`).checked = yearData.included !== false;
+                
+                // Add courses
+                yearData.courses.forEach(courseData => {
+                    const courseDiv = document.createElement('div');
+                    courseDiv.className = 'card mb-3 course-card';
+                    courseDiv.id = `course-${courseData.id}`;
+                    courseDiv.setAttribute('draggable', 'true');
+                    courseDiv.setAttribute('data-year', yearData.year);
+
+                    courseDiv.innerHTML = `
+                        <div class="card-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="include-${courseData.id}" ${courseData.included !== false ? 'checked' : ''}
+                                               onchange="calculateGPA(); saveState()">
+                                        <label class="form-check-label" for="include-${courseData.id}"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Course Name:</label>
+                                    <input type="text" class="form-control course-name" id="course-name-${courseData.id}" 
+                                           placeholder="e.g., AP Biology" value="${courseData.name || ''}" 
+                                           oninput="checkForCourse(this, ${courseData.id}); saveState()">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Grade:</label>
+                                    <select class="form-select" id="grade-${courseData.id}" onchange="calculateGPA(); saveState()">
+                                        <option value="4.000" ${courseData.grade === "4.000" ? 'selected' : ''}>A (93-100)</option>
+                                        <option value="3.670" ${courseData.grade === "3.670" ? 'selected' : ''}>A- (90-92)</option>
+                                        <option value="3.330" ${courseData.grade === "3.330" ? 'selected' : ''}>B+ (87-89)</option>
+                                        <option value="3.000" ${courseData.grade === "3.000" ? 'selected' : ''}>B (83-86)</option>
+                                        <option value="2.670" ${courseData.grade === "2.670" ? 'selected' : ''}>B- (80-82)</option>
+                                        <option value="2.330" ${courseData.grade === "2.330" ? 'selected' : ''}>C+ (77-79)</option>
+                                        <option value="2.000" ${courseData.grade === "2.000" ? 'selected' : ''}>C (73-76)</option>
+                                        <option value="1.670" ${courseData.grade === "1.670" ? 'selected' : ''}>C- (70-72)</option>
+                                        <option value="1.330" ${courseData.grade === "1.330" ? 'selected' : ''}>D+ (67-69)</option>
+                                        <option value="1.000" ${courseData.grade === "1.000" ? 'selected' : ''}>D (63-66)</option>
+                                        <option value="0.670" ${courseData.grade === "0.670" ? 'selected' : ''}>D- (60-62)</option>
+                                        <option value="0.000" ${courseData.grade === "0.000" ? 'selected' : ''}>F (59-Below)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Weighting:</label>
+                                    <select class="form-select" id="weight-${courseData.id}" onchange="calculateGPA(); saveState()">
+                                        <option value="1.0" ${courseData.weight === "1.0" ? 'selected' : ''}>Regular/Honors (4.0 scale)</option>
+                                        <option value="1.25" ${courseData.weight === "1.25" ? 'selected' : ''}>AP/CCP (5.0 scale)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Credits:</label>
+                                    <select class="form-select" id="credits-${courseData.id}" onchange="calculateGPA(); saveState()">
+                                        <option value="1.0" ${courseData.credits === "1.0" ? 'selected' : ''}>Year-long (1.0 credit)</option>
+                                        <option value="0.5" ${courseData.credits === "0.5" ? 'selected' : ''}>Semester (0.5 credit)</option>
+                                        <option value="0.25" ${courseData.credits === "0.25" ? 'selected' : ''}>PE (0.25 credit)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="course-actions">
+                                        <button class="btn btn-outline-danger btn-sm mt-3" onclick="removeCourse(${courseData.id})">
+                                            <i class="bi bi-trash"></i> Remove
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    // Add drag events
+                    courseDiv.addEventListener('dragstart', handleDragStart);
+                    courseDiv.addEventListener('dragend', handleDragEnd);
+
+                    // Find the year's course container and append the course
+                    const yearCoursesContainer = document.querySelector(`#year-${yearData.year} .year-courses`);
+                    yearCoursesContainer.appendChild(courseDiv);
+                });
+            });
+            
+            sortYearDividers();
+            calculateGPA();
+            initializeTooltips();
+        }
+        
+        function undoAction() {
+            if (undoStack.length > 0) {
+                const currentState = undoStack.pop();
+                redoStack.push(currentState);
+                if (undoStack.length > 0) {
+                    restoreState(undoStack[undoStack.length - 1]);
+                } else {
+                    // If we've undone everything, show empty state
+                    document.getElementById('course-container').innerHTML = '';
+                    courseCount = 0;
+                    document.getElementById('gpa-result').textContent = '0.000';
+                    document.getElementById('unweighted-gpa-result').textContent = '0.000';
+                    const emptyState = document.querySelector('.empty-state');
+                    if (emptyState) {
+                        emptyState.style.display = 'block';
+                    }
+                }
+                updateUndoRedoButtons();
+            }
+        }
+        
+        function redoAction() {
+            if (redoStack.length > 0) {
+                const state = redoStack.pop();
+                undoStack.push(state);
+                restoreState(state);
+                updateUndoRedoButtons();
+            }
+        }
+        
+        function updateUndoRedoButtons() {
+            document.getElementById('undoBtn').disabled = undoStack.length <= 1;
+            document.getElementById('redoBtn').disabled = redoStack.length === 0;
+        }
 
         // Initialize the year dropdown with past and future years
         function initializeYearDropdown() {
@@ -240,23 +460,6 @@
             return alertId;
         }
 
-        // Confirm dialog using Bootstrap
-        function showConfirm(message, confirmCallback, cancelCallback = null) {
-            const alertId = showAlert(`
-                <div class="d-flex flex-column">
-                    <div class="mb-2">${message}</div>
-                    <div class="d-flex justify-content-end">
-                        <button class="btn btn-sm btn-outline-secondary me-2" onclick="document.getElementById('${alertId}').remove(); ${cancelCallback ? cancelCallback : ''}">
-                            Cancel
-                        </button>
-                        <button class="btn btn-sm btn-primary" onclick="document.getElementById('${alertId}').remove(); ${confirmCallback}">
-                            Confirm
-                        </button>
-                    </div>
-                </div>
-            `, 'info', 0);
-        }
-
         function getCurrentYear() {
             return document.getElementById('year-select').value;
         }
@@ -298,7 +501,7 @@
                         <div class="col-md-1">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="include-${courseCount}" checked
-                                       onchange="calculateGPA()">
+                                       onchange="calculateGPA(); saveState()">
                                 <label class="form-check-label" for="include-${courseCount}"></label>
                             </div>
                         </div>
@@ -306,11 +509,11 @@
                             <label class="form-label">Course Name:</label>
                             <input type="text" class="form-control course-name" id="course-name-${courseCount}" 
                                    placeholder="e.g., AP Biology" value="${courseData?.name || ''}" 
-                                   oninput="checkForCourse(this, ${courseCount})">
+                                   oninput="checkForCourse(this, ${courseCount}); saveState()">
                         </div>
                         <div class="col-md-2">
                             <label class="form-label">Grade:</label>
-                            <select class="form-select" id="grade-${courseCount}" onchange="calculateGPA()">
+                            <select class="form-select" id="grade-${courseCount}" onchange="calculateGPA(); saveState()">
                                 <option value="4.000" ${courseData?.grade === "4.000" ? 'selected' : ''}>A (93-100)</option>
                                 <option value="3.670" ${courseData?.grade === "3.670" ? 'selected' : ''}>A- (90-92)</option>
                                 <option value="3.330" ${courseData?.grade === "3.330" ? 'selected' : ''}>B+ (87-89)</option>
@@ -327,14 +530,14 @@
                         </div>
                         <div class="col-md-2">
                             <label class="form-label">Weighting:</label>
-                            <select class="form-select" id="weight-${courseCount}" onchange="calculateGPA()">
+                            <select class="form-select" id="weight-${courseCount}" onchange="calculateGPA(); saveState()">
                                 <option value="1.0" ${courseData?.weight === "1.0" ? 'selected' : ''}>Regular/Honors (4.0 scale)</option>
                                 <option value="1.25" ${courseData?.weight === "1.25" ? 'selected' : ''}>AP/CCP (5.0 scale)</option>
                             </select>
                         </div>
                         <div class="col-md-2">
                             <label class="form-label">Credits:</label>
-                            <select class="form-select" id="credits-${courseCount}" onchange="calculateGPA()">
+                            <select class="form-select" id="credits-${courseCount}" onchange="calculateGPA(); saveState()">
                                 <option value="1.0" ${courseData?.credits === "1.0" ? 'selected' : ''}>Year-long (1.0 credit)</option>
                                 <option value="0.5" ${courseData?.credits === "0.5" ? 'selected' : ''}>Semester (0.5 credit)</option>
                                 <option value="0.25" ${courseData?.credits === "0.25" ? 'selected' : ''}>PE (0.25 credit)</option>
@@ -369,6 +572,9 @@
             
             // Calculate GPA immediately
             calculateGPA();
+            
+            // Save state for undo/redo
+            saveState();
         }
 
         function createYearDivider(year) {
@@ -383,13 +589,13 @@
                     <div>
                         <div class="form-check form-switch d-inline-block me-3">
                             <input class="form-check-input" type="checkbox" id="toggle-year-${year}" checked 
-                                   onchange="toggleYear('${year}', this.checked)" onclick="event.stopPropagation()">
+                                   onchange="toggleYear('${year}', this.checked); saveState()" onclick="event.stopPropagation()">
                             <label class="form-check-label" for="toggle-year-${year}">Include</label>
                         </div>
                         <button class="btn btn-sm btn-outline-primary me-2" onclick="event.stopPropagation(); addCourse(null, '${year}')">
                             <i class="bi bi-plus-circle"></i> Course
                         </button>
-                        <button class="btn btn-sm btn-outline-danger" onclick="event.stopPropagation(); removeYear('${year}')">
+                        <button class="btn btn-sm btn-outline-danger" onclick="event.stopPropagation(); showRemoveYearModal('${year}')">
                             <i class="bi bi-trash"></i> Remove
                         </button>
                         <button class="btn btn-sm btn-outline-secondary ms-2" onclick="event.stopPropagation(); toggleYearCollapse('${year}')">
@@ -459,12 +665,36 @@
             }
         }
 
-        function removeYear(year) {
-            if (confirm(`Remove all courses for ${year}?`)) {
-                document.getElementById(`year-${year}`).remove();
+        function showRemoveYearModal(year) {
+            currentYearToRemove = year;
+            document.getElementById('removeYearModalTitle').textContent = `Remove ${year}?`;
+            document.getElementById('removeYearModalBody').innerHTML = 
+                `<p>Are you sure you want to remove the ${year} academic year and all its courses?</p>`;
+            
+            const modal = new bootstrap.Modal(document.getElementById('removeYearModal'));
+            modal.show();
+        }
+
+        function performRemoveYear() {
+            if (currentYearToRemove) {
+                document.getElementById(`year-${currentYearToRemove}`).remove();
                 sortYearDividers();
                 calculateGPA();
+                saveState();
+                
+                const modal = bootstrap.Modal.getInstance(document.getElementById('removeYearModal'));
+                modal.hide();
+                currentYearToRemove = null;
             }
+        }
+
+        function toggleYear(year, include) {
+            const courses = document.querySelectorAll(`[data-year="${year}"].course-card`);
+            courses.forEach(course => {
+                const id = course.id.split('-')[1];
+                document.getElementById(`include-${id}`).checked = include;
+            });
+            calculateGPA();
         }
 
         function checkForCourse(input, courseId) {
@@ -493,20 +723,28 @@
             }
             
             calculateGPA();
+            saveState();
         }
 
-        function clearAllCourses() {
-            if (confirm("Are you sure you want to remove all courses and years?")) {
-                document.getElementById('course-container').innerHTML = '';
-                courseCount = 0;
-                document.getElementById('gpa-result').textContent = '0.000';
-                document.getElementById('unweighted-gpa-result').textContent = '0.000';
-                const emptyState = document.querySelector('.empty-state');
-                if (emptyState) {
-                    emptyState.style.display = 'block';
-                }
+        function showClearAllModal() {
+            const modal = new bootstrap.Modal(document.getElementById('clearAllModal'));
+            modal.show();
+        }
+
+        function performClearAll() {
+            document.getElementById('course-container').innerHTML = '';
+            courseCount = 0;
+            document.getElementById('gpa-result').textContent = '0.000';
+            document.getElementById('unweighted-gpa-result').textContent = '0.000';
+            const emptyState = document.querySelector('.empty-state');
+            if (emptyState) {
+                emptyState.style.display = 'block';
             }
-        } 
+            saveState();
+            
+            const modal = bootstrap.Modal.getInstance(document.getElementById('clearAllModal'));
+            modal.hide();
+        }
 
         function calculateGPA() {
             const courseContainer = document.getElementById('course-container');
@@ -519,6 +757,10 @@
             for (let course of courses) {
                 const isIncluded = course.querySelector('.form-check-input').checked;
                 if (!isIncluded) continue;
+                
+                const year = course.getAttribute('data-year');
+                const yearIncluded = document.getElementById(`toggle-year-${year}`)?.checked ?? true;
+                if (!yearIncluded) continue;
                 
                 const id = course.id.split('-')[1];
                 const grade = parseFloat(document.getElementById(`grade-${id}`).value);
@@ -554,6 +796,7 @@
             this.classList.remove('dragging');
             draggedItem = null;
             calculateGPA();
+            saveState();
             
             // Reset all year divider highlights
             document.querySelectorAll('.year-divider').forEach(div => {
@@ -636,6 +879,7 @@
                 years: years.map(year => {
                     return {
                         year: year,
+                        included: document.getElementById(`toggle-year-${year}`).checked,
                         courses: Array.from(document.querySelectorAll(`[data-year="${year}"].course-card`)).map(course => {
                             const id = course.id.split('-')[1];
                             return {
@@ -692,6 +936,7 @@
                     
                     showAlert("Courses imported successfully!", "success");
                     calculateGPA();
+                    saveState();
                 } catch (error) {
                     showAlert(`Import failed: ${error.message}`, "danger");
                 }
@@ -724,6 +969,7 @@
         window.onload = function() {
             initializeYearDropdown();
             initializeTooltips();
+            saveState(); // Save initial empty state
         };
     </script>
     
