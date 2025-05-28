@@ -1,4 +1,5 @@
 .bely {
-font-family: 'BelyDisplayW00-Regular';
-src: url('/assets/fonts/BelyDisplayW00-Regular.woff2') format('woff2'); 
+    font-weight: bold;;
+/* font-family: 'BelyDisplayW00-Regular'; */
+/* src: url('/assets/fonts/BelyDisplayW00-Regular.woff2') format('woff2');  */
 }
