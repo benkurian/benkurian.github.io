@@ -880,3 +880,10 @@ function addCustomTerm() {
     
     showAlert(`"${termName}" term added`, 'success');
 }
+
+function filterCourses(query) {
+  document.querySelectorAll('.course-card').forEach(card => {
+    const name = card.querySelector('.course-name').value.toLowerCase();
+    card.style.display = name.includes(query.toLowerCase()) ? '' : 'none';
+  });
+}
