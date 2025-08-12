@@ -416,7 +416,7 @@
                                 <option value="0.5" ${courseData?.credits === "0.5" ? 'selected' : ''}>Semester (0.5 credits)</option>
                                 <option value="0.25" ${courseData?.credits === "0.25" ? 'selected' : ''}>PE (0.25 credits)</option>
                                 <option value="0.33" ${courseData?.credits === "0.33" ? 'selected' : ''}>1 credit hour (0.33 credits)</option>
-                                <option value="0.66" ${courseData?.credits === "0.33" ? 'selected' : ''}>2 credit hours (0.66 credits)</option>
+                                <option value="0.66" ${courseData?.credits === "0.66" ? 'selected' : ''}>2 credit hours (0.66 credits)</option>
                                 <option value="1.33" ${courseData?.credits === "1.33" ? 'selected' : ''}>4 credit hours (1.33 credits)</option>
                             </select>
                         </div>
