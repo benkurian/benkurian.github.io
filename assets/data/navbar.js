@@ -17,6 +17,7 @@ var navbar = `
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="https://spanationwide.org">SPAN</a>
+                <a class="dropdown-item" href="/a-right-to-health.html">A Right to Health</a>    
                 <a class="dropdown-item" href="/visionzero.html">The Road to Vision Zero</a>    
                 <a class="dropdown-item" href="/bts.html">Breaking the Silence</a>
                 <!-- <a class="dropdown-item" href="/lls.html">Leukemia & Lymphoma Society</a> -->

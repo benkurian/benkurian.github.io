@@ -53,8 +53,16 @@ var videos = [
     description: "First-prize winner of C-SPAN StudentCam 2025.",
     img: "visionzero.webp",
     linkText: "Watch on <i class='bi bi-youtube'></i> YouTube",
-    linkHref: "https://www.youtube.com/watch?v=h1dHoLHaSDc&t=8s",
+    linkHref: "https://www.youtube.com/watch?v=h1dHoLHaSDc",
     dateAdded: new Date("March 1, 2025"),
+  },
+  {
+    title: "A Right to Health",
+    description: "First-prize winner of C-SPAN StudentCam 2026.",
+    img: "a-right-to-health.png",
+    linkText: "Watch on <i class='bi bi-youtube'></i> YouTube",
+    linkHref: "https://www.youtube.com/watch?v=OJTwR_BkjLY",
+    dateAdded: new Date("March 14, 2026"),
   },
 ];
 
