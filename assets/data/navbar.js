@@ -24,7 +24,7 @@ var navbar = `
             </div>
             </div>
             <!-- <a class="nav-link" href="/mailinglist.html">Mailing List</a> -->
-            <a class="nav-link" href="/assets/resume.pdf">Resume</a>
+            <a class="nav-link" href="/resume.html">Resume</a>
         </div>
         </div>
     </div>
