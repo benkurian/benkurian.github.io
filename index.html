@@ -1,98 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ben Kurian</title>
-  
-  <!-- Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ben Kurian</title>
+<meta name="description" content="Portfolio of Ben Kurian — documentary filmmaker, healthcare advocate, and musician based in Columbus, Ohio.">
+<meta name="theme-color" content="#6B1222">
+<!-- Google Tag Manager -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4MY413SWSB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-4MY413SWSB');
   </script>
-  <!-- End Google Tag Manager -->
+<!-- End Google Tag Manager -->
 
-  <!-- CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <!-- End CDN -->
-
-  <link rel="icon" type="image/x-icon" href="/assets/images/original/index/logo.svg">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="canonical" href="https://benkurian.com">
-  <meta name="robots" content="index, follow">
-
-  <!-- OpenGraph Meta Tags -->
-  <meta property="og:type" content="search">
-  <meta property="og:title" content="Ben Kurian">
-  <meta property="og:description" content="Ben Kurian - Student, Musician, Video Editor">
-  <meta property="og:image" content="/assets/images/original/index/logo.svg">
-  <meta property="og:url" content="https://benkurian.com">
-  <meta property="og:site_name" content="Ben Kurian">
-  <!-- End OpenGraph Meta Tags -->
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:title" content="Ben Kurian">
-  <meta name="twitter:description" content="Ben Kurian - Student, Musician, Video Editor">
-  <meta name="twitter:image" content="/assets/images/original/index/logo.svg">
-  <meta name="twitter:site" content="@bkuroh17">
-  <meta name="twitter:creator" content="@bkuroh17">
-  <!-- End Twitter Meta Tags -->
-  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+<!-- Performance: preload critical assets -->
+<link rel="preload" href="/images/hero.jpg" as="image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <nav id="navbarContainer" class="navbar navbar-expand-lg bg-body-tertiary">
-  </nav>
-  <script src="/assets/data/navbar.js"></script>
-  <a id="home"></a>
-<div class="bg-image p-3 p-md-5 m-md-3 text-center" style="background-image: url('/assets/images/original/index/hero.png'); background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; margin-bottom: 50px; height: 100vh;">
-  <div class="col-sm-6 offset-sm-6">  
-  <img width="100%" oncontextmenu="return false;" loading="lazy" class="text-white user-select-none animate__animated animate__fadeInDown" src="/assets/images/original/index/logo-wide-white.svg" alt="Logo">
-    <p class="text-white lead user-select-none animate__animated animate__fadeInUp">Student, musician, videographer.</p>
-    <div class="align-items-center animate__animated animate__fadeInUp">
-      <a href="https://linkedin.com/in/ben-kurian" target="_blank" rel="noopener noreferrer"><img loading="lazy" class="grow m-1" src="/assets/images/original/index/icons/linkedin.png" height="50vh"></a>
-      <a href="https://youtube.com/@benkurian317" target="_blank" rel="noopener noreferrer"><img loading="lazy" class="grow m-1" src="/assets/images/original/index/icons/youtube.png" height="50vh"></a>
-      <a href="https://open.spotify.com/artist/3RUjQ8FPBYYTPLuPOTnzsT?si=c6EutjXZQw-A1ABwcbMUOw" target="_blank" rel="noopener noreferrer"><img loading="lazy" class="grow m-1" src="/assets/images/original/index/icons/spotify.png" height="50vh"></a>
-      <!-- <a href="https://musescore.com/user/36348798" target="_blank" rel="noopener noreferrer"><img loading="lazy" class="grow m-1" src="/assets/images/compressed/index/icons/musescore.png" height="50vh"></a> -->
-      <style>
-        .grow { 
-        transition: all .2s ease-in-out; 
-        }
 
-        .grow:hover { 
-        transform: scale(1.1); 
-        }
-      </style>
-    </div>
-   </div>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="#" class="masthead-brand">Ben Kurian</a>
+    <nav><ul class="masthead-nav" id="navList"></ul></nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  
-  <a id="update"></a>
-  <div id="updateContainer" class="row position-relative p-3 p-md-5 m-md-3 bg-light">
-  </div>
-  <script src="/assets/data/updates.js"></script>
-  <a id="about"></a>
-  <div class="row position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
-    <div class="col-sm-6 p-lg-5 my-5 text-center">
-      <img oncontextmenu="return false;" loading="lazy" class="rounded img-fluid shadow animate__animated animate__fadeInLeft" src="/assets/images/original/index/nature.jpeg" alt="Photo of Ben">
-    </div>
-    <div class="col-sm-6 p-lg-5 my-5 animate__animated animate__fadeInRight">
-      <h3>About</h3>
-      <h1 class="display-4">Ben Kurian</h1>
-      <p class="lead">
-        I'm <b>Ben Kurian</b>, a 15-year-old musician with a passion for creating both music and film. I've spent a decade learning the piano, six years on the violin, four years on the drums, and two years exploring the bass guitar. Over the last three years, I've also delved into music production, which has been a journey of self-discovery and growth for me. I've participated in the National Piano Guild at a Preparatory B Level and played in the OMEA All-State Orchestra on violin. Additionally, I've been fortunate to receive recognition in global competitions like the World of 8 Billion video contest and C-SPAN's StudentCam competition. I'm dedicated to my craft and aspire to inspire others through my compositions, cinematic work, and other projects.
-      </p>
-    </div>
-  </div>
-  <div class="container">
-    <footer id="footerContainer" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    </footer>
-    <script src="/assets/data/footer.js"></script>
-  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav"></nav>
+
+<section class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-date" id="heroDate"></div>
+  <div class="hero-ornament"></div>
+  <h1 class="hero-name" id="heroName"></h1>
+  <div class="hero-rule"></div>
+  <p class="hero-subtitle" id="heroSub"></p>
+  <div class="hero-scroll"><span>Scroll</span><div class="hero-scroll-line"></div></div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-inner" id="aboutInner"></div>
+</section>
+<div class="about-trailer" id="aboutTrailer"></div>
+
+<main id="mainContent"></main>
+
+<footer class="footer" id="footerEl"></footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19V5m0 0l-6 6m6-6l6 6"/></svg>
+</button>
+
+<div class="modal-overlay" id="modalOverlay"></div>
+<div class="modal-container" id="modalContainer">
+  <div class="modal-close"><button id="modalCloseBtn">&times;</button></div>
+  <div class="modal-body" id="modalBody"></div>
+</div>
+<script type="module" src="/js/main.js"></script>
 </body>
 </html>

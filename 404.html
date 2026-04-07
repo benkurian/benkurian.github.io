@@ -1,67 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ben Kurian</title>
-  
-  <!-- Google Tag Manager -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4MY413SWSB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Ben Kurian</title>
+<meta name="description" content="The page you're looking for doesn't exist.">
+<meta name="theme-color" content="#6B1222">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .notfound {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px 24px;
+    position: relative;
+  }
 
-    gtag('config', 'G-4MY413SWSB');
-  </script>
-  <!-- End Google Tag Manager -->
+  .notfound-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+  }
 
-  <!-- CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <!-- End CDN -->
+  .notfound-code {
+    font-family: var(--display);
+    font-size: clamp(100px, 18vw, 180px);
+    font-weight: 300;
+    line-height: 0.9;
+    color: var(--cream);
+    opacity: 0.08;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.02em;
+  }
 
-  <link rel="icon" type="image/x-icon" href="/assets/images/original/index/logo.svg">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="canonical" href="https://benkurian.com">
-  <meta name="robots" content="index, follow">
+  .notfound-title {
+    font-family: var(--display);
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    color: var(--cream);
+    margin-bottom: 20px;
+    position: relative;
+  }
 
-  <!-- OpenGraph Meta Tags -->
-  <meta property="og:type" content="search">
-  <meta property="og:title" content="Ben Kurian">
-  <meta property="og:description" content="Ben Kurian - Student, Musician, Video Editor">
-  <meta property="og:image" content="/assets/images/original/index/logo.svg">
-  <meta property="og:url" content="https://benkurian.com">
-  <meta property="og:site_name" content="Ben Kurian">
-  <!-- End OpenGraph Meta Tags -->
+  .notfound-rule {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 24px;
+  }
 
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:title" content="Ben Kurian">
-  <meta name="twitter:description" content="Ben Kurian - Student, Musician, Video Editor">
-  <meta name="twitter:image" content="/assets/images/original/index/logo.svg">
-  <meta name="twitter:site" content="@bkuroh17">
-  <meta name="twitter:creator" content="@bkuroh17">
-  <!-- End Twitter Meta Tags -->
+  .notfound-desc {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--cream-dim);
+    line-height: 1.7;
+    max-width: 360px;
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .notfound-back {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    padding: 14px 32px;
+    border: 1px solid var(--rule-light);
+    position: relative;
+    transition: color 0.35s ease, border-color 0.35s ease;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .notfound-back::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s var(--ease-out-expo);
+    z-index: -1;
+  }
+
+  .notfound-back:hover {
+    color: var(--bg-deep);
+    border-color: var(--gold);
+  }
+
+  .notfound-back:hover::before {
+    transform: scaleX(1);
+  }
+
+  .notfound-ornament {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--gold-dim));
+    margin: 0 auto 32px;
+  }
+</style>
 </head>
 <body>
-  <nav id="navbarContainer" class="navbar navbar-expand-lg bg-body-tertiary">
-  </nav>
-  <script src="/assets/data/navbar.js"></script>
-  <div class="d-flex align-items-center justify-content-center bg-image m-md-3 vh-100" style="background-image: url('/assets/images/404/compressed/404-bg.webp'); background-size: cover; background-position: center; height: 90vh;">
-    <div class="text-center">
-        <!-- <img oncontextmenu="return false;" loading="lazy" class="text-white user-select-none animate__animated animate__fadeInDown" src="/assets/images/original/404/404-text.svg" alt="Logo"> -->
-         
-      <p class="fs-3 text-danger">Sorry! Page not found.</p>
-      <p class="lead text-secondary">The page you’re looking for doesn’t exist.</p>
-      <a href="index.html" class="btn btn-light">Go Home</a>
-    </div>
+
+<header class="masthead scrolled">
+  <div class="masthead-inner">
+    <a href="/" class="masthead-brand">Ben Kurian</a>
   </div>
-  <div class="container">
-    <footer id="footerContainer" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    </footer>
-    <script src="/assets/data/footer.js"></script>
-  </div>
+</header>
+
+<section class="notfound">
+  <div class="notfound-code" aria-hidden="true">404</div>
+  <div class="notfound-ornament"></div>
+  <div class="notfound-label">Error 404</div>
+  <h1 class="notfound-title">Page Not Found</h1>
+  <div class="notfound-rule"></div>
+  <p class="notfound-desc">The page you're looking for has moved, or never existed.</p>
+  <a href="/" class="notfound-back">Return Home</a>
+</section>
+
 </body>
 </html>
