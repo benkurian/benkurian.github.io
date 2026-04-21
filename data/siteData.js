@@ -48,36 +48,23 @@ export const SITE_DATA = {
             `
           }
         },
-        // {
-        //   id: "medbridge",
-        //   label: "Central Ohio Initiative",
-        //   title: "Project MedBridge",
-        //   desc: "Collecting surplus medical supplies from Columbus clinics to facilitate access to care abroad.",
-        //   bgImage: "/images/medbridge.jpeg",
-        //   modal: {
-        //     label: "Central Ohio Initiative · Founder",
-        //     title: "Project MedBridge",
-        //     meta: "Founder & Team Lead",
-        //     content: `
-        //     <p>Project MedBridge (est. 2026) is a medical supply redistribution network I founded to address a major issue in our city. U.S. hospitals discard an estimated 2 million pounds of unused, unexpired supplies each year; but unlike Northeast and Southeast Ohio, Central Ohio has no mechanism to redirect any of it.</p>
-        //     <p>Our model works in cycles: we collect surplus from local healthcare providers, organize quarterly Boxing Days where student volunteers sort and package materials, and ship everything to healthcare facilities in over 135 countries. Each shipment reaches over 30,000 people.</p>
-        //     <p>MedBridge will (<em>hopefully!</em>) be backed by a $7,500 grant from the Carnegie Foundation, and operates in partnership with Ohio HOSA’s statewide chapter and hospital network. Our first-year targets include three Boxing Days, 1,000–3,000 pounds of redirected supplies, and a formal policy recommendation to the Columbus Board of Health on redirecting surplus.</p>
-        //     <h4>Carnegie Young Leaders Pitch Video</h4>
-        //     <div class='modal-embed'><iframe src="https://www.youtube.com/embed/8lhsXuLN2Fc?si=E_lXhPYCivNCWUhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        //     `
-        //   }
-        // },
-                {
+        {
           id: "medbridge",
-          label: "",
-          title: "Coming Soon",
-          desc: "",
+          label: "Central Ohio Initiative",
+          title: "Project MedBridge",
+          desc: "Collecting surplus medical supplies from Columbus clinics to facilitate access to care abroad.",
           bgImage: "/images/medbridge.jpeg",
           modal: {
-            label: "",
-            title: "",
-            meta: "",
-            content: ``
+            label: "Central Ohio Initiative · Founder",
+            title: "Project MedBridge",
+            meta: "Founder & Team Lead",
+            content: `
+            <p>Project MedBridge (est. 2026) is a medical supply redistribution network I founded to address a major issue in our city. U.S. hospitals discard an estimated 2 million pounds of unused, unexpired supplies each year; but unlike Northeast and Southeast Ohio, Central Ohio has no mechanism to redirect any of it.</p>
+            <p>Our model works in cycles: we collect surplus from local healthcare providers, organize quarterly Boxing Days where student volunteers sort and package materials, and ship everything to healthcare facilities in over 135 countries. Each shipment reaches over 30,000 people.</p>
+            <p>MedBridge will be backed by a $7,500 grant from the Carnegie Foundation, and operates in partnership with Ohio HOSA’s statewide chapter and hospital network. Our first-year targets include three Boxing Days, 1,000–3,000 pounds of redirected supplies, and a formal policy recommendation to the Columbus Board of Health on redirecting surplus.</p>
+            <h4>Carnegie Young Leaders Pitch Video</h4>
+            <div class='modal-embed'><iframe src="https://www.youtube.com/embed/8lhsXuLN2Fc?si=E_lXhPYCivNCWUhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            `
           }
         },
         {
@@ -195,26 +182,32 @@ export const SITE_DATA = {
           id: "hosa",
           label: "International Awards",
           title: "HOSA—Future Health Professionals",
-          desc: "Chapter VP and State Officer candidate. Top 16 international finish in Biomedical Debate.",
+          desc: "State Vice President. Top 16 international finish in Biomedical Debate.",
           bgImage: "/images/hosa.jpeg",
           modal: {
             label: "International Awards",
             title: "HOSA—Future Health Professionals",
-            meta: "Vice President · State Officer Candidate",
+            meta: "State Vice President",
             content: `
-              <p>I refounded the Olentangy Liberty High School HOSA chapter, and currently serve as Vice President of Public Relations. I'm also running for a position on the Ohio State Executive Council.</p>
-              <p>I lead outreach and communications, growing our chapter membership from 60 to over 100 students. I coordinated speaker events featuring neurosurgeons, psychiatrists, and medical students, and helped guide our chapter to 21+ state placers and 7+ international placers.</p>
+              <p>I refounded the Olentangy Liberty High School HOSA chapter and currently serve as Vice President of Public Relations, as well as an elected member of Ohio HOSA’s State Executive Council.</p>
+
+              <p>At the state level, I represent over 12,000 members and 250 chapters across Ohio, representing the state at the International Leadership Conference (Indianapolis, IN) this June and advocating for expanded health sciences education in Washington D.C. this September.</p>
+
+              <p>Locally, I lead outreach and communications, growing our chapter membership from 60 to over 100 students. I’ve organized speaker events with neurosurgeons, psychiatrists, and medical students, and helped guide our chapter to 33+ state placers and 7+ international placers.</p>
               
               <h4>Awards</h4>
               <ul>
-                <li><span class='yr'>2025</span> Top 16 globally in Biomedical Debate, ILC (highest placement from Ohio, ~1000 teams)</li>
+                <li><span class='yr'>2025</span> Top 16 globally in Biomedical Debate, ILC (highest placement from Ohio, ~1,000 teams)</li>
                 <li><span class='yr'>2025</span> 6th Place in Health Education, SLC</li>
-                <li><span class='yr'>2026</span> 1st Place in Medical Law & Ethics, R5LC</li>
+                <li><span class='yr'>2026</span> 4th Place in Medical Law & Ethics, SLC</li>
               </ul>
-              
+              <figure>
+              <img src="/images/hosasec.jpeg" />
+              <figcaption>2026-2027 State Executive Council, April 2026</figcaption>
+              </figure>
               <figure>
               <img src="/images/top16.jpeg" />
-              <figcaption>Octafinal round in Biomedical Debate (team "Olentangy"), June 2026</figcaption>
+              <figcaption>Octafinal round in Biomedical Debate (team "Olentangy"), June 2025</figcaption>
               </figure>
             `
           }
@@ -268,7 +261,7 @@ export const SITE_DATA = {
             <ul>
               <li><span class='yr'>2026</span> Second Prize, Columbus Symphony Youth Orchestra Concerto Competition</li>
               <li><span class='yr'>2025–2026</span> 2× OMEA All-State Orchestra (Top 30 violinists in Ohio)</li>
-              <li><span class='yr'>2019–2025</span> 6× National Piano Guild Superior Plus Rating</li>
+              <li><span class='yr'>2021–2025</span> 6× National Piano Guild Superior Plus Rating</li>
             </ul>
 
             <p>Beyond formal performance, I’ve been deeply involved in community-based music. I began accompanying my church choir on piano in elementary school, and continue to perform at cultural events including the Central Ohio Malayalee Association’s <a href='https://www.youtube.com/watch?v=0qIzNiniAo8'>Onam</a> and <a href='https://www.youtube.com/watch?v=AByqwfRPoDc'>Christmas</a> programs. I also direct and mentor student bands for the Vindhya Band Competition, where <a href='https://www.youtube.com/watch?v=VAMmX9S9Q8E'>groups I’ve led</a> have earned first place in five consecutive years.</p>
@@ -280,7 +273,7 @@ export const SITE_DATA = {
           label: "3× International Award",
           title: "Composition",
           desc: "Original works awarded internationally by the National Guild of Piano Teachers.",
-          bgImage: "/images/composition.jpg",
+          bgImage: "/images/composition.jpeg",
           modal: {
             label: "3× International Award",
             title: "Composition",
@@ -382,20 +375,27 @@ export const SITE_DATA = {
             content: `
               <p>Recognition from elected officials and coverage from regional media for documentary filmmaking, civic advocacy, and student leadership.</p>
 
-              <h4>Recognition from Governor Mike DeWine</h4>
+              <h4>Ohio Governor Mike DeWine</h4>
+              <figure>
               <div class='modal-embed'><iframe src="https://www.youtube.com/embed/cUyLjtmfbcw?si=F36HiMEsjOamftsr" title="Recognition from Ohio Governor Mike DeWine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-
-              <h4>Recognition from Senator Bernie Moreno</h4>
+                <figcaption>Video of recognition, April 2025</figcaption>
+              </figure>
+              <h4>U.S. Senator Bernie Moreno</h4>
                             <figure>
                 <img src="/images/bernie-moreno.jpg" loading="lazy" alt="Letter of recognition from U.S. Senator Sherrod Brown" />
-                <figcaption>Letter of recognition from U.S. Senator Bernie Moreno, April 2025</figcaption>
+                <figcaption>Letter of recognition, April 2025</figcaption>
               </figure>
-                            <h4>Recognition from Senator Sherrod Brown</h4>
+                            <h4>U.S. Senator Sherrod Brown</h4>
               <figure>
                 <img src="/images/sherrod-brown.jpg" loading="lazy" alt="Letter of recognition from U.S. Senator Sherrod Brown" />
-                <figcaption>Letter of recognition from U.S. Senator Sherrod Brown, May 2023</figcaption>
+                <figcaption>Letter of recognition, May 2023</figcaption>
               </figure>
 
+              <h4>Ohio Director of Health Dr. Bruce Vanderhoff</h4>
+              <figure>
+              <div class='modal-embed'><iframe src="https://www.youtube.com/embed/rrI8SK_bns8?si=4F99OQD9WcfzBklg" title="Recognition from Ohio Governor Mike DeWine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                <figcaption>Video of recognition, April 2026</figcaption>
+              </figure>
             `,
             pressItems: [
               { year: "2026", title: "Kurian wins C-SPAN contest again",                                          outlet: "Delaware Gazette",        date: "March 2026",   type: "read",   url: "https://www.delgazette.com/2026/03/15/kurian-wins-c-span-contest-again/" },
