@@ -395,6 +395,7 @@ export const SITE_DATA = {
               </figure>
             `,
             pressItems: [
+              { year: "2026", title: "Two Olentangy Liberty students win top honors in C-SPAN student documentary contest",                                          outlet: "WOSU Public Media",        date: "May 2026",   type: "read",   url: "https://www.wosu.org/arts-culture/2026-05-04/two-olentangy-liberty-students-win-top-honors-in-c-span-student-documentary-contest" },
               { year: "2026", title: "Kurian wins C-SPAN contest again",                                          outlet: "Delaware Gazette",        date: "March 2026",   type: "read",   url: "https://www.delgazette.com/2026/03/15/kurian-wins-c-span-contest-again/" },
               { year: "2025", title: "Fascinating Ohio: Teen Edition",                                            outlet: "WOSU Public Media",       date: "August 2025",  type: "listen", url: "https://www.wosu.org/show/all-sides/2025-08-07/fascinating-ohio-teen-edition-state-fair-junior-fair-board-member-ninja-warriors-documentarian" },
               { year: "2025", title: "Powell teen takes first prize in C-SPAN student documentary contest",       outlet: "WOSU Public Media",       date: "April 2025",   type: "read",   url: "https://www.wosu.org/arts-culture/2025-04-18/powell-teen-takes-first-prize-in-c-span-student-documentary-contest" },
