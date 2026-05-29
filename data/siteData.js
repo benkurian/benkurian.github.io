@@ -59,12 +59,9 @@ export const SITE_DATA = {
             title: "Project MedBridge",
             meta: "Founder & Team Lead",
             content: `
-            <p>Project MedBridge (est. 2026) is a medical supply redistribution network I founded to address a major issue in our city. U.S. hospitals discard an estimated 2 million pounds of unused, unexpired supplies each year; but unlike Northeast and Southeast Ohio, Central Ohio has no mechanism to redirect any of it.</p>
-            <p>Our model works in cycles: we collect surplus from local healthcare providers, organize quarterly Boxing Days where student volunteers sort and package materials, and ship everything to healthcare facilities in over 135 countries. Each shipment reaches over 30,000 people.</p>
-            <p>MedBridge will be backed by a $7,500 grant from the Carnegie Foundation, and operates in partnership with Ohio HOSA’s statewide chapter and hospital network. Our first-year targets include three Boxing Days, 1,000–3,000 pounds of redirected supplies, and a formal policy recommendation to the Columbus Board of Health on redirecting surplus.</p>
-            <h4>Carnegie Young Leaders Pitch Video</h4>
-            <div class='modal-embed'><iframe src="https://www.youtube.com/embed/8lhsXuLN2Fc?si=E_lXhPYCivNCWUhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-            `
+                <p>Project MedBridge (est. 2026) is Central Ohio's first student-led medical supply redistribution network, which I co-founded to address a glaring gap in our city. U.S. hospitals discard an estimated 2 million pounds of unused, unexpired supplies every year, and Central Ohio has no mechanism to redirect any of it. Project MedBridge collects surplus from local hospital systems and ships it to facilities in 135+ countries. Recently, Project MedBridge secured $7,500 in grant funding from the Carnegie Corporation.</p>
+    <a href='https://projectmedbridge.org' class='modal-link'>Visit Project MedBridge →</a>
+           `
           }
         },
         {
@@ -256,7 +253,7 @@ export const SITE_DATA = {
             <p>I currently serve as Concertmaster of the Olentangy Liberty Chamber Orchestra and Assistant Concertmaster of the Columbus Symphony Youth Orchestra, and have been selected twice to the OMEA All-State Orchestra as one of the top 30 violinists in Ohio.</p>
 
             <h4>Featured: <em>Violin Concerto No. 1 in G minor, Movement I</em> — Max Bruch (2026)</h4>
-            <div class='modal-embed'><iframe src="https://www.youtube.com/embed/3gJRLNuiUCA?si=EVVt5P6gwf0xP12G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div class='modal-embed'><iframe src="https://www.youtube.com/embed/3gJRLNuiUCA?si=bJVWfMuVLGoiOyYv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
             <h4>Awards</h4>
             <ul>
               <li><span class='yr'>2026</span> Second Prize, Columbus Symphony Youth Orchestra Concerto Competition</li>
