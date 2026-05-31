@@ -1,0 +1,32 @@
+---
+import type { SiteData } from '../types/site';
+
+interface Props {
+  footer: SiteData['footer'];
+}
+
+const { footer } = Astro.props;
+---
+
+<footer class="footer" id="footerEl">
+  <div>
+    <h3>{footer.heading}</h3>
+    <ul class="footer-links">
+      {
+        footer.links.map((link) => (
+          <li>
+            <a
+              href={link.url}
+              {...(link.url.startsWith('http')
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class="footer-copy">{footer.copy}</div>
+</footer>

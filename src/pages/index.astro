@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Masthead from '../components/Masthead.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import ProjectSection from '../components/ProjectSection.astro';
+import Footer from '../components/Footer.astro';
+import Modal from '../components/Modal.astro';
+import SiteEffects from '../components/SiteEffects.astro';
+import { SITE_DATA } from '../data/site';
+---
+
+<BaseLayout>
+  <Masthead />
+  <Hero hero={SITE_DATA.hero} />
+  <About about={SITE_DATA.about} />
+  <main id="mainContent">
+    {SITE_DATA.sections.map((section) => <ProjectSection section={section} />)}
+  </main>
+  <Footer footer={SITE_DATA.footer} />
+  <Modal />
+  <SiteEffects />
+</BaseLayout>

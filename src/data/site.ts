@@ -1,0 +1,429 @@
+import type { SiteData } from '../types/site';
+
+export const SITE_DATA: SiteData = {
+
+  hero: {
+    date: "Portfolio — 2026",
+    name: ["Ben", "Kurian"],
+    subtitle: "",
+    bgImage: "/images/hero.jpg"
+  },
+
+  about: {
+    label: "About",
+    heading: "I'm Ben Kurian, a sophomore at Olentangy Liberty High School in Columbus, Ohio.",
+    paragraphs: [
+      //  "My work sits at the intersection of medicine and systems-level thinking: understanding not just how healthcare works, but how the decisions around it get made. That led me to co-found SPAN, a nonpartisan youth healthcare advocacy organization now active in over fifteen states, and to start Project MedBridge, which redirects surplus medical supplies from Central Ohio clinics to low-resource communities abroad.",
+      "My work sits at the intersection of medicine and systems-level thinking: understanding not just how healthcare works, but how the decisions around it get made. That led me to co-found SPAN, a nonpartisan youth healthcare advocacy organization now active in over fifteen states.",
+      "This very thread runs in most of what I do, be it through documentary filmmaking, public speaking, or civic leadership. I’ve been lucky to have some of this work recognized: four consecutive wins in C-SPAN’s StudentCam competition, recognition from Ohio's Governor and U.S. Senators, and invitations to speak at conferences from Dallas to Philadelphia.",
+      "Outside of all that, I’m a multi-instrumentalist and competitive debater. I bike everywhere, collect vinyl, and am always hunting down new Oreo flavors (<em>current favorite: Chocolate Ganache Thins</em>).",
+      "Above all, I am a student. I want to study psychiatry, because it feels like the niche where everything I care about converges: systems, people, and the messy space in between."
+    ],
+    photo: "/images/ben.jpg",
+    video: null
+  },
+
+  // Resume link in the nav — set to the path of your resume PDF
+  resumeUrl: "/resume.pdf",
+
+  sections: [
+    {
+      id: "projects",
+      number: "01",
+      title: "Projects",
+      layout: "hero-side",
+      cards: [
+        {
+          id: "span",
+          label: "National Organization",
+          title: "Students for Patient Advocacy Nationwide",
+          desc: "Youth-led healthcare advocacy org working across 15+ states and the U.S. Congress.",
+          bgImage: "/images/span.jpg",
+          modal: {
+            label: "National Organization",
+            title: "Students for Patient Advocacy Nationwide",
+            meta: "Co-Founder & Executive Director",
+            content: `
+            <p>SPAN (est. 2025) is an organization I co-founded that empowers high school, undergraduate, and medical students to engage directly with state and federal legislation affecting patients. What started as a response to gaps in youth representation in healthcare policy has grown into a national team of over 40 members working across 15+ states and the U.S. Congress.</p>
+            <p>We've worked with over 1,500 legislators through letters, cold calls, and testimony: influencing 52 healthcare bills, including stalling Texas House Bill 5294 and helping introduce legislation to mandate AEDs in Alaskan K–12 schools. SPAN has also partnered with Unite America, Stanford's Deliberative Democracy Lab, and Harvard's Health Fluency Project, and reached over 250,000 people across social media.</p>
+            <a href='https://spanationwide.org' class='modal-link'>Visit SPAN →</a>
+            `
+          }
+        },
+        {
+          id: "medbridge",
+          label: "Central Ohio Initiative",
+          title: "Project MedBridge",
+          desc: "Collecting surplus medical supplies from Columbus clinics to facilitate access to care abroad.",
+          bgImage: "/images/medbridge.jpeg",
+          modal: {
+            label: "Central Ohio Initiative · Founder",
+            title: "Project MedBridge",
+            meta: "Founder & Team Lead",
+            content: `
+                <p>Project MedBridge (est. 2026) is Central Ohio's first student-led medical supply redistribution network, which I co-founded to address a glaring gap in our city. U.S. hospitals discard an estimated 2 million pounds of unused, unexpired supplies every year, and Central Ohio has no mechanism to redirect any of it. Project MedBridge collects surplus from local hospital systems and ships it to facilities in 135+ countries. Recently, Project MedBridge secured $7,500 in grant funding from the Carnegie Corporation.</p>
+    <a href='https://projectmedbridge.org' class='modal-link'>Visit Project MedBridge →</a>
+           `
+          }
+        },
+        {
+          id: "docs",
+          label: "Award-Winning Journalism",
+          title: "Documentary Filmmaking",
+          desc: "Four consecutive wins in C-SPAN's StudentCam competition.",
+          bgImage: "/images/documentary.jpeg",
+          modal: {
+            label: "Award-Winning Journalism",
+            title: "Documentary Filmmaking",
+            meta: "Director, producer, and composer",
+            content: `
+            <p>I've directed, produced, and scored films on healthcare, education, and public policy since 2022, earning national recognition in the largest student documentary contest in the country.</p>
+            <p>I placed in the <a href='http://studentcam.org'>StudentCam documentary competition</a> four consecutive years, competing against roughly 4,000 entries annually. My films have aired on C-SPAN to a viewership of over 50 million and received more than 30,000 cumulative public votes.</p>
+            <ul>
+              <li><span class='yr'>2026</span> First Prize + Fan Favorite, <a href='https://youtu.be/OJTwR_BkjLY?si=a7UoUbbLySrIHX5s'><em>A Right to Health</em></a></li>
+              <li><span class='yr'>2025</span> First Prize, <a href='https://youtu.be/h1dHoLHaSDc?si=qqFcZydKniJkvcRq'><em>The Road to Vision Zero</em></a></li>
+              <li><span class='yr'>2024</span> Second Prize + Fan Favorite, <a href='https://youtu.be/ju_pT2KA4v0?si=0aXuxKS17ee5N0-H'><em>Who Do I Want to Be?</em></a></li>
+              <li><span class='yr'>2023</span> First Prize + Fan Favorite, <a href='https://youtu.be/-rcz3fX9laQ?si=kv-Q0aieXBFVnGdG'><em>Losing a Generation</em></a></li>
+            </ul>
+            <p>My work has involved interviews with senior stakeholders, including public health officials, faculty from Harvard and Yale, and former U.S. Department of Transportation leadership. I've been formally recognized by <a href='https://www.studentcam.org/2023-first-prize-middle-school-losing-a-generation-by-ben-kurian/'>Governor DeWine, U.S. Senator Sherrod Brown</a>, and others, and have been invited to speak at national conferences in Dallas and Philadelphia.</p>
+            <h4>Featured: <em>A Right to Health</em> (2026)</h4>
+            <div class='modal-embed'><iframe src="https://www.youtube.com/embed/OJTwR_BkjLY?si=9UzZoAUCy47qDBty" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            `
+          }
+        }
+      ]
+    },
+    // {
+    //   id: "leadership",
+    //   number: "02",
+    //   title: "Community",
+    //   layout: "thirds",
+    //   cards: [
+    //     {
+    //       id: "cma",
+    //       label: "Columbus Medical Association",
+    //       title: "Youth Advisory Council",
+    //       desc: "One of 15 members allocating $25,000 in annual grant funding to youth health organizations.",
+    //       bgImage: "",
+    //       modal: {
+    //         label: "Youth Advisory Council · Member",
+    //         title: "Columbus Medical Association Foundation",
+    //         meta: "Dec 2025 – Present",
+    //         content: "<p>Selected as one of 15 members on the Columbus Medical Association Foundation's Youth Advisory Council. The council assesses community health needs and allocates $25,000 in annual grant funding to youth-focused organizations across Central Ohio.</p><p>In the current cycle, reviewing and funding programs addressing mental health, substance use, bullying, social inequities, and basic needs — including support for AthletesToAid and We Amplify Voices (WAV).</p>"
+    //       }
+    //     },
+    //     {
+    //       id: "selac",
+    //       label: "Olentangy Schools",
+    //       title: "SELAC Representative",
+    //       desc: "Advising district administrators on equity, engagement, and student wellbeing policies.",
+    //       bgImage: "",
+    //       modal: {
+    //         label: "Student Advisory Council · Liberty Representative",
+    //         title: "SELAC — Student Experience Leadership Advisory Council",
+    //         meta: "Oct 2025 – Present · Olentangy Local School District",
+    //         content: "<p>Selected to represent Olentangy Liberty High School on OLSD's SELAC program. Collaborating with district administrators and peers to enhance student life, shape district-wide initiatives, and advise on policies improving equity, engagement, and wellbeing.</p><p>Participating in regular meetings with district leaders to identify key challenges and design actionable solutions that strengthen the student experience across Olentangy Schools.</p>"
+    //       }
+    //     },
+    //     {
+    //       id: "cyl",
+    //       label: "Carnegie Foundation",
+    //       title: "Young Leaders Fellow",
+    //       desc: "Leading Project Demos — a $7,500-backed civic engagement initiative in Central Ohio.",
+    //       bgImage: "",
+    //       modal: {
+    //         label: "Carnegie Young Leaders · Fellow",
+    //         title: "Project Demos",
+    //         meta: "Jul 2025 – Present · $7,500 Carnegie Foundation Grant",
+    //         content: "<p>Selected as a Carnegie Young Leaders for Civic Preparedness Fellow through the Institute for Citizens & Scholars. Leading Project Demos, a youth-led civic engagement initiative backed by a $7,500 grant from the Carnegie Foundation.</p><p>Part of a year-long program supporting 500 changemakers nationwide. Demos helps high school students in Central Ohio influence municipal governments by organizing voter registration drives, campaigns, and speaker events — building a replicable model for civic engagement across Ohio.</p>"
+    //       }
+    //     }
+    //   ]
+    // },
+    {
+      id: "school",
+      number: "03",
+      title: "School",
+      layout: "thirds",
+      cards: [
+        {
+          id: "debate",
+          label: "Lincoln-Douglas & World Schools",
+          title: "Speech & Debate",
+          desc: "National qualifying performances across Congressional and Lincoln-Douglas formats.",
+          bgImage: "/images/debate.jpeg",
+          modal: {
+            label: "Lincoln-Douglas & World Schools",
+            title: "Speech & Debate",
+            meta: "Team Captain",
+            content: `
+              <p>As Captain of our Lincoln-Douglas Debate team, I lead a group of 10 students in two weekly practices, preparing for tournaments every Saturday. Under my leadership, the team achieved remarkable success, including three state and national qualifiers.</p>
+            <figure>
+            <img src="/images/osdastates.jpeg" loading="lazy"/>
+            <figcaption>OSDA State Finals, March 2026</figcaption>
+            </figure>
+              <h4>Awards</h4>
+            <ul>
+              <li><span class='yr'>LD</span> 4× OSDA State Finals Bids (2025–2026)</a></li>
+              <li><span class='yr'>LD</span> Ranked 6th in state preliminaries (2026)</li>
+              <li><span class='yr'>LD</span> First Alternate to the NSDA National Tournament (2026)</li>
+              <li><span class='yr'>WS</span> National Qualifier (2026)</li>
+            </ul>
+            <p>I also represented the Ohio Speech and Debate Association at the <a href='https://conference.ohioschoolboards.org/2026'>Ohio School Boards Association statewide conference</a>, advocating for greater access to Speech and Debate in Ohio high schools, meeting with school board members and administrators across the state.</p>
+            <figure>
+            <img src="/images/osba.jpg" loading="lazy"/>
+            <figcaption>OSBA conference, November 2025</figcaption>
+            </figure>
+            `
+          }
+        },
+        {
+          id: "hosa",
+          label: "International Awards",
+          title: "HOSA—Future Health Professionals",
+          desc: "State Vice President. Top 16 international finish in Biomedical Debate.",
+          bgImage: "/images/hosa.jpeg",
+          modal: {
+            label: "International Awards",
+            title: "HOSA—Future Health Professionals",
+            meta: "State Vice President",
+            content: `
+              <p>I refounded the Olentangy Liberty High School HOSA chapter and currently serve as Vice President of Public Relations, as well as an elected member of Ohio HOSA’s State Executive Council.</p>
+
+              <p>At the state level, I represent over 12,000 members and 250 chapters across Ohio, representing the state at the International Leadership Conference (Indianapolis, IN) this June and advocating for expanded health sciences education in Washington D.C. this September.</p>
+
+              <p>Locally, I lead outreach and communications, growing our chapter membership from 60 to over 100 students. I’ve organized speaker events with neurosurgeons, psychiatrists, and medical students, and helped guide our chapter to 33+ state placers and 7+ international placers.</p>
+              
+              <h4>Awards</h4>
+              <ul>
+                <li><span class='yr'>2025</span> Top 16 globally in Biomedical Debate, ILC (highest placement from Ohio, ~1,000 teams)</li>
+                <li><span class='yr'>2025</span> 6th Place in Health Education, SLC</li>
+                <li><span class='yr'>2026</span> 4th Place in Medical Law & Ethics, SLC</li>
+              </ul>
+              <figure>
+              <img src="/images/hosasec.jpeg" />
+              <figcaption>2026-2027 State Executive Council, April 2026</figcaption>
+              </figure>
+              <figure>
+              <img src="/images/top16.jpeg" />
+              <figcaption>Octafinal round in Biomedical Debate (team "Olentangy"), June 2025</figcaption>
+              </figure>
+            `
+          }
+        },
+        {
+          id: "tedx",
+          label: "District-Wide Event",
+          title: "TEDxOlentangy Liberty Youth",
+          desc: "Delivered and official TEDx talk and now plan future events.",
+          bgImage: "/images/tedx.jpg",
+          modal: {
+            label: "District-Wide Event",
+            title: "TEDxOlentangy Liberty Youth",
+            meta: "Speaker · Steering Committee Member",
+            content: `
+            <p>In March 2025, I delivered a TEDx talk titled <em>"5 Lessons to Transform a Community"</em>, featured on TEDx's YouTube channel with over 40 million subscribers. The talk shared personal lessons in leadership from reviving my church's Vacation Bible School</p>
+      
+            <p>As part of my involvement, I am now part of the steering committee for the <a href='https://www.ted.com/tedx/events/65993'>upcoming TEDxOlentangy Liberty Youth event</a> in April 2026.</p>
+
+            <h4>5 Lessons to Transform a Community (2025)</h4>
+            <div class='modal-embed'><iframe src="https://www.youtube.com/embed/dcyyexBZ1u0?si=b7vq6hKtlwIgj8XO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            `
+          }
+        }
+      ]
+    },
+    {
+      id: "music",
+      number: "04",
+      title: "Music",
+      layout: "halves",
+      cards: [
+        {
+          id: "performance",
+          label: "Piano · Violin · Drums · Bass Guitar",
+          title: "Performance",
+          desc: "Musician trained across 4 instruments.",
+          bgImage: "/images/performance.png",
+          modal: {
+            label: "Piano · Violin · Drums · Bass Guitar",
+            title: "Performance",
+            meta: "Multi-instrumentalist",
+            content: `
+            <p>Music was the first discipline I grew up in. I began piano at age four, and over time expanded to violin, drums, and bass guitar.</p>
+
+            <p>I currently serve as Concertmaster of the Olentangy Liberty Chamber Orchestra and Assistant Concertmaster of the Columbus Symphony Youth Orchestra, and have been selected twice to the OMEA All-State Orchestra as one of the top 30 violinists in Ohio.</p>
+
+            <h4>Featured: <em>Violin Concerto No. 1 in G minor, Movement I</em> — Max Bruch (2026)</h4>
+            <div class='modal-embed'><iframe src="https://www.youtube.com/embed/3gJRLNuiUCA?si=bJVWfMuVLGoiOyYv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <h4>Awards</h4>
+            <ul>
+              <li><span class='yr'>2026</span> Second Prize, Columbus Symphony Youth Orchestra Concerto Competition</li>
+              <li><span class='yr'>2025–2026</span> 2× OMEA All-State Orchestra (Top 30 violinists in Ohio)</li>
+              <li><span class='yr'>2021–2025</span> 6× National Piano Guild Superior Plus Rating</li>
+            </ul>
+
+            <p>Beyond formal performance, I’ve been deeply involved in community-based music. I began accompanying my church choir on piano in elementary school, and continue to perform at cultural events including the Central Ohio Malayalee Association’s <a href='https://www.youtube.com/watch?v=0qIzNiniAo8'>Onam</a> and <a href='https://www.youtube.com/watch?v=AByqwfRPoDc'>Christmas</a> programs. I also direct and mentor student bands for the Vindhya Band Competition, where <a href='https://www.youtube.com/watch?v=VAMmX9S9Q8E'>groups I’ve led</a> have earned first place in five consecutive years.</p>
+            `
+          }
+        },
+        {
+          id: "composition",
+          label: "3× International Award",
+          title: "Composition",
+          desc: "Original works awarded internationally by the National Guild of Piano Teachers.",
+          bgImage: "/images/composition.jpeg",
+          modal: {
+            label: "3× International Award",
+            title: "Composition",
+            meta: "Award-winning composer",
+            content: `
+              <p>Awarded internationally for original works across four consecutive years by the National Guild of Piano Teachers, selected among hundreds of submissions.</p>
+              <p>Displayed in the 2023–2025 Piano Guild Notes Summer Issues.</p>
+            `,
+            linkSections: [
+              {
+                heading: 'Featured Works',
+                items: [
+                  { meta: '2025', title: 'Consolation', detail: 'Hubert Kaszynski Award + Arnetta Jonas Claymes Award', url: '/scores/consolation.pdf', action: 'view' },
+                  { meta: '2025', title: 'The Turn of Winter', detail: 'Finalist', url: '/scores/the-turn-of-winter.pdf', action: 'view' },
+                  { meta: '2024', title: 'The Heist', detail: 'Honorable Mention', url: '/scores/the-heist.pdf', action: 'view' },
+                  { meta: '2023', title: 'Sinking', detail: 'Honorable Mention', url: '/scores/sinking.pdf', action: 'view' },
+                ],
+              },
+            ],
+          }
+        }
+      ]
+    },
+    {
+      id: "public",
+      number: "05",
+      title: "Public",
+      layout: "thirds",
+      cards: [
+        {
+          id: "civicweek",
+          label: "Philadelphia, PA · 2026",
+          title: "Civic Learning Week",
+          desc: "Panelist discussing youth civic engagement with national leaders in education.",
+          bgImage: "/images/civicweek.jpg",
+          modal: {
+            label: "Philadelphia, PA · 2026",
+            title: "Civic Learning Week National Forum",
+            meta: "Plenary Speaker",
+            content: `
+              <p>My sophomore year, I was invited by the Civic Learning Week Steering Committee for an all-expenses-paid presentation at the National Forum in Philadelphia, co-sponsored by the Bezos Family Foundation, Microsoft, Stanford's Hoover Institution, and leading civic organizations.</p>
+              <p>I joined three other high school students from across the U.S. on a plenary panel moderated by PBS host <a href='https://www.bensheehan.com'>Ben Sheehan</a>, discussing the future of civic learning ahead of America's 250th anniversary. The panel was titled <em>"Student Perspectives on Liberty and Learning."</em> After the panel, <a href='https://www.civics101podcast.org/civics-101-episodes/clw2'>NHPR's <em>Civics 101</em></a> interviewed several of us about what civic education looks like in our classrooms.</p>
+              <h4>Student Perspectives on Liberty and Learning</h4>
+              <div class='modal-embed'><iframe src="https://www.youtube.com/embed/YAno089cApU?si=E4qiW1nx8GApaeSd&start=705" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            `,
+            linkSections: [
+              {
+                heading: 'Press',
+                items: [
+                  { meta: 'Civics 101 · NHPR', title: 'Why Students Are Having a Tough Time', detail: 'March 2026', url: 'https://www.civics101podcast.org/civics-101-episodes/clw2', action: 'listen' },
+                  { meta: 'The Renovator', title: 'The Civic Learning Week National Forum', detail: 'March 2026', url: 'https://therenovator.substack.com/p/the-civic-learning-week-national', action: 'read' },
+                ],
+              },
+            ],
+          }
+        },
+        {
+          id: "ibtta",
+          label: "Dallas, TX · 2025",
+          title: "IBTTA Technology Summit",
+          desc: "Invited speaker on AI and road safety at the international transportation summit.",
+          bgImage: "/images/ibtta.jpeg",
+          modal: {
+            label: "Dallas, TX · 2025",
+            title: "IBTTA Technology Summit",
+            meta: "Speaker",
+            content: `
+            <p>Invited to present to 1,100+ attendees at the International Bridge, Tunnel and Turnpike Association's Technology Summit in Dallas, following recognition for <a href='https://youtu.be/h1dHoLHaSDc?si=385VILxfsBtdd1_K'><em>The Road to Vision Zero</em></a>, my documentary on AI-powered road safety.</p>
+            <h4>Presentation</h4>
+              <div class='modal-embed'><iframe src="https://www.youtube.com/embed/axoGrMKPKs0?si=5S7v1kCm2K_hrvHT&amp;start=404" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            `
+          }
+        },
+        {
+          id: "news",
+          label: "Officials & Media",
+          title: "Recognition",
+          desc: "Recognized by the Governor, U.S. Senators, and regional press for advocacy and filmmaking.",
+          bgImage: "/images/news.jpg",
+          modal: {
+            label: "Officials & Media",
+            title: "Recognition",
+            meta: "Across press, elected officials, and others",
+            content: `
+              <p>Recognition from elected officials and coverage from regional media for documentary filmmaking, civic advocacy, and student leadership.</p>
+
+              <h4>Ohio Governor Mike DeWine</h4>
+              <figure>
+              <div class='modal-embed'><iframe src="https://www.youtube.com/embed/cUyLjtmfbcw?si=F36HiMEsjOamftsr" title="Recognition from Ohio Governor Mike DeWine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                <figcaption>Video of recognition, April 2025</figcaption>
+              </figure>
+              <h4>U.S. Senator Bernie Moreno</h4>
+                            <figure>
+                <img src="/images/bernie-moreno.jpg" loading="lazy" alt="Letter of recognition from U.S. Senator Sherrod Brown" />
+                <figcaption>Letter of recognition, April 2025</figcaption>
+              </figure>
+                            <h4>U.S. Senator Sherrod Brown</h4>
+              <figure>
+                <img src="/images/sherrod-brown.jpg" loading="lazy" alt="Letter of recognition from U.S. Senator Sherrod Brown" />
+                <figcaption>Letter of recognition, May 2023</figcaption>
+              </figure>
+
+              <h4>Ohio Director of Health Dr. Bruce Vanderhoff</h4>
+              <figure>
+              <div class='modal-embed'><iframe src="https://www.youtube.com/embed/rrI8SK_bns8?si=4F99OQD9WcfzBklg" title="Recognition from Ohio Governor Mike DeWine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                <figcaption>Video of recognition, April 2026</figcaption>
+              </figure>
+            `,
+            linkSections: [
+              {
+                heading: 'Press',
+                items: [
+                  { meta: 'WOSU Public Media', title: 'Two Olentangy Liberty students win top honors in C-SPAN student documentary contest', detail: 'May 2026', action: 'read', url: 'https://www.wosu.org/arts-culture/2026-05-04/two-olentangy-liberty-students-win-top-honors-in-c-span-student-documentary-contest' },
+                  { meta: 'Delaware Gazette', title: 'Kurian wins C-SPAN contest again', detail: 'March 2026', action: 'read', url: 'https://www.delgazette.com/2026/03/15/kurian-wins-c-span-contest-again/' },
+                  { meta: 'WOSU Public Media', title: 'Fascinating Ohio: Teen Edition', detail: 'August 2025', action: 'listen', url: 'https://www.wosu.org/show/all-sides/2025-08-07/fascinating-ohio-teen-edition-state-fair-junior-fair-board-member-ninja-warriors-documentarian' },
+                  { meta: 'WOSU Public Media', title: 'Powell teen takes first prize in C-SPAN student documentary contest', detail: 'April 2025', action: 'read', url: 'https://www.wosu.org/arts-culture/2025-04-18/powell-teen-takes-first-prize-in-c-span-student-documentary-contest' },
+                  { meta: 'NBC4 WCMH-TV', title: 'Olentangy student wins first place in documentary contest', detail: 'April 2025', action: 'read', url: 'https://www.nbc4i.com/news/local-news/powell/olentangy-student-wins-first-place-in-documentary-contest/' },
+                  { meta: 'IBTTA', title: 'Young Voices, Big Impact: Ben Kurian and the Road to Vision Zero', detail: 'April 2025', action: 'read', url: 'https://www.ibtta.org/insights/ben-kurian-and-road-vision-zero' },
+                  { meta: 'ABC6 / WSYX', title: 'Local student wins national documentary competition', detail: 'March 2025', action: 'read', url: 'https://abc6onyourside.com/news/local/local-student-wins-national-documentary-competition-olentangy-liberty-ben-kurian-ai-road-highway-safety-cspan-studentcam' },
+                  { meta: '10TV', title: 'Central Ohio student wins national award for raising awareness of career education', detail: 'April 2024', action: 'watch', url: 'https://www.10tv.com/video/news/local/central-ohio-student-wins-national-award-for-raising-awareness-of-career-education/530-d2156794-9c8b-40df-a21e-e45a40a19686' },
+                  { meta: 'Spectrum News 1', title: "Powell student wins prize in C-SPAN's StudentCam competition", detail: 'April 2024', action: 'read', url: 'https://spectrumnews1.com/oh/columbus/news/2024/04/12/powell-student-wins-prize-c-span-competition-' },
+                  { meta: 'Delaware Gazette', title: 'Kurian places second in C-SPAN contest', detail: 'April 2024', action: 'read', url: 'https://www.delgazette.com/2024/04/10/kurian-places-second-in-c-span-contest/' },
+                  { meta: 'NBC4 WCMH-TV', title: 'Olentangy Liberty middle schooler honored by C-SPAN', detail: 'April 2024', action: 'read', url: 'https://www.nbc4i.com/news/local-news/tell-me-something-good/olentangy-liberty-middle-schooler-honored-by-c-span/' },
+                  { meta: 'Spectrum News 1', title: 'Middle school student creates documentary on opioids', detail: 'April 2023', action: 'read', url: 'https://spectrumnews1.com/oh/columbus/in-focus/2023/04/28/middle-school-student-creates-documentary-on-opioids' },
+                  { meta: 'Delaware Gazette', title: 'Local student wins C-SPAN contest', detail: 'April 2023', action: 'read', url: 'https://www.delgazette.com/2023/04/05/local-student-wins-c-span-contest/' },
+                  { meta: 'Spectrum News 1', title: 'Powell student wins international video competition', detail: 'June 2022', action: 'read', url: 'https://spectrumnews1.com/oh/columbus/news/2022/06/14/video-competition-winner-' },
+                ],
+              },
+            ],
+          }
+        }
+      ]
+    }
+  ],
+
+  footer: {
+    heading: "Get in touch",
+    links: [
+      { label: "Email", url: "mailto:hello@benkurian.com" },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/ben-kurian/" },
+      { label: "YouTube", url: "https://www.youtube.com/@benkurian317" },
+      { label: "Instagram", url: "https://www.instagram.com/benkurian_/" }
+    ],
+    copy: "© 2026 Ben Kurian"
+  }
+};
+
+export function getAllCards() {
+  return SITE_DATA.sections.flatMap((section) => section.cards);
+}
+
+export function getModalById(id: string) {
+  return getAllCards().find((card) => card.id === id)?.modal;
+}

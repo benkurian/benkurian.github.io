@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found — Ben Kurian" description="The page you're looking for doesn't exist.">
+  <header class="masthead scrolled">
+    <div class="masthead-inner">
+      <a href="/" class="masthead-brand">Ben Kurian</a>
+    </div>
+  </header>
+
+  <section class="notfound">
+    <div class="notfound-code" aria-hidden="true">404</div>
+    <div class="notfound-ornament"></div>
+    <div class="notfound-label">Error 404</div>
+    <h1 class="notfound-title">Page Not Found</h1>
+    <div class="notfound-rule"></div>
+    <p class="notfound-desc site-text">The page you're looking for has moved, or never existed.</p>
+    <a href="/" class="notfound-back">Return Home</a>
+  </section>
+</BaseLayout>

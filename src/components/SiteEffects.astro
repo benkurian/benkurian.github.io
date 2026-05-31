@@ -1,0 +1,91 @@
+<script>
+  const masthead = document.querySelector('.masthead');
+  let scrolled = false;
+
+  function checkMasthead() {
+    const shouldBeScrolled = window.scrollY > 60;
+    if (shouldBeScrolled !== scrolled) {
+      scrolled = shouldBeScrolled;
+      masthead?.classList.toggle('scrolled', scrolled);
+    }
+  }
+
+  window.addEventListener('scroll', checkMasthead, { passive: true });
+  checkMasthead();
+
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>('.masthead-nav a[data-section]');
+  const sections = [...navLinks]
+    .map((link) => {
+      const id = link.getAttribute('data-section');
+      const el = id ? document.getElementById(id) : null;
+      return el ? { el, link, visible: false } : null;
+    })
+    .filter(Boolean) as { el: HTMLElement; link: HTMLAnchorElement; visible: boolean }[];
+
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const match = sections.find((s) => s.el === entry.target);
+        if (match) match.visible = entry.isIntersecting;
+      });
+
+      let active: (typeof sections)[number] | null = null;
+      for (const section of sections) {
+        if (section.visible) {
+          active = section;
+          break;
+        }
+      }
+
+      navLinks.forEach((l) => l.classList.remove('active'));
+      active?.link.classList.add('active');
+    },
+    { threshold: 0, rootMargin: '-20% 0px -60% 0px' },
+  );
+
+  sections.forEach((s) => navObserver.observe(s.el));
+
+  const reveals = document.querySelectorAll('.reveal');
+  reveals.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('vis');
+    }
+  });
+  document.documentElement.classList.add('reveal-ready');
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('vis');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -30px 0px' },
+  );
+
+  reveals.forEach((el) => {
+    if (!el.classList.contains('vis')) revealObserver.observe(el);
+  });
+
+  const backToTop = document.getElementById('backToTop');
+  let backToTopVisible = false;
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      const shouldShow = window.scrollY > window.innerHeight;
+      if (shouldShow !== backToTopVisible) {
+        backToTopVisible = shouldShow;
+        backToTop?.classList.toggle('visible', shouldShow);
+      }
+    },
+    { passive: true },
+  );
+
+  backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

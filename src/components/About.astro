@@ -1,0 +1,25 @@
+---
+import type { SiteData } from '../types/site';
+
+interface Props {
+  about: SiteData['about'];
+}
+
+const { about } = Astro.props;
+---
+
+<section class="about-section" id="about">
+  <div class="about-inner" id="aboutInner">
+    <div class="reveal">
+      <div class="about-label">{about.label}</div>
+      <h2 class="about-heading">{about.heading}</h2>
+      {about.paragraphs.map((paragraph) => <p class="about-text" set:html={paragraph} />)}
+    </div>
+    <div class="about-right reveal">
+      <div class="about-photo">
+        {about.photo ? <img src={about.photo} alt="Ben Kurian" /> : 'Photo'}
+      </div>
+    </div>
+  </div>
+</section>
+<div class="about-trailer" id="aboutTrailer"></div>

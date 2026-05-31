@@ -1,0 +1,54 @@
+---
+import type { SiteData } from '../types/site';
+
+interface Props {
+  hero: SiteData['hero'];
+}
+
+const { hero } = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero-bg" id="heroBg" style={hero.bgImage ? `background-image:url('${hero.bgImage}')` : undefined}></div>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-date" id="heroDate">{hero.date}</div>
+  <div class="hero-ornament"></div>
+  <h1 class="hero-name" id="heroName">
+    {hero.name.map((line) => <span>{line}</span>)}
+  </h1>
+  <div class="hero-rule"></div>
+  <p class="hero-subtitle" id="heroSub">{hero.subtitle}</p>
+  <div class="hero-scroll"><span>Scroll</span><div class="hero-scroll-line"></div></div>
+</section>
+
+<script>
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // skip parallax
+  } else if (window.innerWidth >= 768) {
+    const heroBg = document.getElementById('heroBg');
+    if (heroBg) {
+      let ticking = false;
+      function update() {
+        const scrollY = window.scrollY;
+        const viewport = window.innerHeight;
+        if (scrollY < viewport) {
+          const progress = scrollY / viewport;
+          const scale = 1.1 - progress * 0.05;
+          heroBg!.style.transform = `translate3d(0,${scrollY * 0.2}px,0) scale(${scale})`;
+        }
+        ticking = false;
+      }
+      update();
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (!ticking) {
+            requestAnimationFrame(update);
+            ticking = true;
+          }
+        },
+        { passive: true },
+      );
+    }
+  }
+</script>

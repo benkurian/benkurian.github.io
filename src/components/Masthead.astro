@@ -1,0 +1,70 @@
+---
+import { SITE_DATA } from '../data/site';
+
+const navSections = SITE_DATA.sections;
+const resumeUrl = SITE_DATA.resumeUrl;
+---
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="#" class="masthead-brand">Ben Kurian</a>
+    <nav>
+      <ul class="masthead-nav" id="navList">
+        <li><a href="#about" data-section="about">About</a></li>
+        {
+          navSections.map((section) => (
+            <li>
+              <a href={`#${section.id}`} data-section={section.id}>
+                {section.title}
+              </a>
+            </li>
+          ))
+        }
+        {
+          resumeUrl && (
+            <li>
+              <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
+                Résumé
+              </a>
+            </li>
+          )
+        }
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#about">About</a>
+  {navSections.map((section) => <a href={`#${section.id}`}>{section.title}</a>)}
+  {resumeUrl && <a href={resumeUrl} target="_blank" rel="noopener noreferrer">Résumé</a>}
+</nav>
+
+<script>
+  const btn = document.getElementById('hamburgerBtn');
+  const nav = document.getElementById('mobileNav');
+
+  function closeMobileNav() {
+    btn?.classList.remove('active');
+    nav?.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  btn?.addEventListener('click', () => {
+    const isOpen = nav?.classList.contains('open');
+    if (isOpen) {
+      closeMobileNav();
+    } else {
+      btn.classList.add('active');
+      nav?.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  nav?.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).tagName === 'A') closeMobileNav();
+  });
+</script>
