@@ -28,8 +28,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html.page-entering body {
+  opacity: 0;
+}
+
 html.page-enter body {
-  animation: page-enter var(--page-transition-duration) var(--page-transition-ease) both;
+  opacity: 1;
+  transition: opacity var(--page-transition-duration) var(--page-transition-ease);
 }
 
 html.page-leaving body {
@@ -37,16 +42,9 @@ html.page-leaving body {
   transition: opacity var(--page-transition-duration) var(--page-transition-ease);
 }
 
-@keyframes page-enter {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  html.page-enter body {
-    animation: none;
-  }
-
+  html.page-entering body,
+  html.page-enter body,
   html.page-leaving body {
     opacity: 1;
     transition: none;
@@ -140,6 +138,9 @@ a {
   width: 100%;
   height: 1px;
   background: var(--fg);
+  transition:
+    transform var(--menu-transition-duration) var(--page-transition-ease),
+    opacity calc(var(--menu-transition-duration) * 0.6) ease;
 }
 
 .hamburger.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
@@ -158,12 +159,20 @@ a {
   padding: var(--page-pad);
   gap: 8px;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
+  transition:
+    opacity var(--menu-transition-duration) var(--page-transition-ease),
+    visibility 0s linear var(--menu-transition-duration);
 }
 
 .mobile-nav.open {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
+  transition:
+    opacity var(--menu-transition-duration) var(--page-transition-ease),
+    visibility 0s;
 }
 
 .mobile-nav a {
@@ -173,6 +182,36 @@ a {
   text-decoration: none;
   line-height: 1.35;
   letter-spacing: -0.01em;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity var(--menu-transition-duration) var(--page-transition-ease),
+    transform var(--menu-transition-duration) var(--page-transition-ease);
+}
+
+.mobile-nav.open a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-nav.open a:nth-child(1) { transition-delay: 0.04s; }
+.mobile-nav.open a:nth-child(2) { transition-delay: 0.07s; }
+.mobile-nav.open a:nth-child(3) { transition-delay: 0.1s; }
+.mobile-nav.open a:nth-child(4) { transition-delay: 0.13s; }
+.mobile-nav.open a:nth-child(5) { transition-delay: 0.16s; }
+.mobile-nav.open a:nth-child(6) { transition-delay: 0.19s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hamburger span,
+  .mobile-nav,
+  .mobile-nav a {
+    transition: none;
+    transform: none;
+  }
+
+  .mobile-nav a {
+    opacity: 1;
+  }
 }
 
 /* ── HERO ── */
@@ -182,7 +221,7 @@ a {
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.35fr;
   gap: clamp(32px, 6vw, 80px);
   align-items: end;
 }
@@ -217,19 +256,27 @@ a {
 
 .hero-figure {
   margin: 0;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1.43 / 1;
 }
 
 .hero-figure img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 120%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
 }
 
 /* ── ABOUT ── */
 .about-inner {
   padding-block: 56px 72px;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(var(--about-photo-min), var(--about-photo-max));
+  grid-template-columns: minmax(var(--about-photo-min), var(--about-photo-max)) minmax(0, 1.15fr);
   gap: clamp(40px, 5vw, 72px);
   align-items: stretch;
 }
@@ -273,6 +320,7 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  will-change: transform;
 }
 
 /* ── SECTIONS ── */
@@ -353,9 +401,43 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 50%;
   transform: scale(1);
   transition: transform var(--panel-hover-duration) var(--panel-hover-ease);
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .panel-media img {
+      animation: panel-drift linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+
+    .panel-grid[data-layout="hero-side"] .panel:first-child .panel-media img {
+      animation-name: panel-drift-hero;
+    }
+  }
+}
+
+@keyframes panel-drift {
+  from {
+    object-position: center var(--panel-drift-from);
+  }
+
+  to {
+    object-position: center var(--panel-drift-to);
+  }
+}
+
+@keyframes panel-drift-hero {
+  from {
+    object-position: center var(--panel-drift-hero-from);
+  }
+
+  to {
+    object-position: center var(--panel-drift-hero-to);
+  }
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
@@ -648,6 +730,10 @@ a {
   }
 
   .about-photo {
+    display: none;
+  }
+
+  .panel-meta {
     display: none;
   }
 

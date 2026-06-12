@@ -34,10 +34,15 @@
   --panel-hover-scale: 1.02;
   --panel-hover-duration: 0.9s;
   --panel-hover-ease: cubic-bezier(0.33, 1, 0.68, 1);
+  --panel-drift-from: 46%;
+  --panel-drift-to: 54%;
+  --panel-drift-hero-from: 42%;
+  --panel-drift-hero-to: 58%;
 
   --scroll-duration: 1.8s;
   --scroll-duration-max: 2.4s;
 
-  --page-transition-duration: 0.38s;
-  --page-transition-ease: cubic-bezier(0.33, 1, 0.68, 1);
+  --page-transition-duration: 0.3s;
+  --page-transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --menu-transition-duration: 0.32s;
 }

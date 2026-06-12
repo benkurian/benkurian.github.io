@@ -10,10 +10,6 @@ const { about } = Astro.props;
 
 <section class="page-shell" id="about">
   <div class="about-inner">
-    <div class="about-text-col">
-      <p class="about-lead">{about.heading}</p>
-      {about.paragraphs.map((paragraph) => <p class="about-text" set:html={paragraph} />)}
-    </div>
     {
       about.photo && (
         <figure class="about-photo">
@@ -21,5 +17,58 @@ const { about } = Astro.props;
         </figure>
       )
     }
+    <div class="about-text-col">
+      <p class="about-lead">{about.heading}</p>
+      {about.paragraphs.map((paragraph) => <p class="about-text" set:html={paragraph} />)}
+    </div>
   </div>
 </section>
+
+<script>
+  // Performant scroll-driven zoom effect for the About photo
+  const initAboutZoom = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const aboutPhoto = document.querySelector('.about-photo');
+    const aboutImg = aboutPhoto?.querySelector('img');
+
+    if (aboutPhoto && aboutImg) {
+      let ticking = false;
+
+      const updateZoom = () => {
+        const rect = aboutPhoto.getBoundingClientRect();
+        // Only compute scale if the element is visible inside the viewport
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          const elementCenter = rect.top + rect.height / 2;
+          const viewportCenter = window.innerHeight / 2;
+          
+          // Distance from screen center, normalized relative to max possible distance
+          const maxDistance = (window.innerHeight + rect.height) / 2;
+          const distanceFromCenter = Math.abs(elementCenter - viewportCenter);
+          const pct = Math.min(1, distanceFromCenter / maxDistance); // 0 at center, 1 at viewport edges
+          
+          // Image starts at scale(1.0) at the viewport edges, and zooms IN to scale(1.12) as it centers
+          const scaleVal = 1.12 - (pct * 0.12);
+          
+          aboutImg.style.transform = `scale3d(${scaleVal}, ${scaleVal}, 1)`;
+        }
+        ticking = false;
+      };
+
+      const onScroll = () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateZoom);
+          ticking = true;
+        }
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      updateZoom();
+    }
+  };
+
+  // Initialize on load and page transition swaps
+  initAboutZoom();
+  document.addEventListener('astro:after-swap', initAboutZoom);
+</script>

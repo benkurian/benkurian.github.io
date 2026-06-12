@@ -30,7 +30,7 @@ var navbar = `
     </div>
 `;
 
-// Update the navbar container's innerHTML
+// Update the navbar container’s innerHTML
 var navbarContainer = document.getElementById("navbarContainer");
 navbarContainer.innerHTML = navbar;
 

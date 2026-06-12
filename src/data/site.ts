@@ -12,8 +12,8 @@ export const SITE_DATA: SiteData = {
     heading: "I’m Ben Kurian, a junior at Olentangy Liberty High School in Columbus, Ohio.",
     paragraphs: [
       "I’m interested in how healthcare decisions actually get made: who gets access, what gets prioritized, and how structures shape patient outcomes. That’s led me to work on a few different projects in that space.",
-      "I co-founded SPAN, a student-led, nonpartisan healthcare advocacy organization now active in over fifteen states. I also help run Project MedBridge, a Central Ohio initiative rerouting 30,000+ pounds of surplus medical equipment globally.",
-      "A lot of my work takes different forms—documentary filmmaking, public speaking, and organizing—usually around the same core questions. I’ve been lucky to have some of that work recognized: airtime on national TV, recognition from Ohio's Governor and U.S. Senators, and invitations to speak at conferences from Dallas to Philadelphia.",
+      "I co-founded SPAN, a student-led, nonpartisan healthcare advocacy organization now active in over fifteen states. I also lead Project MedBridge, a Central Ohio initiative rerouting 30,000+ pounds of surplus medical equipment globally.",
+      "A lot of my work takes different forms—documentary filmmaking, public speaking, and organizing—usually around the same core questions. I’ve been lucky to have some of that work recognized: airtime on national TV, recognition from Ohio’s Governor and U.S. Senators, and invitations to speak at conferences from Dallas to Philadelphia.",
       "Outside of that, I’m a competitive debater and a multi-instrumentalist. I bike everywhere, collect vinyl, and am always hunting down new Oreo flavors <i>(current favorite: Chocolate Ganache Thins)</i>.",
       "I’m planning to study public health, especially the policy side of how care is delivered and who it reaches.",
     ],
@@ -41,7 +41,7 @@ export const SITE_DATA: SiteData = {
             meta: "Co-Founder & Executive Director",
             content: `
             <p>SPAN (est. 2025) is an organization I co-founded that empowers high school, undergraduate, and medical students to engage directly with state and federal legislation affecting patients. What started as a response to gaps in youth representation in healthcare policy has grown into a national team of over 40 members working across 15+ states and the U.S. Congress.</p>
-            <p>We've worked with over 1,500 legislators through letters, cold calls, and testimony: influencing 52 healthcare bills, including stalling Texas House Bill 5294 and helping introduce legislation to mandate AEDs in Alaskan K–12 schools. SPAN has also partnered with Unite America, Stanford's Deliberative Democracy Lab, and Harvard's Health Fluency Project, and reached over 250,000 people across social media.</p>
+            <p>We’ve worked with over 1,500 legislators through letters, cold calls, and testimony: influencing 52 healthcare bills, including stalling Texas House Bill 5294 and helping introduce legislation to mandate AEDs in Alaskan K–12 schools. SPAN has also partnered with Unite America, Stanford’s Deliberative Democracy Lab, and Harvard’s Health Fluency Project, and reached over 250,000 people across social media.</p>
             <p><a href='https://spanationwide.org'>spanationwide.org</a></p>
             `
           }
@@ -53,11 +53,11 @@ export const SITE_DATA: SiteData = {
           desc: "Collecting surplus medical supplies from Columbus clinics to facilitate access to care abroad.",
           bgImage: "/images/medbridge.jpeg",
           detail: {
-            label: "Central Ohio Initiative · Founder",
+            label: "Central Ohio Initiative",
             title: "Project MedBridge",
-            meta: "Founder & Team Lead",
+            meta: "Co-Founder & Team Lead",
             content: `
-                <p>Project MedBridge (est. 2026) is Central Ohio's first student-led medical supply redistribution network, which I co-founded to address a glaring gap in our city. U.S. hospitals discard an estimated 2 million pounds of unused, unexpired supplies every year, and Central Ohio has no mechanism to redirect any of it. Project MedBridge collects surplus from local hospital systems and ships it to facilities in 135+ countries. Recently, Project MedBridge secured $7,500 in grant funding from the Carnegie Corporation.</p>
+                <p>Project MedBridge (est. 2026) is Central Ohio’s first student-led medical supply redistribution network, which I co-founded to address a glaring gap in our city. U.S. hospitals discard an estimated 2 million pounds of unused, unexpired supplies every year, and Central Ohio has no mechanism to redirect any of it. Project MedBridge collects surplus from local hospital systems and ships it to facilities in 40+ countries. Recently, Project MedBridge secured $7,500 in grant funding from the Carnegie Corporation.</p>
     <p><a href='https://projectmedbridge.org'>projectmedbridge.org</a></p>
            `
           }
@@ -66,14 +66,14 @@ export const SITE_DATA: SiteData = {
           id: "docs",
           label: "Award-Winning Journalism",
           title: "Documentary Filmmaking",
-          desc: "Four consecutive wins in C-SPAN's StudentCam competition.",
+          desc: "Four consecutive wins in C-SPAN’s StudentCam competition.",
           bgImage: "/images/documentary.jpeg",
           detail: {
             label: "Award-Winning Journalism",
             title: "Documentary Filmmaking",
             meta: "Director, producer, and composer",
             content: `
-            <p>I've directed, produced, and scored films on healthcare, education, and public policy since 2022, earning national recognition in the largest student documentary contest in the country.</p>
+            <p>I’ve directed, produced, and scored films on healthcare, education, and public policy since 2022, earning national recognition in the largest student documentary contest in the country.</p>
             <p>I placed in the <a href='http://studentcam.org'>StudentCam documentary competition</a> four consecutive years, competing against roughly 4,000 entries annually. My films have aired on C-SPAN to a viewership of over 50 million and received more than 30,000 cumulative public votes.</p>
             <ul>
               <li><span class='yr'>2026</span> First Prize + Fan Favorite, <a href='https://youtu.be/OJTwR_BkjLY?si=a7UoUbbLySrIHX5s'><em>A Right to Health</em></a></li>
@@ -81,7 +81,7 @@ export const SITE_DATA: SiteData = {
               <li><span class='yr'>2024</span> Second Prize + Fan Favorite, <a href='https://youtu.be/ju_pT2KA4v0?si=0aXuxKS17ee5N0-H'><em>Who Do I Want to Be?</em></a></li>
               <li><span class='yr'>2023</span> First Prize + Fan Favorite, <a href='https://youtu.be/-rcz3fX9laQ?si=kv-Q0aieXBFVnGdG'><em>Losing a Generation</em></a></li>
             </ul>
-            <p>My work has involved interviews with senior stakeholders, including public health officials, faculty from Harvard and Yale, and former U.S. Department of Transportation leadership. I've been formally recognized by <a href='https://www.studentcam.org/2023-first-prize-middle-school-losing-a-generation-by-ben-kurian/'>Governor DeWine, U.S. Senator Sherrod Brown</a>, and others, and have been invited to speak at national conferences in Dallas and Philadelphia.</p>
+            <p>My work has involved interviews with senior stakeholders, including public health officials, faculty from Harvard and Yale, and former U.S. Department of Transportation leadership. I’ve been formally recognized by <a href='https://www.studentcam.org/2023-first-prize-middle-school-losing-a-generation-by-ben-kurian/'>Governor DeWine, U.S. Senator Sherrod Brown</a>, and others, and have been invited to speak at national conferences in Dallas and Philadelphia.</p>
             <h4>Featured: <em>A Right to Health</em> (2026)</h4>
             <div class='work-embed'><iframe src="https://www.youtube.com/embed/OJTwR_BkjLY?si=9UzZoAUCy47qDBty" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
             `
@@ -105,7 +105,7 @@ export const SITE_DATA: SiteData = {
     //         label: "Youth Advisory Council · Member",
     //         title: "Columbus Medical Association Foundation",
     //         meta: "Dec 2025 – Present",
-    //         content: "<p>Selected as one of 15 members on the Columbus Medical Association Foundation's Youth Advisory Council. The council assesses community health needs and allocates $25,000 in annual grant funding to youth-focused organizations across Central Ohio.</p><p>In the current cycle, reviewing and funding programs addressing mental health, substance use, bullying, social inequities, and basic needs — including support for AthletesToAid and We Amplify Voices (WAV).</p>"
+    //         content: "<p>Selected as one of 15 members on the Columbus Medical Association Foundation’s Youth Advisory Council. The council assesses community health needs and allocates $25,000 in annual grant funding to youth-focused organizations across Central Ohio.</p><p>In the current cycle, reviewing and funding programs addressing mental health, substance use, bullying, social inequities, and basic needs — including support for AthletesToAid and We Amplify Voices (WAV).</p>"
     //       }
     //     },
     //     {
@@ -118,7 +118,7 @@ export const SITE_DATA: SiteData = {
     //         label: "Student Advisory Council · Liberty Representative",
     //         title: "SELAC — Student Experience Leadership Advisory Council",
     //         meta: "Oct 2025 – Present · Olentangy Local School District",
-    //         content: "<p>Selected to represent Olentangy Liberty High School on OLSD's SELAC program. Collaborating with district administrators and peers to enhance student life, shape district-wide initiatives, and advise on policies improving equity, engagement, and wellbeing.</p><p>Participating in regular meetings with district leaders to identify key challenges and design actionable solutions that strengthen the student experience across Olentangy Schools.</p>"
+    //         content: "<p>Selected to represent Olentangy Liberty High School on OLSD’s SELAC program. Collaborating with district administrators and peers to enhance student life, shape district-wide initiatives, and advise on policies improving equity, engagement, and wellbeing.</p><p>Participating in regular meetings with district leaders to identify key challenges and design actionable solutions that strengthen the student experience across Olentangy Schools.</p>"
     //       }
     //     },
     //     {
@@ -156,6 +156,11 @@ export const SITE_DATA: SiteData = {
             <figure>
             <img src="/images/osdastates.jpeg" loading="lazy"/>
             <figcaption>OSDA State Finals, March 2026</figcaption>
+            </figure>
+              <p>Additionally, I taught Lincoln-Douglas, Public Forum, and Congressional debate to 30+ middle and high school students through Olentangy’s Summer Enrichment Experience (SEE). I prepared materials for daily lessons and exercises, led instruction throughout the program, and helped organize a debate tournament for participating students.</p>
+            <figure>
+            <img src="/images/see.jpg" loading="lazy"/>
+            <figcaption>Me with tournament champion Gavin at SEE, June 2026</figcaption>
             </figure>
               <h4>Awards</h4>
             <ul>
@@ -217,7 +222,7 @@ export const SITE_DATA: SiteData = {
             title: "TEDxOlentangy Liberty Youth",
             meta: "Speaker · Steering Committee Member",
             content: `
-            <p>In March 2025, I delivered a TEDx talk titled <em>"5 Lessons to Transform a Community"</em>, featured on TEDx's YouTube channel with over 40 million subscribers. The talk shared personal lessons in leadership from reviving my church's Vacation Bible School</p>
+            <p>In March 2025, I delivered a TEDx talk titled <em>"5 Lessons to Transform a Community"</em>, featured on TEDx’s YouTube channel with over 40 million subscribers. The talk shared personal lessons in leadership from reviving my church’s Vacation Bible School</p>
       
             <p>As part of my involvement, I am now part of the steering committee for the <a href='https://www.ted.com/tedx/events/65993'>upcoming TEDxOlentangy Liberty Youth event</a> in April 2026.</p>
 
@@ -306,8 +311,8 @@ export const SITE_DATA: SiteData = {
             title: "Civic Learning Week National Forum",
             meta: "Plenary Speaker",
             content: `
-              <p>My sophomore year, I was invited by the Civic Learning Week Steering Committee for an all-expenses-paid presentation at the National Forum in Philadelphia, co-sponsored by the Bezos Family Foundation, Microsoft, Stanford's Hoover Institution, and leading civic organizations.</p>
-              <p>I joined three other high school students from across the U.S. on a plenary panel moderated by PBS host <a href='https://www.bensheehan.com'>Ben Sheehan</a>, discussing the future of civic learning ahead of America's 250th anniversary. The panel was titled <em>"Student Perspectives on Liberty and Learning."</em> After the panel, <a href='https://www.civics101podcast.org/civics-101-episodes/clw2'>NHPR's <em>Civics 101</em></a> interviewed several of us about what civic education looks like in our classrooms.</p>
+              <p>My sophomore year, I was invited by the Civic Learning Week Steering Committee for an all-expenses-paid presentation at the National Forum in Philadelphia, co-sponsored by the Bezos Family Foundation, Microsoft, Stanford’s Hoover Institution, and leading civic organizations.</p>
+              <p>I joined three other high school students from across the U.S. on a plenary panel moderated by PBS host <a href='https://www.bensheehan.com'>Ben Sheehan</a>, discussing the future of civic learning ahead of America’s 250th anniversary. The panel was titled <em>"Student Perspectives on Liberty and Learning."</em> After the panel, <a href='https://www.civics101podcast.org/civics-101-episodes/clw2'>NHPR’s <em>Civics 101</em></a> interviewed several of us about what civic education looks like in our classrooms.</p>
               <h4>Student Perspectives on Liberty and Learning</h4>
               <div class='work-embed'><iframe src="https://www.youtube.com/embed/YAno089cApU?si=E4qiW1nx8GApaeSd&start=705" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
             `,
@@ -333,7 +338,7 @@ export const SITE_DATA: SiteData = {
             title: "IBTTA Technology Summit",
             meta: "Speaker",
             content: `
-            <p>Invited to present to 1,100+ attendees at the International Bridge, Tunnel and Turnpike Association's Technology Summit in Dallas, following recognition for <a href='https://youtu.be/h1dHoLHaSDc?si=385VILxfsBtdd1_K'><em>The Road to Vision Zero</em></a>, my documentary on AI-powered road safety.</p>
+            <p>Invited to present to 1,100+ attendees at the International Bridge, Tunnel and Turnpike Association’s Technology Summit in Dallas, following recognition for <a href='https://youtu.be/h1dHoLHaSDc?si=385VILxfsBtdd1_K'><em>The Road to Vision Zero</em></a>, my documentary on AI-powered road safety.</p>
             <h4>Presentation</h4>
               <div class='work-embed'><iframe src="https://www.youtube.com/embed/axoGrMKPKs0?si=5S7v1kCm2K_hrvHT&amp;start=404" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
             `
@@ -386,7 +391,7 @@ export const SITE_DATA: SiteData = {
                   { meta: 'IBTTA', title: 'Young Voices, Big Impact: Ben Kurian and the Road to Vision Zero', detail: 'April 2025', url: 'https://www.ibtta.org/insights/ben-kurian-and-road-vision-zero' },
                   { meta: 'ABC6 / WSYX', title: 'Local student wins national documentary competition', detail: 'March 2025', url: 'https://abc6onyourside.com/news/local/local-student-wins-national-documentary-competition-olentangy-liberty-ben-kurian-ai-road-highway-safety-cspan-studentcam' },
                   { meta: '10TV', title: 'Central Ohio student wins national award for raising awareness of career education', detail: 'April 2024', url: 'https://www.10tv.com/video/news/local/central-ohio-student-wins-national-award-for-raising-awareness-of-career-education/530-d2156794-9c8b-40df-a21e-e45a40a19686' },
-                  { meta: 'Spectrum News 1', title: "Powell student wins prize in C-SPAN's StudentCam competition", detail: 'April 2024', url: 'https://spectrumnews1.com/oh/columbus/news/2024/04/12/powell-student-wins-prize-c-span-competition-' },
+                  { meta: 'Spectrum News 1', title: "Powell student wins prize in C-SPAN’s StudentCam competition", detail: 'April 2024', url: 'https://spectrumnews1.com/oh/columbus/news/2024/04/12/powell-student-wins-prize-c-span-competition-' },
                   { meta: 'Delaware Gazette', title: 'Kurian places second in C-SPAN contest', detail: 'April 2024', url: 'https://www.delgazette.com/2024/04/10/kurian-places-second-in-c-span-contest/' },
                   { meta: 'NBC4 WCMH-TV', title: 'Olentangy Liberty middle schooler honored by C-SPAN', detail: 'April 2024', url: 'https://www.nbc4i.com/news/local-news/tell-me-something-good/olentangy-liberty-middle-schooler-honored-by-c-span/' },
                   { meta: 'Spectrum News 1', title: 'Middle school student creates documentary on opioids', detail: 'April 2023', url: 'https://spectrumnews1.com/oh/columbus/in-focus/2023/04/28/middle-school-student-creates-documentary-on-opioids' },

@@ -31,3 +31,43 @@ const { hero } = Astro.props;
     }
   </div>
 </section>
+
+<script>
+  // Performant parallax scroll effect for the hero image
+  const initParallax = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const heroFigure = document.querySelector('.hero-figure');
+    const heroImg = heroFigure?.querySelector('img');
+
+    if (heroFigure && heroImg) {
+      let ticking = false;
+
+      const updateParallax = () => {
+        const rect = heroFigure.getBoundingClientRect();
+        // Only compute/apply transform if the hero figure is in the viewport
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          const scrollY = window.scrollY;
+          const translateVal = scrollY * -0.12;
+          heroImg.style.transform = `translate3d(0, ${translateVal}px, 0)`;
+        }
+        ticking = false;
+      };
+
+      const onScroll = () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      updateParallax();
+    }
+  };
+
+  // Initialize on load and custom swap events
+  initParallax();
+  document.addEventListener('astro:after-swap', initParallax);
+</script>

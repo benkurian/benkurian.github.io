@@ -31,7 +31,7 @@ const resumeUrl = SITE_DATA.resumeUrl;
         }
       </ul>
     </nav>
-    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+    <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -46,25 +46,56 @@ const resumeUrl = SITE_DATA.resumeUrl;
 <script>
   const btn = document.getElementById('hamburgerBtn');
   const nav = document.getElementById('mobileNav');
+  const rootStyles = getComputedStyle(document.documentElement);
+  const menuTransitionMs =
+    (parseFloat(rootStyles.getPropertyValue('--menu-transition-duration')) || 0.32) * 1000;
+
+  function setMenuOpen(isOpen: boolean) {
+    btn?.classList.toggle('active', isOpen);
+    nav?.classList.toggle('open', isOpen);
+    btn?.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
 
   function closeMobileNav() {
-    btn?.classList.remove('active');
-    nav?.classList.remove('open');
-    document.body.style.overflow = '';
+    setMenuOpen(false);
   }
 
   btn?.addEventListener('click', () => {
-    const isOpen = nav?.classList.contains('open');
-    if (isOpen) {
-      closeMobileNav();
-    } else {
-      btn.classList.add('active');
-      nav?.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
+    setMenuOpen(!nav?.classList.contains('open'));
   });
 
   nav?.addEventListener('click', (e) => {
-    if ((e.target as HTMLElement).tagName === 'A') closeMobileNav();
+    const link = (e.target as HTMLElement).closest('a');
+    if (!(link instanceof HTMLAnchorElement)) return;
+
+    if (link.target === '_blank') {
+      closeMobileNav();
+      return;
+    }
+
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('mailto:') || href.startsWith('tel:')) {
+      closeMobileNav();
+      return;
+    }
+
+    e.preventDefault();
+    closeMobileNav();
+
+    const isHomePage =
+      window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+    const hash = href.startsWith('/#') ? href.slice(1) : href.startsWith('#') ? href : null;
+
+    window.setTimeout(() => {
+      if (hash && isHomePage) {
+        const target = document.querySelector(hash);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+      }
+      window.location.assign(link.href);
+    }, menuTransitionMs);
   });
 </script>
