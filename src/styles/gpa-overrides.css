@@ -1,4 +1,4 @@
-/* GPA calculator — Bootstrap mapped to site design tokens */
+/* GPA calculator — mapped to site B&W tokens */
 .gpa-page {
   padding-top: var(--nav-height);
 }
@@ -8,19 +8,32 @@
   border-bottom: 1px solid var(--rule);
 }
 
-.gpa-header h1 {
-  font-family: var(--display);
-  font-weight: var(--weight-normal);
-  font-size: clamp(2rem, 4vw, 2.75rem);
+.gpa-back {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-light);
+  color: var(--fg-muted);
+  text-decoration: none;
   letter-spacing: 0.01em;
+  margin-bottom: 1.5rem;
+}
+
+.gpa-back:hover {
+  color: var(--fg);
+}
+
+.gpa-header h1 {
+  font-family: var(--sans);
+  font-weight: var(--weight-bold);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
 }
 
 .gpa-header p {
   font-family: var(--sans);
   font-size: var(--text-body);
-  font-weight: var(--weight-light);
-  color: var(--cream-dim);
+  color: var(--fg-secondary);
 }
 
 .gpa-app {
@@ -41,31 +54,26 @@
   color: #212529;
 }
 
-/* Map Bootstrap buttons to site button style */
 .gpa-app .btn {
   font-family: var(--sans);
-  font-weight: var(--weight-normal);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 11px;
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  font-size: var(--text-sm);
   border-radius: 0;
-  transition:
-    color 0.35s ease,
-    border-color 0.35s ease,
-    background 0.35s ease;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .gpa-app .btn-primary {
   background: transparent;
-  border-color: var(--gold);
-  color: var(--cream);
+  border-color: var(--fg);
+  color: var(--fg);
 }
 
 .gpa-app .btn-primary:hover,
 .gpa-app .btn-primary:focus {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--bg-deep);
+  background: var(--fg);
+  border-color: var(--fg);
+  color: var(--bg);
 }
 
 .gpa-app .btn-outline-primary,
@@ -73,79 +81,79 @@
 .gpa-app .btn-outline-danger,
 .gpa-app .btn-outline-dark {
   background: transparent;
-  border-color: var(--rule-light);
-  color: var(--cream-dim);
+  border-color: var(--rule-strong);
+  color: var(--fg-secondary);
 }
 
 .gpa-app .btn-outline-primary:hover,
 .gpa-app .btn-outline-secondary:hover,
 .gpa-app .btn-outline-danger:hover,
 .gpa-app .btn-outline-dark:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--bg-deep);
+  background: var(--fg);
+  border-color: var(--fg);
+  color: var(--bg);
 }
 
 .gpa-app .btn-secondary {
   background: transparent;
   border-color: var(--rule);
-  color: var(--cream-dim);
+  color: var(--fg-secondary);
 }
 
 .gpa-app .btn-secondary:hover {
-  background: var(--bg-light);
-  border-color: var(--rule);
-  color: var(--cream);
+  background: #f5f5f5;
+  border-color: var(--rule-strong);
+  color: var(--fg);
 }
 
 .gpa-app .btn-danger {
   background: transparent;
-  border-color: rgba(220, 80, 80, 0.5);
-  color: #f8d7da;
+  border-color: rgba(0, 0, 0, 0.35);
+  color: var(--fg-secondary);
 }
 
 .gpa-app .btn-danger:hover {
-  background: rgba(220, 80, 80, 0.85);
-  border-color: rgba(220, 80, 80, 0.85);
-  color: #fff;
+  background: var(--fg);
+  border-color: var(--fg);
+  color: var(--bg);
 }
 
 .gpa-app .card {
   border-radius: 0;
   border-color: var(--rule);
-  background: var(--bg-deep);
-  color: var(--cream);
+  background: var(--bg);
+  color: var(--fg);
 }
 
 .gpa-app .form-control,
 .gpa-app .form-select {
   border-radius: 0;
   border-color: var(--rule);
-  background: var(--bg-deep);
-  color: var(--cream);
+  background: var(--bg);
+  color: var(--fg);
 }
 
 .gpa-app .form-control:focus,
 .gpa-app .form-select:focus {
-  border-color: var(--gold-dim);
+  border-color: var(--fg);
   box-shadow: none;
-  background: var(--bg-deep);
-  color: var(--cream);
+  background: var(--bg);
+  color: var(--fg);
 }
 
 .gpa-app .input-group-text {
   border-radius: 0;
   border-color: var(--rule);
-  background: var(--bg-card);
-  color: var(--cream-dim);
+  background: #f5f5f5;
+  color: var(--fg-secondary);
 }
 
 .gpa-app .badge.bg-primary {
-  background: var(--gold) !important;
-  color: var(--bg-deep) !important;
+  background: var(--fg) !important;
+  color: var(--bg) !important;
 }
 
 .gpa-app .badge.bg-secondary {
-  background: var(--bg-light) !important;
-  color: var(--cream) !important;
+  background: #eee !important;
+  color: var(--fg) !important;
 }

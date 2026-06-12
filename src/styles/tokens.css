@@ -1,37 +1,43 @@
 :root {
-  /* Color */
-  --bg: #6b1222;
-  --bg-deep: #4e0c18;
-  --bg-light: #7e1a2e;
-  --bg-card: #551018;
-  --cream: #f2e8da;
-  --cream-dim: rgba(242, 232, 218, 0.6);
-  --cream-faint: rgba(242, 232, 218, 0.18);
-  --cream-ghost: rgba(242, 232, 218, 0.08);
-  --gold: #c9a96e;
-  --gold-dim: rgba(201, 169, 110, 0.4);
-  --rule: rgba(242, 232, 218, 0.12);
-  --rule-light: rgba(242, 232, 218, 0.06);
+  --bg: #ffffff;
+  --fg: #111111;
+  --fg-secondary: #555555;
+  --fg-muted: #999999;
 
-  /* Typography */
-  --display: "Cormorant Garamond", "Georgia", serif;
-  --sans: "Libre Franklin", "Helvetica Neue", sans-serif;
+  --rule: rgba(0, 0, 0, 0.12);
+  --rule-strong: rgba(0, 0, 0, 0.22);
+  --tracking-wide: 0.04em;
+
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --weight-light: 300;
   --weight-normal: 400;
   --weight-medium: 500;
-  --weight-semibold: 600;
-  --text-label: 10px;
-  --text-small: 12px;
-  --text-body: 15px;
-  --tracking-label: 0.2em;
-  --tracking-wide: 0.14em;
+  --weight-bold: 700;
+  --weight-heavy: 800;
 
-  /* Layout */
-  --page-max: 1400px;
-  --page-pad: 48px;
-  --nav-height: 56px;
+  --text-sm: 15px;
+  --text-panel-meta: 17px;
+  --text-panel: clamp(21px, 1.35vw, 24px);
+  --text-section: clamp(32px, 3.8vw, 44px);
+  --text-body: 20px;
+  --text-about: clamp(24px, 1.35vw, 28px);
+  --text-h1: clamp(48px, 9vw, 96px);
 
-  /* Motion */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --page-pad: clamp(20px, 5vw, 48px);
+  --nav-height: 44px;
+  --panel-gap: 24px;
+  --about-photo-min: 300px;
+  --about-photo-max: 400px;
+
+  --work-max: 720px;
+
+  --panel-hover-scale: 1.02;
+  --panel-hover-duration: 0.9s;
+  --panel-hover-ease: cubic-bezier(0.33, 1, 0.68, 1);
+
+  --scroll-duration: 1.8s;
+  --scroll-duration-max: 2.4s;
+
+  --page-transition-duration: 0.38s;
+  --page-transition-ease: cubic-bezier(0.33, 1, 0.68, 1);
 }

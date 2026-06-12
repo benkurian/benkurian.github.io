@@ -1,22 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&display=swap');
-
 :root {
-  --bg: #6b1222;
-  --bg-deep: #4e0c18;
-  --cream: #f2e8da;
-  --cream-dim: rgba(242, 232, 218, 0.6);
-  --gold: #c9a96e;
-  --rule: rgba(242, 232, 218, 0.12);
-  --rule-light: rgba(242, 232, 218, 0.06);
-  --display: 'Cormorant Garamond', 'Georgia', serif;
-  --sans: 'Libre Franklin', 'Helvetica Neue', sans-serif;
+  --bg: #ffffff;
+  --fg: #000000;
+  --fg-secondary: #3a3a3a;
+  --fg-muted: #888888;
+  --rule: rgba(0, 0, 0, 0.12);
+  --rule-strong: rgba(0, 0, 0, 0.25);
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --weight-normal: 400;
   --weight-medium: 500;
-  --tracking-wide: 0.14em;
+  --weight-bold: 700;
+  --tracking-wide: 0.08em;
 }
 
 body {
   font-family: var(--sans);
+  background: var(--bg);
+  color: var(--fg);
 }
 
 h1,
@@ -25,13 +24,13 @@ h3,
 h4,
 h5,
 .display-1 {
-  font-family: var(--display);
-  font-weight: var(--weight-normal);
+  font-family: var(--sans);
+  font-weight: var(--weight-bold);
 }
 
 .btn {
   font-family: var(--sans);
-  font-weight: var(--weight-normal);
+  font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   border-radius: 0;
@@ -39,65 +38,65 @@ h5,
 
 .btn-primary {
   background: transparent;
-  border-color: var(--gold);
-  color: var(--cream);
+  border-color: var(--fg);
+  color: var(--fg);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--bg-deep);
+  background: var(--fg);
+  border-color: var(--fg);
+  color: var(--bg);
 }
 
 .btn-outline-primary,
 .btn-outline-secondary,
 .btn-outline-dark {
   background: transparent;
-  border-color: var(--rule-light);
-  color: var(--cream-dim);
+  border-color: var(--rule-strong);
+  color: var(--fg-secondary);
 }
 
 .btn-outline-primary:hover,
 .btn-outline-secondary:hover,
 .btn-outline-dark:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--bg-deep);
+  background: var(--fg);
+  border-color: var(--fg);
+  color: var(--bg);
 }
 
 .navbar-brand {
-  font-family: var(--display);
-  font-weight: 600;
+  font-family: var(--sans);
+  font-weight: var(--weight-bold);
 }
 
 .navbar-nav .nav-link {
   font-family: var(--sans);
   font-size: 10px;
   font-weight: var(--weight-medium);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .card-title {
-  font-family: var(--display);
-  font-weight: var(--weight-normal);
+  font-family: var(--sans);
+  font-weight: var(--weight-bold);
 }
 
 .card-text {
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: var(--weight-normal);
 }
 
 .lead {
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: var(--weight-normal);
 }
 
 small,
 .text-muted {
   font-family: var(--sans);
-  font-weight: 300;
+  color: var(--fg-muted) !important;
 }
 
 .badge {

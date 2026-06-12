@@ -3,29 +3,22 @@ import type { Card } from '../types/site';
 
 interface Props {
   card: Card;
+  sectionId: string;
 }
 
-const { card } = Astro.props;
+const { card, sectionId } = Astro.props;
 ---
 
-<div
-  class="card reveal"
-  data-modal={card.id}
-  tabindex="0"
-  role="button"
-  aria-label={`View details: ${card.title}`}
->
-  <div
-    class="card-bg"
-    style={card.bgImage ? `background-image:url('${card.bgImage}')` : undefined}
-  ></div>
-  <div class="card-overlay"></div>
-  <div class="card-arrow">
-    <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
-  </div>
-  <div class="card-content">
-    <div class="card-label">{card.label}</div>
-    <div class="card-title">{card.title}</div>
-    <div class="card-desc">{card.desc}</div>
-  </div>
-</div>
+<a href={`/${sectionId}/${card.id}/`} class="panel">
+  {
+    card.bgImage && (
+      <div class="panel-media">
+        <img src={card.bgImage} alt="" loading="lazy" />
+      </div>
+    )
+  }
+  <p class="panel-caption">
+    <span class="panel-title">{card.title}</span>
+    {card.label && <span class="panel-meta">{card.label}</span>}
+  </p>
+</a>

@@ -9,12 +9,9 @@ interface Props {
 const { section } = Astro.props;
 ---
 
-<section class="section" id={section.id}>
-  <div class="section-header reveal">
-    <span class="section-number">{section.number}</span>
-    <h2 class="section-title">{section.title}</h2>
-  </div>
-  <div class="grid stagger" data-layout={section.layout}>
-    {section.cards.map((card) => <Card card={card} />)}
+<section class="section page-shell" id={section.id}>
+  <h2 class="section-title">{section.title}</h2>
+  <div class="panel-grid" data-layout={section.layout}>
+    {section.cards.map((card) => <Card card={card} sectionId={section.id} />)}
   </div>
 </section>

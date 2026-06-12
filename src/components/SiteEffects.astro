@@ -1,91 +1,154 @@
 <script>
-  const masthead = document.querySelector('.masthead');
-  let scrolled = false;
+  import Lenis from 'lenis';
 
-  function checkMasthead() {
-    const shouldBeScrolled = window.scrollY > 60;
-    if (shouldBeScrolled !== scrolled) {
-      scrolled = shouldBeScrolled;
-      masthead?.classList.toggle('scrolled', scrolled);
-    }
+  const rootStyles = getComputedStyle(document.documentElement);
+  const navHeight = parseInt(rootStyles.getPropertyValue('--nav-height'), 10) || 44;
+  const scrollDurationMin = parseFloat(rootStyles.getPropertyValue('--scroll-duration')) || 1.8;
+  const scrollDurationMax = parseFloat(rootStyles.getPropertyValue('--scroll-duration-max')) || 2.4;
+  const scrollEase = (t: number) => 1 - (1 - t) ** 4;
+
+  function scrollDurationFor(target: HTMLElement) {
+    const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+    const distance = Math.abs(top - window.scrollY);
+    const scaled = distance / 900 + scrollDurationMin;
+    return Math.min(scrollDurationMax, Math.max(scrollDurationMin, scaled));
   }
 
-  window.addEventListener('scroll', checkMasthead, { passive: true });
-  checkMasthead();
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const pageTransitionMs =
+    (parseFloat(rootStyles.getPropertyValue('--page-transition-duration')) || 0.38) * 1000;
+  const pageTransitionKey = 'page-transition';
+
+  const isHomePage =
+    window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+
+  if (!prefersReducedMotion && sessionStorage.getItem(pageTransitionKey)) {
+    document.documentElement.classList.add('page-enter');
+    sessionStorage.removeItem(pageTransitionKey);
+  }
+
+  let lenis: Lenis | null = null;
+
+  if (!prefersReducedMotion && isHomePage) {
+    lenis = new Lenis({
+      lerp: 0.09,
+      smoothWheel: true,
+      wheelMultiplier: 0.9,
+    });
+
+    function raf(time: number) {
+      lenis?.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }
+
+  document.addEventListener('click', (event) => {
+    if (prefersReducedMotion || event.defaultPrevented) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    const link = (event.target as Element).closest('a');
+    if (!(link instanceof HTMLAnchorElement)) return;
+    if (link.target === '_blank' || link.hasAttribute('download')) return;
+
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+
+    const url = new URL(link.href, window.location.href);
+    if (url.origin !== window.location.origin || url.href === window.location.href) return;
+
+    const isPageTransition =
+      link.classList.contains('panel') ||
+      link.classList.contains('work-back') ||
+      link.classList.contains('notfound-back') ||
+      link.classList.contains('masthead-brand');
+
+    if (!isPageTransition) return;
+
+    event.preventDefault();
+    sessionStorage.setItem(pageTransitionKey, '1');
+    document.documentElement.classList.add('page-leaving');
+
+    window.setTimeout(() => {
+      window.location.assign(url.href);
+    }, pageTransitionMs);
+  });
+
+  function hashFromHref(href: string | null) {
+    if (!href || href === '#') return null;
+    if (href.startsWith('/#')) return href.slice(1);
+    if (href.startsWith('#')) return href;
+    return null;
+  }
+
+  document
+    .querySelectorAll<HTMLAnchorElement>('a[href^="#"], a[href^="/#"]')
+    .forEach((anchor) => {
+      anchor.addEventListener('click', (event) => {
+        const hash = hashFromHref(anchor.getAttribute('href'));
+        if (!hash) return;
+
+        if (anchor.getAttribute('href')?.startsWith('/#') && !isHomePage) return;
+
+        const target = document.querySelector(hash);
+        if (!target) return;
+
+        event.preventDefault();
+
+        if (lenis) {
+          lenis.scrollTo(target, {
+            offset: -navHeight,
+            duration: scrollDurationFor(target as HTMLElement),
+            easing: scrollEase,
+          });
+        } else {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
 
   const navLinks = document.querySelectorAll<HTMLAnchorElement>('.masthead-nav a[data-section]');
   const sections = [...navLinks]
     .map((link) => {
       const id = link.getAttribute('data-section');
       const el = id ? document.getElementById(id) : null;
-      return el ? { el, link, visible: false } : null;
+      return el ? { el, link } : null;
     })
-    .filter(Boolean) as { el: HTMLElement; link: HTMLAnchorElement; visible: boolean }[];
+    .filter(Boolean) as { el: HTMLElement; link: HTMLAnchorElement }[];
 
-  const navObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const match = sections.find((s) => s.el === entry.target);
-        if (match) match.visible = entry.isIntersecting;
-      });
+  function getScrollY() {
+    return lenis ? lenis.scroll : window.scrollY;
+  }
 
-      let active: (typeof sections)[number] | null = null;
+  function updateActiveNav() {
+    if (!sections.length) return;
+
+    const scrollY = getScrollY();
+    const viewportEnd = scrollY + window.innerHeight;
+    const pageEnd = document.documentElement.scrollHeight;
+    const marker = scrollY + navHeight + 96;
+
+    let active = sections[0];
+
+    if (viewportEnd >= pageEnd - 48) {
+      active = sections[sections.length - 1];
+    } else {
       for (const section of sections) {
-        if (section.visible) {
-          active = section;
-          break;
-        }
+        const top = section.el.getBoundingClientRect().top + scrollY;
+        if (top <= marker) active = section;
       }
-
-      navLinks.forEach((l) => l.classList.remove('active'));
-      active?.link.classList.add('active');
-    },
-    { threshold: 0, rootMargin: '-20% 0px -60% 0px' },
-  );
-
-  sections.forEach((s) => navObserver.observe(s.el));
-
-  const reveals = document.querySelectorAll('.reveal');
-  reveals.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      el.classList.add('vis');
     }
-  });
-  document.documentElement.classList.add('reveal-ready');
 
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('vis');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.08, rootMargin: '0px 0px -30px 0px' },
-  );
+    navLinks.forEach((l) => l.classList.remove('active'));
+    active.link.classList.add('active');
+  }
 
-  reveals.forEach((el) => {
-    if (!el.classList.contains('vis')) revealObserver.observe(el);
-  });
+  if (sections.length) {
+    if (lenis) lenis.on('scroll', updateActiveNav);
+    else window.addEventListener('scroll', updateActiveNav, { passive: true });
 
-  const backToTop = document.getElementById('backToTop');
-  let backToTopVisible = false;
-
-  window.addEventListener(
-    'scroll',
-    () => {
-      const shouldShow = window.scrollY > window.innerHeight;
-      if (shouldShow !== backToTopVisible) {
-        backToTopVisible = shouldShow;
-        backToTop?.classList.toggle('visible', shouldShow);
-      }
-    },
-    { passive: true },
-  );
-
-  backToTop?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    window.addEventListener('resize', updateActiveNav);
+    updateActiveNav();
+  }
 </script>

@@ -3,24 +3,21 @@ import type { SiteData } from '../types/site';
 export const SITE_DATA: SiteData = {
 
   hero: {
-    date: "Portfolio — 2026",
     name: ["Ben", "Kurian"],
     subtitle: "",
     bgImage: "/images/hero.jpg"
   },
 
   about: {
-    label: "About",
-    heading: "I'm Ben Kurian, a sophomore at Olentangy Liberty High School in Columbus, Ohio.",
+    heading: "I’m Ben Kurian, a junior at Olentangy Liberty High School in Columbus, Ohio.",
     paragraphs: [
-      //  "My work sits at the intersection of medicine and systems-level thinking: understanding not just how healthcare works, but how the decisions around it get made. That led me to co-found SPAN, a nonpartisan youth healthcare advocacy organization now active in over fifteen states, and to start Project MedBridge, which redirects surplus medical supplies from Central Ohio clinics to low-resource communities abroad.",
-      "My work sits at the intersection of medicine and systems-level thinking: understanding not just how healthcare works, but how the decisions around it get made. That led me to co-found SPAN, a nonpartisan youth healthcare advocacy organization now active in over fifteen states.",
-      "This very thread runs in most of what I do, be it through documentary filmmaking, public speaking, or civic leadership. I’ve been lucky to have some of this work recognized: four consecutive wins in C-SPAN’s StudentCam competition, recognition from Ohio's Governor and U.S. Senators, and invitations to speak at conferences from Dallas to Philadelphia.",
-      "Outside of all that, I’m a multi-instrumentalist and competitive debater. I bike everywhere, collect vinyl, and am always hunting down new Oreo flavors (<em>current favorite: Chocolate Ganache Thins</em>).",
-      "Above all, I am a student. I want to study psychiatry, because it feels like the niche where everything I care about converges: systems, people, and the messy space in between."
+      "I’m interested in how healthcare decisions actually get made: who gets access, what gets prioritized, and how structures shape patient outcomes. That’s led me to work on a few different projects in that space.",
+      "I co-founded SPAN, a student-led, nonpartisan healthcare advocacy organization now active in over fifteen states. I also help run Project MedBridge, a Central Ohio initiative rerouting 30,000+ pounds of surplus medical equipment globally.",
+      "A lot of my work takes different forms—documentary filmmaking, public speaking, and organizing—usually around the same core questions. I’ve been lucky to have some of that work recognized: airtime on national TV, recognition from Ohio's Governor and U.S. Senators, and invitations to speak at conferences from Dallas to Philadelphia.",
+      "Outside of that, I’m a competitive debater and a multi-instrumentalist. I bike everywhere, collect vinyl, and am always hunting down new Oreo flavors <i>(current favorite: Chocolate Ganache Thins)</i>.",
+      "I’m planning to study public health, especially the policy side of how care is delivered and who it reaches.",
     ],
-    photo: "/images/ben.jpg",
-    video: null
+    photo: "/images/ben.jpg"
   },
 
   // Resume link in the nav — set to the path of your resume PDF
@@ -29,7 +26,6 @@ export const SITE_DATA: SiteData = {
   sections: [
     {
       id: "projects",
-      number: "01",
       title: "Projects",
       layout: "hero-side",
       cards: [
@@ -39,14 +35,14 @@ export const SITE_DATA: SiteData = {
           title: "Students for Patient Advocacy Nationwide",
           desc: "Youth-led healthcare advocacy org working across 15+ states and the U.S. Congress.",
           bgImage: "/images/span.jpg",
-          modal: {
+          detail: {
             label: "National Organization",
             title: "Students for Patient Advocacy Nationwide",
             meta: "Co-Founder & Executive Director",
             content: `
             <p>SPAN (est. 2025) is an organization I co-founded that empowers high school, undergraduate, and medical students to engage directly with state and federal legislation affecting patients. What started as a response to gaps in youth representation in healthcare policy has grown into a national team of over 40 members working across 15+ states and the U.S. Congress.</p>
             <p>We've worked with over 1,500 legislators through letters, cold calls, and testimony: influencing 52 healthcare bills, including stalling Texas House Bill 5294 and helping introduce legislation to mandate AEDs in Alaskan K–12 schools. SPAN has also partnered with Unite America, Stanford's Deliberative Democracy Lab, and Harvard's Health Fluency Project, and reached over 250,000 people across social media.</p>
-            <a href='https://spanationwide.org' class='modal-link'>Visit SPAN →</a>
+            <p><a href='https://spanationwide.org'>spanationwide.org</a></p>
             `
           }
         },
@@ -56,13 +52,13 @@ export const SITE_DATA: SiteData = {
           title: "Project MedBridge",
           desc: "Collecting surplus medical supplies from Columbus clinics to facilitate access to care abroad.",
           bgImage: "/images/medbridge.jpeg",
-          modal: {
+          detail: {
             label: "Central Ohio Initiative · Founder",
             title: "Project MedBridge",
             meta: "Founder & Team Lead",
             content: `
                 <p>Project MedBridge (est. 2026) is Central Ohio's first student-led medical supply redistribution network, which I co-founded to address a glaring gap in our city. U.S. hospitals discard an estimated 2 million pounds of unused, unexpired supplies every year, and Central Ohio has no mechanism to redirect any of it. Project MedBridge collects surplus from local hospital systems and ships it to facilities in 135+ countries. Recently, Project MedBridge secured $7,500 in grant funding from the Carnegie Corporation.</p>
-    <a href='https://projectmedbridge.org' class='modal-link'>Visit Project MedBridge →</a>
+    <p><a href='https://projectmedbridge.org'>projectmedbridge.org</a></p>
            `
           }
         },
@@ -72,7 +68,7 @@ export const SITE_DATA: SiteData = {
           title: "Documentary Filmmaking",
           desc: "Four consecutive wins in C-SPAN's StudentCam competition.",
           bgImage: "/images/documentary.jpeg",
-          modal: {
+          detail: {
             label: "Award-Winning Journalism",
             title: "Documentary Filmmaking",
             meta: "Director, producer, and composer",
@@ -87,7 +83,7 @@ export const SITE_DATA: SiteData = {
             </ul>
             <p>My work has involved interviews with senior stakeholders, including public health officials, faculty from Harvard and Yale, and former U.S. Department of Transportation leadership. I've been formally recognized by <a href='https://www.studentcam.org/2023-first-prize-middle-school-losing-a-generation-by-ben-kurian/'>Governor DeWine, U.S. Senator Sherrod Brown</a>, and others, and have been invited to speak at national conferences in Dallas and Philadelphia.</p>
             <h4>Featured: <em>A Right to Health</em> (2026)</h4>
-            <div class='modal-embed'><iframe src="https://www.youtube.com/embed/OJTwR_BkjLY?si=9UzZoAUCy47qDBty" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div class='work-embed'><iframe src="https://www.youtube.com/embed/OJTwR_BkjLY?si=9UzZoAUCy47qDBty" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
             `
           }
         }
@@ -105,7 +101,7 @@ export const SITE_DATA: SiteData = {
     //       title: "Youth Advisory Council",
     //       desc: "One of 15 members allocating $25,000 in annual grant funding to youth health organizations.",
     //       bgImage: "",
-    //       modal: {
+    //       detail: {
     //         label: "Youth Advisory Council · Member",
     //         title: "Columbus Medical Association Foundation",
     //         meta: "Dec 2025 – Present",
@@ -118,7 +114,7 @@ export const SITE_DATA: SiteData = {
     //       title: "SELAC Representative",
     //       desc: "Advising district administrators on equity, engagement, and student wellbeing policies.",
     //       bgImage: "",
-    //       modal: {
+    //       detail: {
     //         label: "Student Advisory Council · Liberty Representative",
     //         title: "SELAC — Student Experience Leadership Advisory Council",
     //         meta: "Oct 2025 – Present · Olentangy Local School District",
@@ -131,7 +127,7 @@ export const SITE_DATA: SiteData = {
     //       title: "Young Leaders Fellow",
     //       desc: "Leading Project Demos — a $7,500-backed civic engagement initiative in Central Ohio.",
     //       bgImage: "",
-    //       modal: {
+    //       detail: {
     //         label: "Carnegie Young Leaders · Fellow",
     //         title: "Project Demos",
     //         meta: "Jul 2025 – Present · $7,500 Carnegie Foundation Grant",
@@ -142,7 +138,6 @@ export const SITE_DATA: SiteData = {
     // },
     {
       id: "school",
-      number: "03",
       title: "School",
       layout: "thirds",
       cards: [
@@ -152,7 +147,7 @@ export const SITE_DATA: SiteData = {
           title: "Speech & Debate",
           desc: "National qualifying performances across Congressional and Lincoln-Douglas formats.",
           bgImage: "/images/debate.jpeg",
-          modal: {
+          detail: {
             label: "Lincoln-Douglas & World Schools",
             title: "Speech & Debate",
             meta: "Team Captain",
@@ -183,7 +178,7 @@ export const SITE_DATA: SiteData = {
           title: "HOSA—Future Health Professionals",
           desc: "State Vice President. Top 16 international finish in Biomedical Debate.",
           bgImage: "/images/hosa.jpeg",
-          modal: {
+          detail: {
             label: "International Awards",
             title: "HOSA—Future Health Professionals",
             meta: "State Vice President",
@@ -217,7 +212,7 @@ export const SITE_DATA: SiteData = {
           title: "TEDxOlentangy Liberty Youth",
           desc: "Delivered and official TEDx talk and now plan future events.",
           bgImage: "/images/tedx.jpg",
-          modal: {
+          detail: {
             label: "District-Wide Event",
             title: "TEDxOlentangy Liberty Youth",
             meta: "Speaker · Steering Committee Member",
@@ -227,7 +222,7 @@ export const SITE_DATA: SiteData = {
             <p>As part of my involvement, I am now part of the steering committee for the <a href='https://www.ted.com/tedx/events/65993'>upcoming TEDxOlentangy Liberty Youth event</a> in April 2026.</p>
 
             <h4>5 Lessons to Transform a Community (2025)</h4>
-            <div class='modal-embed'><iframe src="https://www.youtube.com/embed/dcyyexBZ1u0?si=b7vq6hKtlwIgj8XO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div class='work-embed'><iframe src="https://www.youtube.com/embed/dcyyexBZ1u0?si=b7vq6hKtlwIgj8XO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
             `
           }
         }
@@ -235,7 +230,6 @@ export const SITE_DATA: SiteData = {
     },
     {
       id: "music",
-      number: "04",
       title: "Music",
       layout: "halves",
       cards: [
@@ -245,7 +239,7 @@ export const SITE_DATA: SiteData = {
           title: "Performance",
           desc: "Musician trained across 4 instruments.",
           bgImage: "/images/performance.png",
-          modal: {
+          detail: {
             label: "Piano · Violin · Drums · Bass Guitar",
             title: "Performance",
             meta: "Multi-instrumentalist",
@@ -255,7 +249,7 @@ export const SITE_DATA: SiteData = {
             <p>I currently serve as Concertmaster of the Olentangy Liberty Chamber Orchestra and Assistant Concertmaster of the Columbus Symphony Youth Orchestra, and have been selected twice to the OMEA All-State Orchestra as one of the top 30 violinists in Ohio.</p>
 
             <h4>Featured: <em>Violin Concerto No. 1 in G minor, Movement I</em> — Max Bruch (2026)</h4>
-            <div class='modal-embed'><iframe src="https://www.youtube.com/embed/3gJRLNuiUCA?si=bJVWfMuVLGoiOyYv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div class='work-embed'><iframe src="https://www.youtube.com/embed/3gJRLNuiUCA?si=bJVWfMuVLGoiOyYv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
             <h4>Awards</h4>
             <ul>
               <li><span class='yr'>2026</span> Second Prize, Columbus Symphony Youth Orchestra Concerto Competition</li>
@@ -273,7 +267,7 @@ export const SITE_DATA: SiteData = {
           title: "Composition",
           desc: "Original works awarded internationally by the National Guild of Piano Teachers.",
           bgImage: "/images/composition.jpeg",
-          modal: {
+          detail: {
             label: "3× International Award",
             title: "Composition",
             meta: "Award-winning composer",
@@ -285,10 +279,10 @@ export const SITE_DATA: SiteData = {
               {
                 heading: 'Featured Works',
                 items: [
-                  { meta: '2025', title: 'Consolation', detail: 'Hubert Kaszynski Award + Arnetta Jonas Claymes Award', url: '/scores/consolation.pdf', action: 'view' },
-                  { meta: '2025', title: 'The Turn of Winter', detail: 'Finalist', url: '/scores/the-turn-of-winter.pdf', action: 'view' },
-                  { meta: '2024', title: 'The Heist', detail: 'Honorable Mention', url: '/scores/the-heist.pdf', action: 'view' },
-                  { meta: '2023', title: 'Sinking', detail: 'Honorable Mention', url: '/scores/sinking.pdf', action: 'view' },
+                  { meta: '2025', title: 'Consolation', detail: 'Hubert Kaszynski Award + Arnetta Jonas Claymes Award', url: '/scores/consolation.pdf' },
+                  { meta: '2025', title: 'The Turn of Winter', detail: 'Finalist', url: '/scores/the-turn-of-winter.pdf' },
+                  { meta: '2024', title: 'The Heist', detail: 'Honorable Mention', url: '/scores/the-heist.pdf' },
+                  { meta: '2023', title: 'Sinking', detail: 'Honorable Mention', url: '/scores/sinking.pdf' },
                 ],
               },
             ],
@@ -298,7 +292,6 @@ export const SITE_DATA: SiteData = {
     },
     {
       id: "public",
-      number: "05",
       title: "Public",
       layout: "thirds",
       cards: [
@@ -308,7 +301,7 @@ export const SITE_DATA: SiteData = {
           title: "Civic Learning Week",
           desc: "Panelist discussing youth civic engagement with national leaders in education.",
           bgImage: "/images/civicweek.jpg",
-          modal: {
+          detail: {
             label: "Philadelphia, PA · 2026",
             title: "Civic Learning Week National Forum",
             meta: "Plenary Speaker",
@@ -316,14 +309,14 @@ export const SITE_DATA: SiteData = {
               <p>My sophomore year, I was invited by the Civic Learning Week Steering Committee for an all-expenses-paid presentation at the National Forum in Philadelphia, co-sponsored by the Bezos Family Foundation, Microsoft, Stanford's Hoover Institution, and leading civic organizations.</p>
               <p>I joined three other high school students from across the U.S. on a plenary panel moderated by PBS host <a href='https://www.bensheehan.com'>Ben Sheehan</a>, discussing the future of civic learning ahead of America's 250th anniversary. The panel was titled <em>"Student Perspectives on Liberty and Learning."</em> After the panel, <a href='https://www.civics101podcast.org/civics-101-episodes/clw2'>NHPR's <em>Civics 101</em></a> interviewed several of us about what civic education looks like in our classrooms.</p>
               <h4>Student Perspectives on Liberty and Learning</h4>
-              <div class='modal-embed'><iframe src="https://www.youtube.com/embed/YAno089cApU?si=E4qiW1nx8GApaeSd&start=705" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              <div class='work-embed'><iframe src="https://www.youtube.com/embed/YAno089cApU?si=E4qiW1nx8GApaeSd&start=705" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
             `,
             linkSections: [
               {
                 heading: 'Press',
                 items: [
-                  { meta: 'Civics 101 · NHPR', title: 'Why Students Are Having a Tough Time', detail: 'March 2026', url: 'https://www.civics101podcast.org/civics-101-episodes/clw2', action: 'listen' },
-                  { meta: 'The Renovator', title: 'The Civic Learning Week National Forum', detail: 'March 2026', url: 'https://therenovator.substack.com/p/the-civic-learning-week-national', action: 'read' },
+                  { meta: 'Civics 101 · NHPR', title: 'Why Students Are Having a Tough Time', detail: 'March 2026', url: 'https://www.civics101podcast.org/civics-101-episodes/clw2' },
+                  { meta: 'The Renovator', title: 'The Civic Learning Week National Forum', detail: 'March 2026', url: 'https://therenovator.substack.com/p/the-civic-learning-week-national' },
                 ],
               },
             ],
@@ -335,14 +328,14 @@ export const SITE_DATA: SiteData = {
           title: "IBTTA Technology Summit",
           desc: "Invited speaker on AI and road safety at the international transportation summit.",
           bgImage: "/images/ibtta.jpeg",
-          modal: {
+          detail: {
             label: "Dallas, TX · 2025",
             title: "IBTTA Technology Summit",
             meta: "Speaker",
             content: `
             <p>Invited to present to 1,100+ attendees at the International Bridge, Tunnel and Turnpike Association's Technology Summit in Dallas, following recognition for <a href='https://youtu.be/h1dHoLHaSDc?si=385VILxfsBtdd1_K'><em>The Road to Vision Zero</em></a>, my documentary on AI-powered road safety.</p>
             <h4>Presentation</h4>
-              <div class='modal-embed'><iframe src="https://www.youtube.com/embed/axoGrMKPKs0?si=5S7v1kCm2K_hrvHT&amp;start=404" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              <div class='work-embed'><iframe src="https://www.youtube.com/embed/axoGrMKPKs0?si=5S7v1kCm2K_hrvHT&amp;start=404" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
             `
           }
         },
@@ -352,7 +345,7 @@ export const SITE_DATA: SiteData = {
           title: "Recognition",
           desc: "Recognized by the Governor, U.S. Senators, and regional press for advocacy and filmmaking.",
           bgImage: "/images/news.jpg",
-          modal: {
+          detail: {
             label: "Officials & Media",
             title: "Recognition",
             meta: "Across press, elected officials, and others",
@@ -361,7 +354,7 @@ export const SITE_DATA: SiteData = {
 
               <h4>Ohio Governor Mike DeWine</h4>
               <figure>
-              <div class='modal-embed'><iframe src="https://www.youtube.com/embed/cUyLjtmfbcw?si=F36HiMEsjOamftsr" title="Recognition from Ohio Governor Mike DeWine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              <div class='work-embed'><iframe src="https://www.youtube.com/embed/cUyLjtmfbcw?si=F36HiMEsjOamftsr" title="Recognition from Ohio Governor Mike DeWine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
                 <figcaption>Video of recognition, April 2025</figcaption>
               </figure>
               <h4>U.S. Senator Bernie Moreno</h4>
@@ -377,7 +370,7 @@ export const SITE_DATA: SiteData = {
 
               <h4>Ohio Director of Health Dr. Bruce Vanderhoff</h4>
               <figure>
-              <div class='modal-embed'><iframe src="https://www.youtube.com/embed/rrI8SK_bns8?si=4F99OQD9WcfzBklg" title="Recognition from Ohio Governor Mike DeWine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              <div class='work-embed'><iframe src="https://www.youtube.com/embed/rrI8SK_bns8?si=4F99OQD9WcfzBklg" title="Recognition from Ohio Governor Mike DeWine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
                 <figcaption>Video of recognition, April 2026</figcaption>
               </figure>
             `,
@@ -385,20 +378,20 @@ export const SITE_DATA: SiteData = {
               {
                 heading: 'Press',
                 items: [
-                  { meta: 'WOSU Public Media', title: 'Two Olentangy Liberty students win top honors in C-SPAN student documentary contest', detail: 'May 2026', action: 'read', url: 'https://www.wosu.org/arts-culture/2026-05-04/two-olentangy-liberty-students-win-top-honors-in-c-span-student-documentary-contest' },
-                  { meta: 'Delaware Gazette', title: 'Kurian wins C-SPAN contest again', detail: 'March 2026', action: 'read', url: 'https://www.delgazette.com/2026/03/15/kurian-wins-c-span-contest-again/' },
-                  { meta: 'WOSU Public Media', title: 'Fascinating Ohio: Teen Edition', detail: 'August 2025', action: 'listen', url: 'https://www.wosu.org/show/all-sides/2025-08-07/fascinating-ohio-teen-edition-state-fair-junior-fair-board-member-ninja-warriors-documentarian' },
-                  { meta: 'WOSU Public Media', title: 'Powell teen takes first prize in C-SPAN student documentary contest', detail: 'April 2025', action: 'read', url: 'https://www.wosu.org/arts-culture/2025-04-18/powell-teen-takes-first-prize-in-c-span-student-documentary-contest' },
-                  { meta: 'NBC4 WCMH-TV', title: 'Olentangy student wins first place in documentary contest', detail: 'April 2025', action: 'read', url: 'https://www.nbc4i.com/news/local-news/powell/olentangy-student-wins-first-place-in-documentary-contest/' },
-                  { meta: 'IBTTA', title: 'Young Voices, Big Impact: Ben Kurian and the Road to Vision Zero', detail: 'April 2025', action: 'read', url: 'https://www.ibtta.org/insights/ben-kurian-and-road-vision-zero' },
-                  { meta: 'ABC6 / WSYX', title: 'Local student wins national documentary competition', detail: 'March 2025', action: 'read', url: 'https://abc6onyourside.com/news/local/local-student-wins-national-documentary-competition-olentangy-liberty-ben-kurian-ai-road-highway-safety-cspan-studentcam' },
-                  { meta: '10TV', title: 'Central Ohio student wins national award for raising awareness of career education', detail: 'April 2024', action: 'watch', url: 'https://www.10tv.com/video/news/local/central-ohio-student-wins-national-award-for-raising-awareness-of-career-education/530-d2156794-9c8b-40df-a21e-e45a40a19686' },
-                  { meta: 'Spectrum News 1', title: "Powell student wins prize in C-SPAN's StudentCam competition", detail: 'April 2024', action: 'read', url: 'https://spectrumnews1.com/oh/columbus/news/2024/04/12/powell-student-wins-prize-c-span-competition-' },
-                  { meta: 'Delaware Gazette', title: 'Kurian places second in C-SPAN contest', detail: 'April 2024', action: 'read', url: 'https://www.delgazette.com/2024/04/10/kurian-places-second-in-c-span-contest/' },
-                  { meta: 'NBC4 WCMH-TV', title: 'Olentangy Liberty middle schooler honored by C-SPAN', detail: 'April 2024', action: 'read', url: 'https://www.nbc4i.com/news/local-news/tell-me-something-good/olentangy-liberty-middle-schooler-honored-by-c-span/' },
-                  { meta: 'Spectrum News 1', title: 'Middle school student creates documentary on opioids', detail: 'April 2023', action: 'read', url: 'https://spectrumnews1.com/oh/columbus/in-focus/2023/04/28/middle-school-student-creates-documentary-on-opioids' },
-                  { meta: 'Delaware Gazette', title: 'Local student wins C-SPAN contest', detail: 'April 2023', action: 'read', url: 'https://www.delgazette.com/2023/04/05/local-student-wins-c-span-contest/' },
-                  { meta: 'Spectrum News 1', title: 'Powell student wins international video competition', detail: 'June 2022', action: 'read', url: 'https://spectrumnews1.com/oh/columbus/news/2022/06/14/video-competition-winner-' },
+                  { meta: 'WOSU Public Media', title: 'Two Olentangy Liberty students win top honors in C-SPAN student documentary contest', detail: 'May 2026', url: 'https://www.wosu.org/arts-culture/2026-05-04/two-olentangy-liberty-students-win-top-honors-in-c-span-student-documentary-contest' },
+                  { meta: 'Delaware Gazette', title: 'Kurian wins C-SPAN contest again', detail: 'March 2026', url: 'https://www.delgazette.com/2026/03/15/kurian-wins-c-span-contest-again/' },
+                  { meta: 'WOSU Public Media', title: 'Fascinating Ohio: Teen Edition', detail: 'August 2025', url: 'https://www.wosu.org/show/all-sides/2025-08-07/fascinating-ohio-teen-edition-state-fair-junior-fair-board-member-ninja-warriors-documentarian' },
+                  { meta: 'WOSU Public Media', title: 'Powell teen takes first prize in C-SPAN student documentary contest', detail: 'April 2025', url: 'https://www.wosu.org/arts-culture/2025-04-18/powell-teen-takes-first-prize-in-c-span-student-documentary-contest' },
+                  { meta: 'NBC4 WCMH-TV', title: 'Olentangy student wins first place in documentary contest', detail: 'April 2025', url: 'https://www.nbc4i.com/news/local-news/powell/olentangy-student-wins-first-place-in-documentary-contest/' },
+                  { meta: 'IBTTA', title: 'Young Voices, Big Impact: Ben Kurian and the Road to Vision Zero', detail: 'April 2025', url: 'https://www.ibtta.org/insights/ben-kurian-and-road-vision-zero' },
+                  { meta: 'ABC6 / WSYX', title: 'Local student wins national documentary competition', detail: 'March 2025', url: 'https://abc6onyourside.com/news/local/local-student-wins-national-documentary-competition-olentangy-liberty-ben-kurian-ai-road-highway-safety-cspan-studentcam' },
+                  { meta: '10TV', title: 'Central Ohio student wins national award for raising awareness of career education', detail: 'April 2024', url: 'https://www.10tv.com/video/news/local/central-ohio-student-wins-national-award-for-raising-awareness-of-career-education/530-d2156794-9c8b-40df-a21e-e45a40a19686' },
+                  { meta: 'Spectrum News 1', title: "Powell student wins prize in C-SPAN's StudentCam competition", detail: 'April 2024', url: 'https://spectrumnews1.com/oh/columbus/news/2024/04/12/powell-student-wins-prize-c-span-competition-' },
+                  { meta: 'Delaware Gazette', title: 'Kurian places second in C-SPAN contest', detail: 'April 2024', url: 'https://www.delgazette.com/2024/04/10/kurian-places-second-in-c-span-contest/' },
+                  { meta: 'NBC4 WCMH-TV', title: 'Olentangy Liberty middle schooler honored by C-SPAN', detail: 'April 2024', url: 'https://www.nbc4i.com/news/local-news/tell-me-something-good/olentangy-liberty-middle-schooler-honored-by-c-span/' },
+                  { meta: 'Spectrum News 1', title: 'Middle school student creates documentary on opioids', detail: 'April 2023', url: 'https://spectrumnews1.com/oh/columbus/in-focus/2023/04/28/middle-school-student-creates-documentary-on-opioids' },
+                  { meta: 'Delaware Gazette', title: 'Local student wins C-SPAN contest', detail: 'April 2023', url: 'https://www.delgazette.com/2023/04/05/local-student-wins-c-span-contest/' },
+                  { meta: 'Spectrum News 1', title: 'Powell student wins international video competition', detail: 'June 2022', url: 'https://spectrumnews1.com/oh/columbus/news/2022/06/14/video-competition-winner-' },
                 ],
               },
             ],
@@ -409,7 +402,6 @@ export const SITE_DATA: SiteData = {
   ],
 
   footer: {
-    heading: "Get in touch",
     links: [
       { label: "Email", url: "mailto:hello@benkurian.com" },
       { label: "LinkedIn", url: "https://www.linkedin.com/in/ben-kurian/" },
@@ -420,10 +412,8 @@ export const SITE_DATA: SiteData = {
   }
 };
 
-export function getAllCards() {
-  return SITE_DATA.sections.flatMap((section) => section.cards);
-}
-
-export function getModalById(id: string) {
-  return getAllCards().find((card) => card.id === id)?.modal;
+export function getAllCardEntries() {
+  return SITE_DATA.sections.flatMap((section) =>
+    section.cards.map((card) => ({ sectionId: section.id, card })),
+  );
 }

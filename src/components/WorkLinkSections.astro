@@ -1,0 +1,30 @@
+---
+import type { WorkLinkSection } from '../types/site';
+
+interface Props {
+  sections: WorkLinkSection[];
+}
+
+const { sections } = Astro.props;
+---
+
+{
+  sections.map((section) => (
+    <div class="work-links">
+      <p class="work-links-label">{section.heading}</p>
+      <ul class="work-links-list">
+        {section.items.map((item) => (
+          <li>
+            <a href={item.url} target="_blank" rel="noopener">
+              {item.title}
+            </a>
+            <span>
+              {item.meta}
+              {item.detail ? ` · ${item.detail}` : ''}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))
+}

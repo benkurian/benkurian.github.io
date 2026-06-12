@@ -1,0 +1,32 @@
+/* Helvetica Neue — same family used on bureautonalli.com (Framer-hosted cuts, self-hosted here). */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Bold.woff2") format("woff2");
+  font-weight: 700 800;
+  font-style: normal;
+  font-display: swap;
+}

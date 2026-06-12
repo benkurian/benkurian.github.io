@@ -1,22 +1,21 @@
-export interface ModalLinkItem {
+export interface WorkLinkItem {
   meta: string;
   title: string;
   detail: string;
   url: string;
-  action: 'listen' | 'watch' | 'read' | 'view';
 }
 
-export interface ModalLinkSection {
+export interface WorkLinkSection {
   heading: string;
-  items: ModalLinkItem[];
+  items: WorkLinkItem[];
 }
 
-export interface ModalData {
+export interface WorkDetail {
   label: string;
   title: string;
   meta: string;
   content: string;
-  linkSections?: ModalLinkSection[];
+  linkSections?: WorkLinkSection[];
 }
 
 export interface Card {
@@ -25,12 +24,11 @@ export interface Card {
   title: string;
   desc: string;
   bgImage?: string;
-  modal: ModalData;
+  detail: WorkDetail;
 }
 
 export interface Section {
   id: string;
-  number: string;
   title: string;
   layout: 'hero-side' | 'thirds' | 'halves';
   cards: Card[];
@@ -43,22 +41,18 @@ export interface FooterLink {
 
 export interface SiteData {
   hero: {
-    date: string;
     name: string[];
     subtitle: string;
     bgImage: string;
   };
   about: {
-    label: string;
     heading: string;
     paragraphs: string[];
     photo: string;
-    video: string | null;
   };
   resumeUrl: string;
   sections: Section[];
   footer: {
-    heading: string;
     links: FooterLink[];
     copy: string;
   };
