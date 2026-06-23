@@ -190,19 +190,20 @@ export const SITE_DATA: SiteData = {
             content: `
               <p>I refounded the Olentangy Liberty High School HOSA chapter and currently serve as Vice President of Public Relations, as well as an elected member of Ohio HOSA’s State Executive Council.</p>
 
-              <p>At the state level, I represent over 12,000 members and 250 chapters across Ohio, representing the state at the International Leadership Conference (Indianapolis, IN) this June and advocating for expanded health sciences education in Washington D.C. this September.</p>
+              <p>As State Vice President, I represent about 12,500 members and 250 chapters across Ohio, representing the state at the International Leadership Conference (Indianapolis, IN) this June and advocating for expanded health sciences education in Washington D.C. this September.</p>
 
               <p>Locally, I lead outreach and communications, growing our chapter membership from 60 to over 100 students. I’ve organized speaker events with neurosurgeons, psychiatrists, and medical students, and helped guide our chapter to 33+ state placers and 7+ international placers.</p>
               
               <h4>Awards</h4>
               <ul>
+                <li><span class='yr'>2026</span> Top 10 globally in Allied Health Statistics, ILC</li>
                 <li><span class='yr'>2025</span> Top 16 globally in Biomedical Debate, ILC (highest placement from Ohio, ~1,000 teams)</li>
                 <li><span class='yr'>2025</span> 6th Place in Health Education, SLC</li>
                 <li><span class='yr'>2026</span> 4th Place in Medical Law & Ethics, SLC</li>
               </ul>
               <figure>
               <img src="/images/hosasec.jpeg" />
-              <figcaption>2026-2027 State Executive Council, April 2026</figcaption>
+              <figcaption>International Leadership Conference, June 2026</figcaption>
               </figure>
               <figure>
               <img src="/images/top16.jpeg" />
