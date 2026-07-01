@@ -1,6 +1,7 @@
 ---
 import Analytics from '../components/Analytics.astro';
 import SiteEffects from '../components/SiteEffects.astro';
+import { SITE, absoluteAssetUrl, canonicalUrl } from '../lib/seo';
 import '../styles/fonts.css';
 import '../styles/global.css';
 import lenisCss from 'lenis/dist/lenis.css?inline';
@@ -8,16 +9,27 @@ import lenisCss from 'lenis/dist/lenis.css?inline';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
   effects?: boolean;
 }
 
 const {
-  title = 'Ben Kurian',
-  description = 'Portfolio of Ben Kurian — documentary filmmaker, healthcare advocate, and musician based in Columbus, Ohio.',
+  title = SITE.homeTitle,
+  description = SITE.defaultDescription,
+  image = SITE.defaultImage,
+  imageAlt = SITE.name,
+  type = 'website',
+  noindex = false,
   effects = true,
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const siteOrigin = Astro.site ?? SITE.url;
+const canonical = canonicalUrl(Astro.url.pathname, siteOrigin);
+const ogImage = absoluteAssetUrl(image, siteOrigin);
+const robots = noindex ? 'noindex, follow' : 'index, follow';
 const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 ---
 
@@ -28,12 +40,50 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content={SITE.name} />
+    <meta name="robots" content={robots} />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content={SITE.locale} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={imageAlt} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+
+    {isHomePage && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: SITE.name,
+        url: SITE.url,
+        image: absoluteAssetUrl(SITE.defaultImage, siteOrigin),
+        description: SITE.defaultDescription,
+        jobTitle: 'Student',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Columbus',
+          addressRegion: 'OH',
+          addressCountry: 'US',
+        },
+        sameAs: SITE.sameAs,
+      })} />
+    )}
+
     {isHomePage && <link rel="preload" href="/images/hero.jpg" as="image" />}
+    <link rel="preload" href="/fonts/helvetica-neue/HelveticaNeue-Light.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/helvetica-neue/HelveticaNeue-Regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/helvetica-neue/HelveticaNeue-Bold.woff2" as="font" type="font/woff2" crossorigin />
     {effects && <style is:global set:html={lenisCss} />}
     <style is:inline>
       html.page-entering body { opacity: 0; }

@@ -19,11 +19,12 @@ html.lenis body {
 body {
   font-family: var(--sans);
   font-size: var(--text-body);
-  font-weight: var(--weight-normal);
+  font-weight: var(--weight-reading);
   line-height: 1.55;
   background: var(--bg);
   color: var(--fg);
   font-variant-numeric: tabular-nums;
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -289,13 +290,13 @@ a {
 
 .about-lead {
   color: var(--fg);
-  font-weight: var(--weight-normal);
+  font-weight: var(--weight-medium);
   letter-spacing: -0.01em;
   margin-bottom: 1.2em;
 }
 
 .about-text {
-  font-weight: var(--weight-normal);
+  font-weight: var(--weight-reading);
   color: var(--fg-secondary);
 }
 
@@ -533,7 +534,7 @@ a {
 }
 
 .work-content {
-  font-weight: var(--weight-normal);
+  font-weight: var(--weight-reading);
   color: var(--fg-secondary);
 }
 
@@ -560,6 +561,7 @@ a {
   font-size: var(--text-sm);
   font-weight: var(--weight-light);
   color: var(--fg-muted);
+  letter-spacing: 0.02em;
 }
 
 .work-content h2 {
@@ -571,11 +573,21 @@ a {
 }
 
 .work-content h4,
+.work-content .work-entry-title {
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  color: var(--fg);
+  letter-spacing: -0.01em;
+  margin: 40px 0 14px;
+}
+
+.work-content h4.work-section-label,
 .work-links-label {
   font-size: var(--text-sm);
   font-weight: var(--weight-light);
   color: var(--fg-muted);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   margin: 36px 0 12px;
 }
 
@@ -589,24 +601,23 @@ a {
   margin: 1em 0;
 }
 
-.work-content li,
-.work-links-list li {
+.work-content li {
   margin-bottom: 0.55em;
   font-size: var(--text-sm);
-  font-weight: var(--weight-light);
+  font-weight: var(--weight-reading);
   line-height: 1.5;
-  color: var(--fg-secondary);
+  color: var(--fg);
   letter-spacing: 0.01em;
 }
 
 .work-content .yr {
+  font-weight: var(--weight-light);
   color: var(--fg-muted);
   margin-right: 0.35em;
 }
 
-.work-content a,
-.work-links-list a {
-  font-weight: var(--weight-light);
+.work-content a {
+  font-weight: var(--weight-normal);
   color: var(--fg);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -614,21 +625,48 @@ a {
   text-decoration-color: var(--fg-muted);
 }
 
-.work-content a:hover,
-.work-links-list a:hover {
+.work-content a:hover {
   text-decoration-color: var(--fg);
 }
 
-.work-links-list li {
-  margin-bottom: 10px;
-  line-height: 1.45;
+.work-link-item {
+  margin-bottom: 16px;
 }
 
-.work-links-list span {
+.work-link-meta {
   display: block;
+  font-size: var(--text-sm);
   font-weight: var(--weight-light);
   color: var(--fg-muted);
-  margin-top: 2px;
+  letter-spacing: 0.02em;
+}
+
+.work-link-title {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--fg-muted);
+}
+
+.work-link-title:hover {
+  text-decoration-color: var(--fg);
+}
+
+.work-link-detail {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-light);
+  line-height: 1.45;
+  color: var(--fg-secondary);
+  letter-spacing: 0.01em;
 }
 
 .work-content .work-embed {

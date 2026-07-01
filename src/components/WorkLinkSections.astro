@@ -6,6 +6,14 @@ interface Props {
 }
 
 const { sections } = Astro.props;
+
+function metaLine(section: WorkLinkSection, item: WorkLinkSection['items'][number]) {
+  if (!item.meta && !item.detail) return null;
+  if (section.heading === 'Press') {
+    return [item.meta, item.detail].filter(Boolean).join(' · ');
+  }
+  return item.meta || null;
+}
 ---
 
 {
@@ -13,17 +21,20 @@ const { sections } = Astro.props;
     <div class="work-links">
       <p class="work-links-label">{section.heading}</p>
       <ul class="work-links-list">
-        {section.items.map((item) => (
-          <li>
-            <a href={item.url} target="_blank" rel="noopener">
-              {item.title}
-            </a>
-            <span>
-              {item.meta}
-              {item.detail ? ` · ${item.detail}` : ''}
-            </span>
-          </li>
-        ))}
+        {section.items.map((item) => {
+          const meta = metaLine(section, item);
+          return (
+            <li class="work-link-item">
+              {meta && <span class="work-link-meta">{meta}</span>}
+              <a href={item.url} target="_blank" rel="noopener" class="work-link-title">
+                {item.title}
+              </a>
+              {section.heading !== 'Press' && item.detail && (
+                <span class="work-link-detail">{item.detail}</span>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </div>
   ))

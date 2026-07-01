@@ -11,7 +11,7 @@ export interface WorkLinkSection {
 }
 
 export interface WorkDetail {
-  label: string;
+  label?: string;
   title: string;
   meta: string;
   content: string;
@@ -22,7 +22,7 @@ export interface Card {
   id: string;
   label: string;
   title: string;
-  desc: string;
+  desc?: string;
   bgImage?: string;
   detail: WorkDetail;
 }

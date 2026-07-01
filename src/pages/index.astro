@@ -6,9 +6,10 @@ import About from '../components/About.astro';
 import ProjectSection from '../components/ProjectSection.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_DATA } from '../data/site';
+import { SITE } from '../lib/seo';
 ---
 
-<BaseLayout>
+<BaseLayout title={SITE.homeTitle} description={SITE.defaultDescription}>
   <Masthead />
   <Hero hero={SITE_DATA.hero} />
   <About about={SITE_DATA.about} />

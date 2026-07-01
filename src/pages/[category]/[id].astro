@@ -3,26 +3,52 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Masthead from '../../components/Masthead.astro';
 import WorkLinkSections from '../../components/WorkLinkSections.astro';
 import { getAllCardEntries } from '../../data/site';
+import { getCardDescription, pageTitle, truncateDescription } from '../../lib/seo';
 
 export function getStaticPaths() {
   return getAllCardEntries().map(({ sectionId, card }) => ({
     params: { category: sectionId, id: card.id },
-    props: { card },
+    props: { card, sectionId },
   }));
 }
 
-const { card } = Astro.props;
-const pageTitle = `${card.detail.title} — Ben Kurian`;
+const { card, sectionId } = Astro.props;
+const siteOrigin = Astro.site ?? 'https://www.benkurian.com';
+const fallbackDescription = `${card.detail.title}. ${[card.detail.meta, card.label].filter(Boolean).join('. ')}.`;
+const pageDescription = truncateDescription(
+  getCardDescription(card.id, fallbackDescription),
+);
+const pageTitleText = pageTitle(card.detail.title);
+const pageImage = card.bgImage ?? '/images/hero.jpg';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: card.detail.title,
+  description: pageDescription,
+  author: {
+    '@type': 'Person',
+    name: 'Ben Kurian',
+    url: 'https://www.benkurian.com',
+  },
+  image: new URL(pageImage, siteOrigin).href,
+  mainEntityOfPage: new URL(`/${sectionId}/${card.id}/`, siteOrigin).href,
+};
 ---
 
-<BaseLayout title={pageTitle} description={card.desc}>
+<BaseLayout
+  title={pageTitleText}
+  description={pageDescription}
+  image={pageImage}
+  imageAlt={`${card.detail.title} by Ben Kurian`}
+  type="article"
+>
   <Masthead />
   <article class="work-page page-shell">
     <div class="work-body">
       <a href="/" class="work-back">Back</a>
 
       <header class="work-header">
-        {card.detail.label && <p class="work-label">{card.detail.label}</p>}
+        {card.label && <p class="work-label">{card.label}</p>}
         <h1 class="work-title">{card.detail.title}</h1>
         {card.detail.meta && <p class="work-meta">{card.detail.meta}</p>}
       </header>
@@ -31,4 +57,6 @@ const pageTitle = `${card.detail.title} — Ben Kurian`;
       {card.detail.linkSections && <WorkLinkSections sections={card.detail.linkSections} />}
     </div>
   </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 </BaseLayout>
