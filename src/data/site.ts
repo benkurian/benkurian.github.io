@@ -403,6 +403,7 @@ export const SITE_DATA: SiteData = {
              {
                heading: 'Press',
                items: [
+                 { meta: 'Delaware Gazette', title: 'Olentangy student honored for healthcare advocacy', detail: 'July 2026', url: 'https://www.delgazette.com/2026/07/15/olentangy-student-honored-for-healthcare-advocacy/' },
                  { meta: 'WOSU Public Media', title: 'Two Olentangy Liberty students win top honors in C-SPAN student documentary contest', detail: 'May 2026', url: 'https://www.wosu.org/arts-culture/2026-05-04/two-olentangy-liberty-students-win-top-honors-in-c-span-student-documentary-contest' },
                  { meta: 'Delaware Gazette', title: 'Kurian wins C-SPAN contest again', detail: 'March 2026', url: 'https://www.delgazette.com/2026/03/15/kurian-wins-c-span-contest-again/' },
                  { meta: 'WOSU Public Media', title: 'Fascinating Ohio: Teen Edition', detail: 'August 2025', url: 'https://www.wosu.org/show/all-sides/2025-08-07/fascinating-ohio-teen-edition-state-fair-junior-fair-board-member-ninja-warriors-documentarian' },
