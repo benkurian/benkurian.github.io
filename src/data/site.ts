@@ -95,6 +95,10 @@ export const SITE_DATA: SiteData = {
 
 
 <p>The story will (hopefully!) air on PBS NewsHour later in 2026.</p>
+ <h4>Featured: <em>Beyond the Capitol: Celebrating Everyday Life in DC
+</em></h4>
+           <div class='work-embed'><iframe src="https://www.youtube.com/embed/VtYdZgHb5Zs?si=9KrUZe3r_sVifyX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          
            `
          }
        }
