@@ -27,3 +27,15 @@ const { footer } = Astro.props;
   </ul>
   <p class="footer-copy">{footer.copy}</p>
 </footer>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.footer-links a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        window.posthog?.capture('footer_link_clicked', {
+          label: (link.textContent || '').trim(),
+        });
+      });
+    });
+  });
+</script>
