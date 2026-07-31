@@ -17,4 +17,22 @@ import { SITE } from '../lib/seo';
     {SITE_DATA.sections.map((section) => <ProjectSection section={section} />)}
   </main>
   <Footer footer={SITE_DATA.footer} />
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('a.panel').forEach(function (panel) {
+        panel.addEventListener('click', function () {
+          var href = panel.getAttribute('href') || '';
+          var parts = href.replace(/^\/|\/$/g, '').split('/');
+          var sectionId = parts[0] || '';
+          var cardId = parts[1] || '';
+          var title = (panel.querySelector('.panel-title') || {}).textContent || '';
+          window.posthog?.capture('project_card_clicked', {
+            card_id: cardId,
+            section_id: sectionId,
+            card_title: title,
+          });
+        });
+      });
+    });
+  </script>
 </BaseLayout>

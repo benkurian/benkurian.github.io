@@ -99,3 +99,13 @@ const resumeUrl = SITE_DATA.resumeUrl;
     }, menuTransitionMs);
   });
 </script>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href$=".pdf"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        window.posthog?.capture('resume_viewed');
+      });
+    });
+  });
+</script>

@@ -70,6 +70,11 @@
                 </div>
                 </div>`;
 
+            window.posthog?.capture('gpa_report_generated', {
+                course_count: document.querySelectorAll('.course-card').length,
+                term_count: document.querySelectorAll('.year-divider').length,
+            });
+
             // Open print window
             const printWindow = window.open('', '_blank');
             printWindow.document.write(`
@@ -452,6 +457,9 @@
             
             // Save state for undo/redo
             saveState();
+            if (!courseData) {
+                window.posthog?.capture('gpa_course_added', { term: targetYear });
+            }
         }
 
         function createYearDivider(year) {
@@ -536,6 +544,7 @@
                 const yearDivider = createYearDivider(year);
                 document.getElementById('course-container').appendChild(yearDivider);
                 sortYearDividers();
+                window.posthog?.capture('gpa_term_added', { term: year });
                 addCourse(null, year); // Add a default course when creating a new year
             } else {
                 showAlert(`The ${year} term already exists`, 'info');
@@ -778,7 +787,7 @@
             a.download = `${fileName}.json`;
             a.click();
             URL.revokeObjectURL(url);
-            
+            window.posthog?.capture('gpa_data_exported');
             const modal = bootstrap.Modal.getInstance(document.getElementById('exportModal'));
             modal.hide();
         }
@@ -812,6 +821,10 @@
                     });
                     
                     showAlert("Courses imported successfully!", "success");
+                    window.posthog?.capture('gpa_data_imported', {
+                        term_count: data.years.length,
+                        course_count: data.years.reduce(function (sum, y) { return sum + y.courses.length; }, 0),
+                    });
                     calculateGPA();
                     saveState();
                 } catch (error) {

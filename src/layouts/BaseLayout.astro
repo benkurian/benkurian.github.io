@@ -1,5 +1,6 @@
 ---
 import Analytics from '../components/Analytics.astro';
+import PostHog from '../components/posthog.astro';
 import SiteEffects from '../components/SiteEffects.astro';
 import { SITE, absoluteAssetUrl, canonicalUrl } from '../lib/seo';
 import '../styles/fonts.css';
@@ -97,6 +98,7 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
       })();
     </script>
     <Analytics />
+    <PostHog />
   </head>
   <body>
     <slot />
