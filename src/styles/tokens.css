@@ -1,8 +1,8 @@
 :root {
   --bg: #ffffff;
   --fg: #111111;
-  --fg-secondary: #555555;
-  --fg-muted: #999999;
+  --fg-secondary: #4f4f4f;
+  --fg-muted: #707070;
 
   --rule: rgba(0, 0, 0, 0.12);
   --rule-strong: rgba(0, 0, 0, 0.22);
@@ -17,7 +17,7 @@
   --weight-heavy: 800;
 
   --text-sm: 15px;
-  --text-panel-meta: 17px;
+  --text-panel-meta: 15px;
   --text-panel: clamp(21px, 1.35vw, 24px);
   --text-section: clamp(32px, 3.8vw, 44px);
   --text-body: 20px;
@@ -31,6 +31,7 @@
   --about-photo-max: 400px;
 
   --work-max: 720px;
+  --site-max: 1440px;
 
   --panel-hover-scale: 1.02;
   --panel-hover-duration: 0.9s;

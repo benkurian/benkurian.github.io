@@ -2,7 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Masthead from '../../components/Masthead.astro';
 import WorkLinkSections from '../../components/WorkLinkSections.astro';
-import { getAllCardEntries } from '../../data/site';
+import Footer from '../../components/Footer.astro';
+import { SITE_DATA, getAllCardEntries } from '../../data/site';
 import { getCardDescription, pageTitle, truncateDescription } from '../../lib/seo';
 
 export function getStaticPaths() {
@@ -13,6 +14,12 @@ export function getStaticPaths() {
 }
 
 const { card, sectionId } = Astro.props;
+const allCards = getAllCardEntries();
+const currentIndex = allCards.findIndex(
+  (entry) => entry.sectionId === sectionId && entry.card.id === card.id,
+);
+const previousEntry = currentIndex > 0 ? allCards[currentIndex - 1] : null;
+const nextEntry = currentIndex < allCards.length - 1 ? allCards[currentIndex + 1] : null;
 const siteOrigin = Astro.site ?? 'https://www.benkurian.com';
 const fallbackDescription = `${card.detail.title}. ${[card.detail.meta, card.label].filter(Boolean).join('. ')}.`;
 const pageDescription = truncateDescription(
@@ -44,19 +51,57 @@ const structuredData = {
 >
   <Masthead />
   <article class="work-page page-shell">
-    <div class="work-body">
-      <a href="/" class="work-back">Back</a>
+    <div class="work-shell">
+      <a href={`/#${sectionId}`} class="work-back">← All work</a>
 
       <header class="work-header">
-        {card.label && <p class="work-label">{card.label}</p>}
-        <h1 class="work-title">{card.detail.title}</h1>
-        {card.detail.meta && <p class="work-meta">{card.detail.meta}</p>}
+        <div class="work-heading">
+          <h1 class="work-title">{card.detail.title}</h1>
+          {card.detail.meta && <p class="work-meta">{card.detail.meta}</p>}
+          {card.desc && <p class="work-deck">{card.desc}</p>}
+        </div>
       </header>
 
-      <div class="work-content" set:html={card.detail.content} />
-      {card.detail.linkSections && <WorkLinkSections sections={card.detail.linkSections} />}
+      <div class="work-reading-grid">
+        <div class="work-reading-column">
+          <div class="work-content" set:html={card.detail.content} />
+          {card.detail.linkSections && <WorkLinkSections sections={card.detail.linkSections} />}
+        </div>
+      </div>
+
+      <nav class="work-pagination" aria-label="More work">
+        <div class="work-pagination-item work-pagination-previous">
+          {previousEntry && (
+            <a class="work-pagination-link" href={`/${previousEntry.sectionId}/${previousEntry.card.id}/`}>
+              <span class="work-pagination-direction">Previous</span>
+              <span class="work-pagination-title">{previousEntry.card.title}</span>
+            </a>
+          )}
+        </div>
+        <div class="work-pagination-item work-pagination-next">
+          {nextEntry && (
+            <a class="work-pagination-link" href={`/${nextEntry.sectionId}/${nextEntry.card.id}/`}>
+              <span class="work-pagination-direction">Next</span>
+              <span class="work-pagination-title">{nextEntry.card.title}</span>
+            </a>
+          )}
+        </div>
+      </nav>
     </div>
   </article>
 
+  <Footer footer={SITE_DATA.footer} />
+
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <script define:vars={{ sectionId }}>
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || event.defaultPrevented) return;
+
+      event.preventDefault();
+      const backLink = document.querySelector('.work-back');
+      if (backLink instanceof HTMLAnchorElement) backLink.click();
+      else window.location.assign(`/#${sectionId}`);
+    });
+  </script>
 </BaseLayout>

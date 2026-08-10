@@ -15,7 +15,7 @@ export const SITE_DATA: SiteData = {
    heading: "I’m Ben Kurian, a junior at Olentangy Liberty High School in Columbus, Ohio.",
    paragraphs: [
      "I’m interested in how healthcare decisions actually get made: who gets access, what gets prioritized, and how structures shape patient outcomes. That’s led me to work on a few different projects in that space.",
-     "I co-founded SPAN, a student-led, nonpartisan healthcare advocacy organization now active in over fifteen states. I also lead Project MedBridge, a Central Ohio initiative rerouting 30,000+ pounds of surplus medical equipment globally.",
+     "I co-founded SPAN, a student-led, nonpartisan healthcare advocacy organization now active across eighteen states. I also lead Project MedBridge, a Central Ohio initiative rerouting 30,000+ pounds of surplus medical equipment globally.",
      "A lot of my work takes different forms—documentary filmmaking, public speaking, and organizing—usually around the same core questions. I’ve been lucky to have some of that work recognized: airtime on national TV, recognition from Ohio’s Governor and U.S. Senators, and invitations to speak at conferences from Dallas to Philadelphia.",
      "Outside of that, I’m a competitive debater and a multi-instrumentalist. I bike everywhere, collect vinyl, and am always hunting down new Oreo flavors <i>(current favorite: Chocolate Ganache Thins)</i>.",
      "I’m planning to study public health, especially the policy side of how care is delivered and who it reaches.",
@@ -38,15 +38,35 @@ export const SITE_DATA: SiteData = {
          id: "span",
          label: "National Organization",
          title: "Students for Patient Advocacy Nationwide",
-         desc: "Youth-led healthcare advocacy org working across 15+ states and the U.S. Congress.",
+         desc: "Youth-led healthcare advocacy organization shaping policy across 18 states and Congress.",
          bgImage: "/images/span.jpg",
          detail: {
            label: "National Organization",
            title: "Students for Patient Advocacy Nationwide",
            meta: "Co-Founder & Executive Director",
            content: `
-           <p>SPAN (est. 2025) is an organization I co-founded that empowers high school, undergraduate, and medical students to engage directly with state and federal legislation affecting patients. What started as a response to gaps in youth representation in healthcare policy has grown into a national team of over 40 members working across 15+ states and the U.S. Congress.</p>
-           <p>We’ve worked with over 1,500 legislators through letters, cold calls, and testimony: influencing 52 healthcare bills, including stalling Texas House Bill 5294 and helping introduce legislation to mandate AEDs in Alaskan K–12 schools. SPAN has also partnered with Unite America, Stanford’s Deliberative Democracy Lab, and Harvard’s Health Fluency Project, and reached over 250,000 people across social media.</p>
+           <p>SPAN (est. 2025) is a youth-led healthcare policy organization I co-founded to give students a direct role in decisions affecting patients. More than 50 high school, undergraduate, graduate, and medical students now work across 18 states and Congress, researching legislation, writing policy language, organizing outreach, and testifying before lawmakers.</p>
+
+           <h2>Origin</h2>
+           <p>SPAN began in response to Texas House Bill 5294, which threatened pass/fail grading at Texas medical schools and would have restricted how admissions committees considered race. We organized more than 100 medical students to contact lawmakers and testify at the Texas Capitol. The campaign protected roughly 8,000 Texas medical students and stalled the bill just weeks before reaching the Governor's desk.</p>
+
+           <h2>Progress</h2>
+           <p>Since then, SPAN has engaged more than 1,500 elected officials and shaped 53 healthcare bills across 18 states and Congress. Our work spans supporting, amending, opposing, and proposing legislation. A few highlights:</p>
+           <ul>
+             <li><span class='yr'>CA</span> Drafted amendment language expanding coverage to 15M+ Medi-Cal patients in SB 363.</li>
+             <li><span class='yr'>TX</span> Drafted language adopted in SB 75 clarifying hospitals as critical infrastructure.</li>
+             <li><span class='yr'>OH</span> Passed SB 137 so overdose patients leave hospitals with naloxone in hand.</li>
+             <li><span class='yr'>AK</span> Working to introduce an AED mandate in all Alaskan K-12 schools.</li>
+             <li><span class='yr'>MA</span> Advanced H.2284/S.2622, requiring multilingual resources in healthcare settings.</li>
+           </ul>
+           <p>We also publish weekly policy briefs on our blog and our social media reach has surpassed 250,000 views. Our partners include Unite America, Stanford’s Deliberative Democracy Lab, Harvard’s Health Fluency Project, Beyond Partisan, the Institute for Citizens & Scholars, and the Mass Speaks Coalition.</p>
+
+           <h2>Recognition</h2>
+           <p>On July 3, 2026, I was named <a href='https://www.pointsoflight.org/awards/better-health-care-begins-with-student-leadership/'>Daily Point of Light Award honoree #8361</a> for building SPAN and rallying young people around healthcare policy. SPAN has also received $7,500 through Carnegie Young Leaders and a $500 Beyond Partisan microgrant.</p>
+
+           <h2>Featured: SPAN</h2>
+           <div class='work-embed'><iframe src="https://www.youtube.com/embed/t9-e2QdTz78" title="Students for Patient Advocacy Nationwide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
            <p><a href='https://spanationwide.org'>spanationwide.org</a></p>
            `
          }
@@ -55,15 +75,28 @@ export const SITE_DATA: SiteData = {
          id: "medbridge",
          label: "Central Ohio Initiative",
          title: "Project MedBridge",
-         desc: "Collecting surplus medical supplies from Columbus clinics to facilitate access to care abroad.",
+         desc: "Rerouting 30,000+ pounds of surplus medical equipment from Central Ohio to facilities worldwide.",
          bgImage: "/images/medbridge.jpeg",
          detail: {
            label: "Central Ohio Initiative",
            title: "Project MedBridge",
            meta: "Co-Founder & Team Lead",
            content: `
-               <p>Project MedBridge (est. 2026) is Central Ohio’s first student-led medical supply redistribution network, which I co-founded to address a glaring gap in our city. U.S. hospitals discard an estimated 2 million pounds of unused, unexpired supplies every year, and Central Ohio has no mechanism to redirect any of it. Project MedBridge collects surplus from local hospital systems and ships it to facilities in 40+ countries. Recently, Project MedBridge secured $7,500 in grant funding from the Carnegie Corporation.</p>
-   <p><a href='https://projectmedbridge.org'>projectmedbridge.org</a></p>
+           <p>Project MedBridge (est. 2026) is Central Ohio’s first medical supply redistribution network.</p>
+           <p>U.S. hospitals discard an estimated two million pounds of unused, unexpired supplies each year, while health facilities around the world operate without essential equipment.</p>
+           <p>We built a local pipeline that collects surplus from Central Ohio clinics and hospital systems, sorts and prepares it for redistribution, and routes it through established partners to facilities abroad. We've now rerouted more than 30,000 pounds of medical equipment serving communities in over 40 countries.</p>
+            <figure>
+             <img src="/images/medbridge-first-shipment.jpg" loading="lazy" alt="Project MedBridge co-founders seated at the back of the first shipment truck" />
+             <figcaption>Project MedBridge’s first shipment, August 2026</figcaption>
+           </figure>
+           <h2>Carnegie funding and kickoff</h2>
+           <p>Project MedBridge received $7,500 in Carnegie Young Leaders funding through the Institute for Citizens & Scholars. Additionally, I was invited to the Carnegie Young Leaders kickoff, meeting 70 other changemakers from across the country.</p>
+           <figure>
+             <img src="/images/medbridge-carnegie-kickoff.jpg" loading="lazy" alt="Ben Kurian and other youth leaders at the Carnegie Young Leaders kickoff" />
+             <figcaption>Carnegie Young Leaders kickoff, July 2026</figcaption>
+           </figure>
+
+           <p><a href='https://projectmedbridge.org'>projectmedbridge.org</a></p>
           `
          }
        },
@@ -87,7 +120,7 @@ export const SITE_DATA: SiteData = {
              <li><span class='yr'>2023</span> First Prize + Fan Favorite, <a href='https://youtu.be/-rcz3fX9laQ?si=kv-Q0aieXBFVnGdG'><em>Losing a Generation</em></a></li>
            </ul>
            <p>My work has involved interviews with senior stakeholders, including public health officials, faculty from Harvard and Yale, and former U.S. Department of Transportation leadership. I’ve been formally recognized by <a href='https://www.studentcam.org/2023-first-prize-middle-school-losing-a-generation-by-ben-kurian/'>Governor DeWine, U.S. Senator Sherrod Brown</a>, and others, and have been invited to speak at national conferences in Dallas and Philadelphia.</p>
-           <h4>Featured: <em>A Right to Health</em> (2026)</h4>
+           <h2>Featured: <em>A Right to Health</em> (2026)</h2>
            <div class='work-embed'><iframe src="https://www.youtube.com/embed/OJTwR_BkjLY?si=9UzZoAUCy47qDBty" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
           
 <p>This summer, I was selected as one of <a href='https://studentreportinglabs.org/news/introducing-the-2026-srl-summer-academy-fellows/'>18 fellows</a> nationwide for the <a href='https://studentreportinglabs.org/news/applications-now-open-2026-srl-summer-academy/'>PBS News Student Reporting Labs Summer Academy</a>: a highly competitive, all-expenses-paid week of professional video journalism training held June 24–30 on the Georgetown University campus in Washington, D.C., in collaboration with WETA.</p>
@@ -95,8 +128,8 @@ export const SITE_DATA: SiteData = {
 
 
 <p>The story will (hopefully!) air on PBS NewsHour later in 2026.</p>
- <h4>Featured: <em>Beyond the Capitol: Celebrating Everyday Life in DC
-</em></h4>
+ <h2>Featured: <em>Beyond the Capitol: Celebrating Everyday Life in DC
+</em></h2>
            <div class='work-embed'><iframe src="https://www.youtube.com/embed/VtYdZgHb5Zs?si=9KrUZe3r_sVifyX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
           
            `
@@ -169,24 +202,24 @@ export const SITE_DATA: SiteData = {
            content: `
              <p>As Captain of our Lincoln-Douglas Debate team, I lead a group of 10 students in two weekly practices, preparing for tournaments every Saturday. Under my leadership, the team achieved remarkable success, including three state and national qualifiers.</p>
            <figure>
-           <img src="/images/osdastates.jpeg" loading="lazy"/>
+           <img src="/images/osdastates.jpeg" loading="lazy" alt="Ben Kurian and teammates at the OSDA State Finals" />
            <figcaption>OSDA State Finals, March 2026</figcaption>
            </figure>
              <p>Additionally, I taught Lincoln-Douglas, Public Forum, and Congressional debate to 30+ middle and high school students through Olentangy’s Summer Enrichment Experience (SEE). I prepared materials for daily lessons and exercises, led instruction throughout the program, and helped organize a debate tournament for participating students.</p>
            <figure>
-           <img src="/images/see.jpg" loading="lazy"/>
+           <img src="/images/see.jpg" loading="lazy" alt="Ben Kurian with the student debate tournament champion at SEE" />
            <figcaption>Me with tournament champion Gavin at SEE, June 2026</figcaption>
            </figure>
-             <h4>Awards</h4>
+             <h2>Awards</h2>
            <ul>
-             <li><span class='yr'>LD</span> 4× OSDA State Finals Bids (2025–2026)</a></li>
+             <li><span class='yr'>LD</span> 4× OSDA State Finals Bids (2025–2026)</li>
              <li><span class='yr'>LD</span> Ranked 6th in state preliminaries (2026)</li>
              <li><span class='yr'>LD</span> First Alternate to the NSDA National Tournament (2026)</li>
              <li><span class='yr'>WS</span> National Qualifier (2026)</li>
            </ul>
            <p>I also represented the Ohio Speech and Debate Association at the <a href='https://conference.ohioschoolboards.org/2026'>Ohio School Boards Association statewide conference</a>, advocating for greater access to Speech and Debate in Ohio high schools, meeting with school board members and administrators across the state.</p>
            <figure>
-           <img src="/images/osba.jpg" loading="lazy"/>
+           <img src="/images/osba.jpg" loading="lazy" alt="Ben Kurian presenting at the Ohio School Boards Association conference" />
            <figcaption>OSBA conference, November 2025</figcaption>
            </figure>
            `
@@ -211,7 +244,7 @@ export const SITE_DATA: SiteData = {
 
              <p>Locally, I lead outreach and communications, growing our chapter membership from 60 to over 100 students. I’ve organized speaker events with neurosurgeons, psychiatrists, and medical students, and helped guide our chapter to 33+ state placers and 7+ international placers.</p>
             
-             <h4>Awards</h4>
+             <h2>Awards</h2>
              <ul>
                <li><span class='yr'>2026</span> Top 10 globally in Allied Health Statistics, ILC</li>
                <li><span class='yr'>2025</span> Top 16 globally in Biomedical Debate, ILC (highest placement from Ohio, ~1,000 teams)</li>
@@ -219,11 +252,11 @@ export const SITE_DATA: SiteData = {
                <li><span class='yr'>2026</span> 4th Place in Medical Law & Ethics, SLC</li>
              </ul>
              <figure>
-             <img src="/images/hosasec.jpeg" />
+             <img src="/images/hosasec.jpeg" loading="lazy" alt="Ben Kurian with Ohio HOSA state officers at the International Leadership Conference" />
              <figcaption>International Leadership Conference, June 2026</figcaption>
              </figure>
              <figure>
-             <img src="/images/top16.jpeg" />
+             <img src="/images/top16.jpeg" loading="lazy" alt="Ben Kurian and his team competing in the Biomedical Debate octafinal round" />
              <figcaption>Octafinal round in Biomedical Debate (team "Olentangy"), June 2025</figcaption>
              </figure>
            `
@@ -233,7 +266,7 @@ export const SITE_DATA: SiteData = {
          id: "tedx",
          label: "District-Wide Event",
          title: "TEDxOlentangy Liberty Youth",
-         desc: "Delivered and official TEDx talk and now plan future events.",
+         desc: "Delivered an official TEDx talk and now helps plan future events.",
          bgImage: "/images/tedx.jpg",
          detail: {
            label: "District-Wide Event",
@@ -245,7 +278,7 @@ export const SITE_DATA: SiteData = {
            <p>As part of my involvement, I am now part of the steering committee for the <a href='https://www.ted.com/tedx/events/65993'>upcoming TEDxOlentangy Liberty Youth event</a> in April 2026.</p>
 
 
-           <h4>5 Lessons to Transform a Community (2025)</h4>
+           <h2>5 Lessons to Transform a Community (2025)</h2>
            <div class='work-embed'><iframe src="https://www.youtube.com/embed/dcyyexBZ1u0?si=b7vq6hKtlwIgj8XO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
            `
          }
@@ -274,9 +307,9 @@ export const SITE_DATA: SiteData = {
            <p>I currently serve as Concertmaster of the Olentangy Liberty Chamber Orchestra and Assistant Concertmaster of the Columbus Symphony Youth Orchestra, and have been selected twice to the OMEA All-State Orchestra as one of the top 30 violinists in Ohio.</p>
 
 
-           <h4>Featured: <em>Violin Concerto No. 1 in G minor, Movement I</em> — Max Bruch (2026)</h4>
+           <h2>Featured: <em>Violin Concerto No. 1 in G minor, Movement I</em> — Max Bruch (2026)</h2>
            <div class='work-embed'><iframe src="https://www.youtube.com/embed/3gJRLNuiUCA?si=bJVWfMuVLGoiOyYv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-           <h4>Awards</h4>
+           <h2>Awards</h2>
            <ul>
              <li><span class='yr'>2026</span> Second Prize, Columbus Symphony Youth Orchestra Concerto Competition</li>
              <li><span class='yr'>2025–2026</span> 2× OMEA All-State Orchestra (Top 30 violinists in Ohio)</li>
@@ -301,6 +334,8 @@ export const SITE_DATA: SiteData = {
            content: `
              <p>Awarded internationally for original works across four consecutive years by the National Guild of Piano Teachers, selected among hundreds of submissions.</p>
              <p>Displayed in the 2023–2025 Piano Guild Notes Summer Issues.</p>
+             <h2>Featured: <em>Consolation</em></h2>
+             <div class='work-embed'><iframe src="https://www.youtube.com/embed/QGBV0MG8jp0?si=d6WWSNSUwpJMcbwe" title="Performance of Consolation by Ben Kurian" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
            `,
            linkSections: [
              {
@@ -335,8 +370,8 @@ export const SITE_DATA: SiteData = {
            content: `
              <p>My sophomore year, I was invited by the Civic Learning Week Steering Committee for an all-expenses-paid presentation at the National Forum in Philadelphia, co-sponsored by the Bezos Family Foundation, Microsoft, Stanford’s Hoover Institution, and leading civic organizations.</p>
              <p>I joined three other high school students from across the U.S. on a plenary panel moderated by PBS host <a href='https://www.bensheehan.com'>Ben Sheehan</a>, discussing the future of civic learning ahead of America’s 250th anniversary. The panel was titled <em>"Student Perspectives on Liberty and Learning."</em> After the panel, <a href='https://www.civics101podcast.org/civics-101-episodes/clw2'>NHPR’s <em>Civics 101</em></a> interviewed several of us about what civic education looks like in our classrooms.</p>
-             <h4>Student Perspectives on Liberty and Learning</h4>
-             <div class='work-embed'><iframe src="https://www.youtube.com/embed/YAno089cApU?si=E4qiW1nx8GApaeSd&start=705" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+             <h2>Student Perspectives on Liberty and Learning</h2>
+             <div class='work-embed'><iframe src="https://www.youtube.com/embed/YAno089cApU?si=E4qiW1nx8GApaeSd&start=705" title="Student Perspectives on Liberty and Learning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
            `,
            linkSections: [
              {
@@ -361,8 +396,8 @@ export const SITE_DATA: SiteData = {
            meta: "Speaker",
            content: `
            <p>Invited to present to 1,100+ attendees at the International Bridge, Tunnel and Turnpike Association’s Technology Summit in Dallas, following recognition for <a href='https://youtu.be/h1dHoLHaSDc?si=385VILxfsBtdd1_K'><em>The Road to Vision Zero</em></a>, my documentary on AI-powered road safety.</p>
-           <h4>Presentation</h4>
-             <div class='work-embed'><iframe src="https://www.youtube.com/embed/axoGrMKPKs0?si=5S7v1kCm2K_hrvHT&amp;start=404" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+           <h2>Presentation</h2>
+             <div class='work-embed'><iframe src="https://www.youtube.com/embed/axoGrMKPKs0?si=5S7v1kCm2K_hrvHT&amp;start=404" title="Ben Kurian at the IBTTA Technology Summit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
            `
          }
        },
@@ -380,26 +415,26 @@ export const SITE_DATA: SiteData = {
              <p>Recognition from elected officials and coverage from regional media for documentary filmmaking, civic advocacy, and student leadership.</p>
 
 
-             <h4>Ohio Governor Mike DeWine</h4>
+             <h2>Ohio Governor Mike DeWine</h2>
              <figure>
              <div class='work-embed'><iframe src="https://www.youtube.com/embed/cUyLjtmfbcw?si=F36HiMEsjOamftsr" title="Recognition from Ohio Governor Mike DeWine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
                <figcaption>Video of recognition, April 2025</figcaption>
              </figure>
-             <h4>U.S. Senator Bernie Moreno</h4>
+             <h2>U.S. Senator Bernie Moreno</h2>
                            <figure>
-               <img src="/images/bernie-moreno.jpg" loading="lazy" alt="Letter of recognition from U.S. Senator Sherrod Brown" />
+               <img src="/images/bernie-moreno.jpg" loading="lazy" alt="Letter of recognition from U.S. Senator Bernie Moreno" />
                <figcaption>Letter of recognition, April 2025</figcaption>
              </figure>
-                           <h4>U.S. Senator Sherrod Brown</h4>
+                           <h2>U.S. Senator Sherrod Brown</h2>
              <figure>
                <img src="/images/sherrod-brown.jpg" loading="lazy" alt="Letter of recognition from U.S. Senator Sherrod Brown" />
                <figcaption>Letter of recognition, May 2023</figcaption>
              </figure>
 
 
-             <h4>Ohio Director of Health Dr. Bruce Vanderhoff</h4>
+             <h2>Ohio Director of Health Dr. Bruce Vanderhoff</h2>
              <figure>
-             <div class='work-embed'><iframe src="https://www.youtube.com/embed/rrI8SK_bns8?si=4F99OQD9WcfzBklg" title="Recognition from Ohio Governor Mike DeWine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+             <div class='work-embed'><iframe src="https://www.youtube.com/embed/rrI8SK_bns8?si=4F99OQD9WcfzBklg" title="Recognition from Ohio Director of Health Dr. Bruce Vanderhoff" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
                <figcaption>Video of recognition, April 2026</figcaption>
              </figure>
            `,
@@ -449,8 +484,3 @@ export function getAllCardEntries() {
    section.cards.map((card) => ({ sectionId: section.id, card })),
  );
 }
-
-
-
-
-

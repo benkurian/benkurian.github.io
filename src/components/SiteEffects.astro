@@ -19,6 +19,17 @@
     (parseFloat(rootStyles.getPropertyValue('--page-transition-duration')) || 0.3) * 1000;
   const pageTransitionKey = 'page-transition';
 
+  function resetPageTransitionState() {
+    document.documentElement.classList.remove('page-entering', 'page-enter', 'page-leaving');
+    document.body.style.opacity = '';
+    sessionStorage.removeItem(pageTransitionKey);
+  }
+
+  window.addEventListener('pageshow', resetPageTransitionState);
+  window.addEventListener('pagehide', () => {
+    document.documentElement.classList.remove('page-leaving');
+  });
+
   const isHomePage =
     window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
 
@@ -83,6 +94,7 @@
     const isPageTransition =
       link.classList.contains('panel') ||
       link.classList.contains('work-back') ||
+      link.classList.contains('work-pagination-link') ||
       link.classList.contains('notfound-back') ||
       link.classList.contains('masthead-brand');
 

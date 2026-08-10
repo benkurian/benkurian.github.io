@@ -19,7 +19,7 @@ function metaLine(section: WorkLinkSection, item: WorkLinkSection['items'][numbe
 {
   sections.map((section) => (
     <div class="work-links">
-      <p class="work-links-label">{section.heading}</p>
+      <h2 class="work-links-label">{section.heading}</h2>
       <ul class="work-links-list">
         {section.items.map((item) => {
           const meta = metaLine(section, item);

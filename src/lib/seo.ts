@@ -14,9 +14,9 @@ export const SITE = {
 } as const;
 
 const CARD_DESCRIPTIONS: Record<string, string> = {
-  span: 'Ben Kurian co-founded SPAN, a youth healthcare advocacy organization active in 15+ states, working with legislators on patient-focused policy nationwide.',
+  span: 'Ben Kurian co-founded SPAN, a youth healthcare advocacy organization that has shaped 53 bills across 18 states and engaged more than 1,500 officials.',
   medbridge:
-    'Project MedBridge redirects surplus medical supplies from Central Ohio clinics to low-resource communities worldwide, co-founded and led by Ben Kurian.',
+    'Project MedBridge has redirected 30,000+ pounds of surplus medical equipment from Central Ohio to health facilities in more than 40 countries.',
   docs: 'Four-time C-SPAN StudentCam winner Ben Kurian directs documentary films on healthcare, education, and public policy aired to millions of viewers.',
   hosa: 'Ohio HOSA State Vice President Ben Kurian leads youth health leadership across 250 chapters, with top international finishes in biomedical debate and allied health.',
   debate:
