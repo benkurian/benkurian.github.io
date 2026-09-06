@@ -76,7 +76,7 @@ export const SITE_DATA: SiteData = {
          label: "Central Ohio Initiative",
          title: "Project MedBridge",
          desc: "Rerouting 30,000+ pounds of surplus medical equipment from Central Ohio to facilities worldwide.",
-         bgImage: "/images/medbridge.jpeg",
+         bgImage: "/images/medbridge-first-shipment.jpg",
          detail: {
            label: "Central Ohio Initiative",
            title: "Project MedBridge",
@@ -86,8 +86,8 @@ export const SITE_DATA: SiteData = {
            <p>U.S. hospitals discard an estimated two million pounds of unused, unexpired supplies each year, while health facilities around the world operate without essential equipment.</p>
            <p>We built a local pipeline that collects surplus from Central Ohio clinics and hospital systems, sorts and prepares it for redistribution, and routes it through established partners to facilities abroad. We've now rerouted more than 30,000 pounds of medical equipment serving communities in over 40 countries.</p>
             <figure>
-             <img src="/images/medbridge-first-shipment.jpg" loading="lazy" alt="Project MedBridge co-founders seated at the back of the first shipment truck" />
-             <figcaption>Project MedBridge’s first shipment, August 2026</figcaption>
+             <img src="/images/medbridge-shipment-boxes.jpg" loading="lazy" alt="Palletized medical supplies inside Project MedBridge’s first shipment truck" />
+             <figcaption>N95 masks and hot/cold packs loaded for Project MedBridge’s first shipment, August 2026</figcaption>
            </figure>
            <h2>Carnegie funding and kickoff</h2>
            <p>Project MedBridge received $7,500 in Carnegie Young Leaders funding through the Institute for Citizens & Scholars. Additionally, I was invited to the Carnegie Young Leaders kickoff, meeting 70 other changemakers from across the country.</p>
@@ -95,9 +95,19 @@ export const SITE_DATA: SiteData = {
              <img src="/images/medbridge-carnegie-kickoff.jpg" loading="lazy" alt="Ben Kurian and other youth leaders at the Carnegie Young Leaders kickoff" />
              <figcaption>Carnegie Young Leaders kickoff, July 2026</figcaption>
            </figure>
+           <h2>Carnegie Young Leaders pitch</h2>
+           <div class='work-embed'><iframe src="https://www.youtube.com/embed/8lhsXuLN2Fc" title="Project MedBridge Carnegie Young Leaders pitch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
            <p><a href='https://projectmedbridge.org'>projectmedbridge.org</a></p>
-          `
+          `,
+          linkSections: [
+            {
+              heading: 'Press',
+              items: [
+                { meta: 'Delaware Source', title: 'One man’s trash, another man’s treasure: Olentangy students turn OhioHealth surplus into medical aid', detail: 'August 2026', url: 'https://www.delawaresource.com/2026/08/26/one-mans-trash-another-mans-treasure-olentangy-students-turn-ohiohealth-surplus-into-medical-aid/' },
+              ],
+            },
+          ],
          }
        },
        {
@@ -120,6 +130,10 @@ export const SITE_DATA: SiteData = {
              <li><span class='yr'>2023</span> First Prize + Fan Favorite, <a href='https://youtu.be/-rcz3fX9laQ?si=kv-Q0aieXBFVnGdG'><em>Losing a Generation</em></a></li>
            </ul>
            <p>My work has involved interviews with senior stakeholders, including public health officials, faculty from Harvard and Yale, and former U.S. Department of Transportation leadership. I’ve been formally recognized by <a href='https://www.studentcam.org/2023-first-prize-middle-school-losing-a-generation-by-ben-kurian/'>Governor DeWine, U.S. Senator Sherrod Brown</a>, and others, and have been invited to speak at national conferences in Dallas and Philadelphia.</p>
+           <figure>
+             <img src="/images/filmmaking-pogge-interview.jpg" loading="lazy" alt="Ben Kurian interviewing Yale philosopher Dr. Thomas Pogge" />
+             <figcaption>Interviewing Yale philosopher Dr. Thomas Pogge, November 2025</figcaption>
+           </figure>
            <h2>Featured: <em>A Right to Health</em> (2026)</h2>
            <div class='work-embed'><iframe src="https://www.youtube.com/embed/OJTwR_BkjLY?si=9UzZoAUCy47qDBty" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
           

@@ -513,7 +513,7 @@ a {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--panel-gap);
   align-items: start;
-  margin-bottom: clamp(56px, 7vw, 88px);
+  margin-bottom: clamp(48px, 6vw, 72px);
 }
 
 .work-meta,
@@ -529,8 +529,6 @@ a {
   grid-column: 4 / 12;
   width: 100%;
   max-width: 720px;
-  padding-bottom: clamp(40px, 5vw, 64px);
-  border-bottom: 1px solid var(--rule);
 }
 
 .work-title,
@@ -745,9 +743,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--panel-gap);
-  margin-top: clamp(88px, 12vw, 160px);
-  padding-top: 24px;
-  border-top: 1px solid var(--rule);
+  margin-top: clamp(80px, 10vw, 128px);
 }
 
 .work-pagination-item a {
@@ -918,10 +914,6 @@ a {
     margin-bottom: 48px;
   }
 
-  .work-heading {
-    padding-bottom: 40px;
-  }
-
   .work-meta {
     margin-top: 14px;
   }
@@ -941,7 +933,7 @@ a {
   }
 
   .work-pagination {
-    margin-top: 88px;
+    margin-top: 72px;
   }
 }
 
@@ -954,6 +946,11 @@ a {
 
   .panel-grid[data-layout="hero-side"] .panel:first-child {
     grid-column: auto;
+  }
+
+  .panel-media img[src="/images/medbridge-first-shipment.jpg"] {
+    object-position: center 24%;
+    animation: none;
   }
 
   .work-pagination {
